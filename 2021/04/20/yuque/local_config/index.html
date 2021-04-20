@@ -4,15 +4,40 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>local_config | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="开发环境配置 开发环境配置EPELRHEL 以及他的衍生发行版如 CentOS、Scientific Linux 为了稳定，官方的 rpm repository 提供的 rpm 包往往是很滞后的，当然了，这样做这是无可厚非的，毕竟这是服务器版本，安全稳定是重点，官方的 rpm repository 提供的 rpm 包也不够丰富，自己编译比较麻烦EPEL 的全称叫 Extra Packages fo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="local_config">
+<meta property="og:url" content="http://example.com/2021/04/20/yuque/local_config/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="开发环境配置 开发环境配置EPELRHEL 以及他的衍生发行版如 CentOS、Scientific Linux 为了稳定，官方的 rpm repository 提供的 rpm 包往往是很滞后的，当然了，这样做这是无可厚非的，毕竟这是服务器版本，安全稳定是重点，官方的 rpm repository 提供的 rpm 包也不够丰富，自己编译比较麻烦EPEL 的全称叫 Extra Packages fo">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929168915-e0793457-702b-4608-9d7e-aa9cdb6236ac.png#clientId=u3f79bcc4-559b-4&from=paste&height=774&id=ua42eb338&margin=%5Bobject%20Object%5D&originHeight=774&originWidth=898&originalType=url&status=done&style=none&taskId=u9b795330-6108-4f18-b7fa-40a45d35944&width=898">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929168979-1097f88a-47d4-42f2-8cc3-5cdf45aa5a9a.png#clientId=u3f79bcc4-559b-4&from=paste&height=664&id=u6dcb6e42&margin=%5Bobject%20Object%5D&originHeight=664&originWidth=708&originalType=url&status=done&style=none&taskId=ufc947ff7-7668-40b0-8632-1a2b7a7c846&width=708">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929168968-0361aa5b-46f4-43ac-b3dd-bd4856ae17d8.png#clientId=u3f79bcc4-559b-4&from=paste&height=672&id=u684267c7&margin=%5Bobject%20Object%5D&originHeight=672&originWidth=711&originalType=url&status=done&style=none&taskId=ueb02c941-83ed-401d-915e-63c61e182a9&width=711">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929168963-84a62e5d-f9ac-4a07-bd3c-87a192d22fb2.png#clientId=u3f79bcc4-559b-4&from=paste&height=672&id=u4a79dfec&margin=%5Bobject%20Object%5D&originHeight=672&originWidth=705&originalType=url&status=done&style=none&taskId=ucfcb0802-ddf7-4ab8-89b2-d77fe2e030a&width=705">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929168980-f16492e8-aba5-4c4e-a074-205a9c992e5e.png#clientId=u3f79bcc4-559b-4&from=paste&height=670&id=u884703c6&margin=%5Bobject%20Object%5D&originHeight=670&originWidth=707&originalType=url&status=done&style=none&taskId=uf4d226ae-1de8-4a0d-9052-b1eee5754db&width=707">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929169508-22329ec6-0071-49c6-ac90-01e738a92a22.png#clientId=u3f79bcc4-559b-4&from=paste&height=668&id=u2f4ebed4&margin=%5Bobject%20Object%5D&originHeight=668&originWidth=706&originalType=url&status=done&style=none&taskId=u73d06363-8f55-45c4-bd7b-8197c638c48&width=706">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929169560-422a0d60-45e8-4fff-ab49-a5a2152cbb2d.png#clientId=u3f79bcc4-559b-4&from=paste&height=667&id=u0f6b0657&margin=%5Bobject%20Object%5D&originHeight=667&originWidth=708&originalType=url&status=done&style=none&taskId=u88891987-555a-41f7-9fe0-29d934ecde5&width=708">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929169555-4a87f174-35b1-4a3d-84fe-4d9789b3f298.png#clientId=u3f79bcc4-559b-4&from=paste&height=673&id=u10bb24d3&margin=%5Bobject%20Object%5D&originHeight=673&originWidth=712&originalType=url&status=done&style=none&taskId=u879272ba-4276-48f3-9faf-f335475bf92&width=712">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929169562-38f640c6-9ca9-4a6d-8ade-5d41efecdcba.png#clientId=u3f79bcc4-559b-4&from=paste&height=676&id=u53086bc5&margin=%5Bobject%20Object%5D&originHeight=676&originWidth=709&originalType=url&status=done&style=none&taskId=u9165552d-253a-4aad-913c-4ff9e16125b&width=709">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929169662-e0eef2a2-7ad1-42a5-8763-efc7fd1eb70d.png#clientId=u3f79bcc4-559b-4&from=paste&height=676&id=ud6571532&margin=%5Bobject%20Object%5D&originHeight=676&originWidth=720&originalType=url&status=done&style=none&taskId=u12bca789-ffb4-4df0-b2aa-8e4aed545cd&width=720">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929170086-1b309beb-3144-4785-8b03-78376c01a7b9.png#clientId=u3f79bcc4-559b-4&from=paste&height=666&id=u1fe601c8&margin=%5Bobject%20Object%5D&originHeight=666&originWidth=713&originalType=url&status=done&style=none&taskId=ue14399b7-d0e2-48ef-95b6-75e5a7f4422&width=713">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929170081-efd88f0d-1b71-4dcd-821a-9d549b9250e8.png#clientId=u3f79bcc4-559b-4&from=paste&height=671&id=ua8e56e87&margin=%5Bobject%20Object%5D&originHeight=671&originWidth=712&originalType=url&status=done&style=none&taskId=u146ba902-6fce-4f09-8007-7477b118ab7&width=712">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929170090-757fa171-0709-435c-b3dc-9553d9c5849d.png#clientId=u3f79bcc4-559b-4&from=paste&height=676&id=u37d67583&margin=%5Bobject%20Object%5D&originHeight=676&originWidth=707&originalType=url&status=done&style=none&taskId=ua8161296-b49b-4968-8f5a-a27af7866dc&width=707">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929170118-65cd429e-8e8d-44a7-b81f-c524282ea875.png#clientId=u3f79bcc4-559b-4&from=paste&height=503&id=u056eac5a&margin=%5Bobject%20Object%5D&originHeight=503&originWidth=863&originalType=url&status=done&style=none&taskId=uc6ec5ff5-d780-4b66-bd27-df97305f7ba&width=863">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929170257-987a54f3-f0eb-4891-968d-24031d4d6a99.png#clientId=u3f79bcc4-559b-4&from=paste&height=605&id=u8b3b5df5&margin=%5Bobject%20Object%5D&originHeight=605&originWidth=808&originalType=url&status=done&style=none&taskId=uc9a20d83-94c0-4d66-a5c8-52c133d002b&width=808">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929170572-b4214281-9706-4b5d-8ea3-658c267ddf6c.png#clientId=u3f79bcc4-559b-4&from=paste&height=606&id=u227faa7b&margin=%5Bobject%20Object%5D&originHeight=606&originWidth=808&originalType=url&status=done&style=none&taskId=u600b4b13-4549-412a-8d5c-f82220d3d89&width=808">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929170597-ebd7eed3-722c-4a0d-92d8-d99203e97c3a.png#clientId=u3f79bcc4-559b-4&from=paste&height=601&id=u1e4e9d19&margin=%5Bobject%20Object%5D&originHeight=601&originWidth=803&originalType=url&status=done&style=none&taskId=u0eae5720-0218-4d2e-8f6d-28e9ee40bb2&width=803">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929170627-a484e76d-a267-47dd-91c2-2e3e0325d126.png#clientId=u3f79bcc4-559b-4&from=paste&height=602&id=u6c770117&margin=%5Bobject%20Object%5D&originHeight=602&originWidth=812&originalType=url&status=done&style=none&taskId=u981b1e3e-4794-428a-a4ae-634757df458&width=812">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929170613-9298f73d-3053-43e2-9a16-88c6a73ab0ab.png#clientId=u3f79bcc4-559b-4&from=paste&height=596&id=ub750e0e0&margin=%5Bobject%20Object%5D&originHeight=596&originWidth=811&originalType=url&status=done&style=none&taskId=uede80458-b920-4d0a-b15c-da7f6d62b6a&width=811">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929170912-caef3def-a3ce-4dbc-813f-bf5f7488528c.png#clientId=u3f79bcc4-559b-4&from=paste&height=602&id=u29d5feaf&margin=%5Bobject%20Object%5D&originHeight=602&originWidth=801&originalType=url&status=done&style=none&taskId=ud3c1c89a-876a-415b-98bb-1a8cc12e6ac&width=801">
+<meta property="article:published_time" content="2021-04-20T14:29:59.000Z">
+<meta property="article:modified_time" content="2021-04-20T14:34:34.124Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1618929168915-e0793457-702b-4608-9d7e-aa9cdb6236ac.png#clientId=u3f79bcc4-559b-4&from=paste&height=774&id=ua42eb338&margin=%5Bobject%20Object%5D&originHeight=774&originWidth=898&originalType=url&status=done&style=none&taskId=u9b795330-6108-4f18-b7fa-40a45d35944&width=898">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,60 +94,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/04/20/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-04-20T14:33:57.472Z" itemprop="datePublished">2021-04-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/20/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/hello-world/" data-id="cknq4ovdx0000adnd9ry1cqa8" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-yuque/local_config" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-yuque/local_config" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/04/20/yuque/local_config/" class="article-date">
   <time class="dt-published" datetime="2021-04-20T14:29:59.000Z" itemprop="datePublished">2021-04-20</time>
@@ -135,8 +107,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/20/yuque/local_config/">local_config</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      local_config
     </h1>
   
 
@@ -702,128 +674,28 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-yuque/test_two" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/04/20/yuque/test_two/" class="article-date">
-  <time class="dt-published" datetime="2021-04-20T04:19:09.000Z" itemprop="datePublished">2021-04-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2021/04/20/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/20/yuque/test_two/">test_two</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>this is two</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test_two/" data-id="cknq4ove50003adndd27qfli1" data-title="test_two" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-yuque/test_one" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/04/20/yuque/test_one/" class="article-date">
-  <time class="dt-published" datetime="2021-04-20T04:18:47.000Z" itemprop="datePublished">2021-04-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          Hello World
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/20/yuque/test_one/">test_one</a>
-    </h1>
   
+    <a href="/2021/04/20/yuque/test_two/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">test_two</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>this is test one</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test_one/" data-id="cknq4ove40002adnd2d927a5t" data-title="test_one" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-yuque/test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/04/20/yuque/test/" class="article-date">
-  <time class="dt-published" datetime="2021-04-20T04:13:10.000Z" itemprop="datePublished">2021-04-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/20/yuque/test/">test</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>this is a test paper!</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test/" data-id="cknq4ove20001adnde04wd5li" data-title="test" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
