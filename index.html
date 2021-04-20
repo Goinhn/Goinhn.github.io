@@ -74,7 +74,7 @@
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/04/20/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-04-20T14:33:57.472Z" itemprop="datePublished">2021-04-20</time>
+  <time class="dt-published" datetime="2021-04-20T14:35:03.616Z" itemprop="datePublished">2021-04-20</time>
 </a>
     
   </div>
@@ -110,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/hello-world/" data-id="cknq4ovdx0000adnd9ry1cqa8" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/hello-world/" data-id="cknq4qbob0000cmn8gagx89ha" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -144,8 +144,8 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>开发环境配置</p>
-<h1 id="开发环境配置"><a href="#开发环境配置" class="headerlink" title="开发环境配置"></a>开发环境配置</h1><h2 id="EPEL"><a href="#EPEL" class="headerlink" title="EPEL"></a>EPEL</h2><p>RHEL 以及他的衍生发行版如 CentOS、Scientific Linux 为了稳定，官方的 rpm repository 提供的 rpm 包往往是很滞后的，当然了，这样做这是无可厚非的，毕竟这是服务器版本，安全稳定是重点，官方的 rpm repository 提供的 rpm 包也不够丰富，自己编译比较麻烦<br>EPEL 的全称叫 Extra Packages for Enterprise Linux 。EPEL 是由 Fedora 社区打造，为 RHEL 及衍生发行版如 CentOS、Scientific Linux 等提供高质量软件包的项目。装上了 EPEL 之后，就相当于添加了一个第三方源。<br><strong>安装</strong><br><strong>命令行</strong><br>yum install -y epel-release<br><strong>源码安装</strong><br>// 根据系统的架构选择对应的类型<br><a target="_blank" rel="noopener" href="http://dl.fedoraproject.org/pub/epel/">http://dl.fedoraproject.org/pub/epel/</a></p>
+        <p>记录常用的开发环境配置</p>
+<h2 id="EPEL"><a href="#EPEL" class="headerlink" title="EPEL"></a>EPEL</h2><p>RHEL 以及他的衍生发行版如 CentOS、Scientific Linux 为了稳定，官方的 rpm repository 提供的 rpm 包往往是很滞后的，当然了，这样做这是无可厚非的，毕竟这是服务器版本，安全稳定是重点，官方的 rpm repository 提供的 rpm 包也不够丰富，自己编译比较麻烦<br>EPEL 的全称叫 Extra Packages for Enterprise Linux 。EPEL 是由 Fedora 社区打造，为 RHEL 及衍生发行版如 CentOS、Scientific Linux 等提供高质量软件包的项目。装上了 EPEL 之后，就相当于添加了一个第三方源。<br><strong>安装</strong><br><strong>命令行</strong><br>yum install -y epel-release<br><strong>源码安装</strong><br>// 根据系统的架构选择对应的类型<br><a target="_blank" rel="noopener" href="http://dl.fedoraproject.org/pub/epel/">http://dl.fedoraproject.org/pub/epel/</a></p>
 <p>// 指定进行安装<br>rpm -ivh <a target="_blank" rel="noopener" href="http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm">http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</a></p>
 <p>// 如果发生冲入可以删除冲入的包<br>yum remove epel-release</p>
 <p>// 更新数据<br>yum clean all &amp;&amp; yum makecache</p>
@@ -209,7 +209,7 @@
 <h3 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h3><h4 id="windows-2"><a href="#windows-2" class="headerlink" title="windows"></a>windows</h4><p>配置全局信息<br>// 设置全局的用户名<br>git config –global user.name ‘goinhn’<br>// 配置全局的邮箱<br>git config –global user.email ‘goinhn@163.com’</p>
 <p>// 查看全局的信息<br>git config –list<br>配置 ssh 密钥<br>ssh-keygen</p>
 <p>-b 采用长度 1024bit 的密钥对,b=bits,最长 4096，不过没啥必要<br>-t rsa 采用 rsa 加密方式,t=type<br>-f 生成文件名,f=output_keyfiles<br>-C 备注，C=comment<br>测试 ssh<br>ssh -T hostname<br>不同的远端配置多个不同的 ssh 密钥</p>
-<h1 id="配置文件参数"><a href="#配置文件参数" class="headerlink" title="配置文件参数"></a>配置文件参数</h1><h1 id="Host-别名，可以取自己喜欢的名字，不过这个会影响-git-相关命令，例如定义为：Host-mygithub-时，clone-命令为-git-clone-x67-x69-x74-64-109-x79-103-x69-116-x68-117-x62-46-99-111-x6d-WordPress-WordPress-git"><a href="#Host-别名，可以取自己喜欢的名字，不过这个会影响-git-相关命令，例如定义为：Host-mygithub-时，clone-命令为-git-clone-x67-x69-x74-64-109-x79-103-x69-116-x68-117-x62-46-99-111-x6d-WordPress-WordPress-git" class="headerlink" title="Host : 别名，可以取自己喜欢的名字，不过这个会影响 git 相关命令，例如定义为：Host mygithub 时，clone 命令为 git clone &#x67;&#x69;&#x74;&#64;&#109;&#x79;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#46;&#99;&#111;&#x6d;:WordPress/WordPress.git"></a>Host : 别名，可以取自己喜欢的名字，不过这个会影响 git 相关命令，例如定义为：Host mygithub 时，clone 命令为 git clone <a href="mailto:&#x67;&#x69;&#x74;&#64;&#109;&#x79;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#46;&#99;&#111;&#x6d;">&#x67;&#x69;&#x74;&#64;&#109;&#x79;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#46;&#99;&#111;&#x6d;</a>:WordPress/WordPress.git</h1><h1 id="HostName-要登录主机的主机名，真实的域名地址"><a href="#HostName-要登录主机的主机名，真实的域名地址" class="headerlink" title="HostName : 要登录主机的主机名，真实的域名地址"></a>HostName : 要登录主机的主机名，真实的域名地址</h1><h1 id="User-登录名"><a href="#User-登录名" class="headerlink" title="User : 登录名"></a>User : 登录名</h1><h1 id="IdentityFile-指明上面-User-对应的-identityFile-路径"><a href="#IdentityFile-指明上面-User-对应的-identityFile-路径" class="headerlink" title="IdentityFile : 指明上面 User 对应的 identityFile 路径"></a>IdentityFile : 指明上面 User 对应的 identityFile 路径</h1><h1 id="PreferredAuthentications-配置登录时的权限认证方式–可设为-publickey-password-publickey-keyboard-interactive-等"><a href="#PreferredAuthentications-配置登录时的权限认证方式–可设为-publickey-password-publickey-keyboard-interactive-等" class="headerlink" title="PreferredAuthentications : 配置登录时的权限认证方式–可设为 publickey,password publickey,keyboard-interactive 等"></a>PreferredAuthentications : 配置登录时的权限认证方式–可设为 publickey,password publickey,keyboard-interactive 等</h1><h1 id="文件内容如下："><a href="#文件内容如下：" class="headerlink" title="文件内容如下："></a>文件内容如下：</h1><h1 id="github-com-x67-111-x69-x6e-104-x6e-64-49-54-51-x2e-99-x6f-x6d"><a href="#github-com-x67-111-x69-x6e-104-x6e-64-49-54-51-x2e-99-x6f-x6d" class="headerlink" title="github.com - &#x67;&#111;&#x69;&#x6e;&#104;&#x6e;&#64;&#49;&#54;&#51;&#x2e;&#99;&#x6f;&#x6d;"></a>github.com - <a href="mailto:&#x67;&#111;&#x69;&#x6e;&#104;&#x6e;&#64;&#49;&#54;&#51;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#111;&#x69;&#x6e;&#104;&#x6e;&#64;&#49;&#54;&#51;&#x2e;&#99;&#x6f;&#x6d;</a></h1><p>Host github.com<br>HostName github.com<br>PreferredAuthentications publickey<br>IdentityFile C:/Users/goinhn/.ssh/id_rsa_github_goinhn<br>User Goinhn</p>
+<h1 id="配置文件参数"><a href="#配置文件参数" class="headerlink" title="配置文件参数"></a>配置文件参数</h1><h1 id="Host-别名，可以取自己喜欢的名字，不过这个会影响-git-相关命令，例如定义为：Host-mygithub-时，clone-命令为-git-clone-103-x69-x74-64-109-x79-103-x69-116-x68-x75-98-46-x63-x6f-x6d-WordPress-WordPress-git"><a href="#Host-别名，可以取自己喜欢的名字，不过这个会影响-git-相关命令，例如定义为：Host-mygithub-时，clone-命令为-git-clone-103-x69-x74-64-109-x79-103-x69-116-x68-x75-98-46-x63-x6f-x6d-WordPress-WordPress-git" class="headerlink" title="Host : 别名，可以取自己喜欢的名字，不过这个会影响 git 相关命令，例如定义为：Host mygithub 时，clone 命令为 git clone &#103;&#x69;&#x74;&#64;&#109;&#x79;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;:WordPress/WordPress.git"></a>Host : 别名，可以取自己喜欢的名字，不过这个会影响 git 相关命令，例如定义为：Host mygithub 时，clone 命令为 git clone <a href="mailto:&#103;&#x69;&#x74;&#64;&#109;&#x79;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#64;&#109;&#x79;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;</a>:WordPress/WordPress.git</h1><h1 id="HostName-要登录主机的主机名，真实的域名地址"><a href="#HostName-要登录主机的主机名，真实的域名地址" class="headerlink" title="HostName : 要登录主机的主机名，真实的域名地址"></a>HostName : 要登录主机的主机名，真实的域名地址</h1><h1 id="User-登录名"><a href="#User-登录名" class="headerlink" title="User : 登录名"></a>User : 登录名</h1><h1 id="IdentityFile-指明上面-User-对应的-identityFile-路径"><a href="#IdentityFile-指明上面-User-对应的-identityFile-路径" class="headerlink" title="IdentityFile : 指明上面 User 对应的 identityFile 路径"></a>IdentityFile : 指明上面 User 对应的 identityFile 路径</h1><h1 id="PreferredAuthentications-配置登录时的权限认证方式–可设为-publickey-password-publickey-keyboard-interactive-等"><a href="#PreferredAuthentications-配置登录时的权限认证方式–可设为-publickey-password-publickey-keyboard-interactive-等" class="headerlink" title="PreferredAuthentications : 配置登录时的权限认证方式–可设为 publickey,password publickey,keyboard-interactive 等"></a>PreferredAuthentications : 配置登录时的权限认证方式–可设为 publickey,password publickey,keyboard-interactive 等</h1><h1 id="文件内容如下："><a href="#文件内容如下：" class="headerlink" title="文件内容如下："></a>文件内容如下：</h1><h1 id="github-com-103-111-x69-110-104-110-x40-49-x36-x33-x2e-x63-111-109"><a href="#github-com-103-111-x69-110-104-110-x40-49-x36-x33-x2e-x63-111-109" class="headerlink" title="github.com - &#103;&#111;&#x69;&#110;&#104;&#110;&#x40;&#49;&#x36;&#x33;&#x2e;&#x63;&#111;&#109;"></a>github.com - <a href="mailto:&#103;&#111;&#x69;&#110;&#104;&#110;&#x40;&#49;&#x36;&#x33;&#x2e;&#x63;&#111;&#109;">&#103;&#111;&#x69;&#110;&#104;&#110;&#x40;&#49;&#x36;&#x33;&#x2e;&#x63;&#111;&#109;</a></h1><p>Host github.com<br>HostName github.com<br>PreferredAuthentications publickey<br>IdentityFile C:/Users/goinhn/.ssh/id_rsa_github_goinhn<br>User Goinhn</p>
 <h4 id="Linux-2"><a href="#Linux-2" class="headerlink" title="Linux"></a>Linux</h4><p>配置 sshkey 到远端<br>// 生成 sshkey 在本地</p>
 <p>// 添加 sshkey 到 ssh-agent<br>// 确认 ssh-agent 是否工作<br>eval $(ssh-agent -s)<br>// 添加<br>ssh-add ~/.ssh/id_rsa</p>
 <h5 id=""><a href="#" class="headerlink" title=""></a></h5><h2 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h2><p>官网<br><a target="_blank" rel="noopener" href="https://tomcat.apache.org/">https://tomcat.apache.org/</a></p>
@@ -695,7 +695,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/local_config/" data-id="cknq4ove90004adndbgmb6k1y" data-title="local_config" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/local_config/" data-id="cknq4qboo0004cmn87bs8axf7" data-title="local_config" class="article-share-link">Share</a>
       
       
       
@@ -734,7 +734,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test_two/" data-id="cknq4ove50003adndd27qfli1" data-title="test_two" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/test_two/" data-id="cknq4qbok0003cmn81zo9753h" data-title="test_two" class="article-share-link">Share</a>
       
       
       
@@ -773,7 +773,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test_one/" data-id="cknq4ove40002adnd2d927a5t" data-title="test_one" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/test_one/" data-id="cknq4qboj0002cmn86sg52hxe" data-title="test_one" class="article-share-link">Share</a>
       
       
       
@@ -812,7 +812,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test/" data-id="cknq4ove20001adnde04wd5li" data-title="test" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/test/" data-id="cknq4qboh0001cmn85c1j0t3f" data-title="test" class="article-share-link">Share</a>
       
       
       
