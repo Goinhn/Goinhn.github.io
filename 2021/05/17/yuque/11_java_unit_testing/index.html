@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>11_java_unit_testing | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="测试介绍分类 黑盒测试：黑盒测试也称功能测试，它是通过测试来检测每个功能是否都能正常使用。在测试中，把程序看作一个不能打开的黑盒子，在完全不考虑程序内部结构和内部特性的情况下，在程序接口进行测试，它只检查程序功能是否按照需求规格说明书的规定正常使用，程序是否能适当地接收输入数据而产生正确的输出信息。黑盒测试着眼于程序外部结构，不考虑内部逻辑结构，主要针对软件界面和软件功能进行测试。黑盒测试是以用户">
+<meta property="og:type" content="article">
+<meta property="og:title" content="11_java_unit_testing">
+<meta property="og:url" content="http://example.com/2021/05/17/yuque/11_java_unit_testing/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="测试介绍分类 黑盒测试：黑盒测试也称功能测试，它是通过测试来检测每个功能是否都能正常使用。在测试中，把程序看作一个不能打开的黑盒子，在完全不考虑程序内部结构和内部特性的情况下，在程序接口进行测试，它只检查程序功能是否按照需求规格说明书的规定正常使用，程序是否能适当地接收输入数据而产生正确的输出信息。黑盒测试着眼于程序外部结构，不考虑内部逻辑结构，主要针对软件界面和软件功能进行测试。黑盒测试是以用户">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1621231348177-fb9022db-8d44-45a8-9def-974fcf35edc5.png#clientId=u571283fb-348c-4&from=paste&height=157&id=u4e4a32fb&margin=%5Bobject%20Object%5D&originHeight=314&originWidth=393&originalType=url&status=done&style=none&taskId=uebdecc23-5d25-4c96-a280-a38cc67723d&width=196.5">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1621231348182-f31f8a5b-c3ba-4c07-9a8a-a7f0fdd8a93f.png#clientId=u571283fb-348c-4&from=paste&height=122&id=u106ebccb&margin=%5Bobject%20Object%5D&originHeight=244&originWidth=267&originalType=url&status=done&style=none&taskId=u46f9716a-e9e5-49a1-9d8a-d7bfac8f405&width=133.5">
+<meta property="article:published_time" content="2021-05-17T06:02:14.000Z">
+<meta property="article:modified_time" content="2021-05-17T06:55:32.524Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2021/png/1430920/1621231348177-fb9022db-8d44-45a8-9def-974fcf35edc5.png#clientId=u571283fb-348c-4&from=paste&height=157&id=u4e4a32fb&margin=%5Bobject%20Object%5D&originHeight=314&originWidth=393&originalType=url&status=done&style=none&taskId=uebdecc23-5d25-4c96-a280-a38cc67723d&width=196.5">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-yuque/11_java_unit_testing" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/17/yuque/11_java_unit_testing/" class="article-date">
+  <time class="dt-published" datetime="2021-05-17T06:02:14.000Z" itemprop="datePublished">2021-05-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      11_java_unit_testing
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="测试介绍"><a href="#测试介绍" class="headerlink" title="测试介绍"></a>测试介绍</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li>黑盒测试：黑盒测试也称功能测试，它是通过测试来检测每个功能是否都能正常使用。在测试中，把程序看作一个不能打开的黑盒子，在完全不考虑程序内部结构和内部特性的情况下，在程序接口进行测试，它只检查程序功能是否按照需求规格说明书的规定正常使用，程序是否能适当地接收输入数据而产生正确的输出信息。黑盒测试着眼于程序外部结构，不考虑内部逻辑结构，主要针对软件界面和软件功能进行测试。黑盒测试是以用户的角度，从输入数据与输出数据的对应关系出发进行测试的。很明显，如果外部特性本身设计有问题或规格说明的规定有误，用黑盒测试方法是发现不了的。<ul>
+<li>作用：黑盒测试法注重于测试软件的功能需求，主要试图发现下列几类错误。功能不正确或遗漏；界面错误；输入和输出错误；数据库访问错误；性能错误；初始化和终止错误等。</li>
+</ul>
+</li>
+<li>白盒测试：白盒测试又称结构测试、透明盒测试、逻辑驱动测试或基于代码的测试。白盒测试是一种测试用例设计方法，盒子指的是被测试的软件，白盒指的是盒子是可视的，你清楚盒子内部的东西以及里面是如何运作的。”白盒”法全面了解程序内部逻辑结构、对所有逻辑路径进行测试。”白盒”法是穷举路径测试。在使用这一方案时，测试者必须检查程序的内部结构，从检查程序的逻辑着手，得出测试数据。贯穿程序的独立路径数是天文数字。采用什么方法对软件进行测试呢？常用的软件测试方法有两大类：静态测试方法和动态测试方法。其中软件的静态测试不要求在计算机上实际执行所测程序，主要以一些人工的模拟技术对软件进行分析和测试；而软件的动态测试是通过输入一组预先按照一定的测试准则构造的实例数据来动态运行程序，而达到发现程序错误的过程。在动态分析技术中,最重要的技术是路径和分支测试。下面要介绍的六种覆盖测试方法属于动态分析方法。<ul>
+<li>测试方法：静态结构分析法、静态质量度量法、逻辑覆盖法、基本路径测试法、域测试、符号测试、路径覆盖和程序变异。</li>
+<li>白盒测试法的覆盖标准：逻辑覆盖、循环覆盖和基本路径测试。其中逻辑覆盖包括语句覆盖、判定覆盖、条件覆盖、判定/条件覆盖、条件组合覆盖和路径覆盖。六种覆盖标准发现错误的能力呈由弱到强的变化：1.语句覆盖每条语句至少执行一次。2.判定覆盖每个判定的每个分支至少执行一次。3.条件覆盖每个判定的每个条件应取到各种可能的值。4.判定/条件覆盖同时满足判定覆盖条件覆盖。5.条件组合覆盖每个判定中各条件的每一种组合至少出现一次。6.路径覆盖使程序中每一条可能的路径至少执行一次。</li>
+</ul>
+</li>
+<li>灰盒测试：灰盒测试，是介于白盒测试与黑盒测试之间的一种测试，灰盒测试多用于集成测试阶段，不仅关注输出、输入的正确性，同时也关注程序内部的情况。灰盒测试不像白盒那样详细、完整，但又比黑盒测试更关注程序的内部逻辑，常常是通过一些表征性的现象、事件、标志来判断内部的运行状态。</li>
+</ul>
+<p>​</p>
+<h3 id="测试逻辑"><a href="#测试逻辑" class="headerlink" title="测试逻辑"></a>测试逻辑</h3><p>优秀的单元测试原则：</p>
+<ul>
+<li>独立的：独立于其他测试和环境</li>
+<li>可重复的：不同的人运行相同的单测都可以得到相同的结果</li>
+<li>自动化：运行自动化，结果判断自动化</li>
+<li>彻底的：分支覆盖全面</li>
+</ul>
+<p>​</p>
+<p>测试替身：</p>
+<ul>
+<li>Stub（桩）：一般什么都不做，实现空的方法调用或者简单的硬编码返回即可</li>
+<li>Fake（伪造对象）：真实事物的简答版本，优化的伪造真实事物的行为，但是没有副作用或者使用真实事物的其它后果。比如替换数据库的对象得到虚假的伪造对象。</li>
+<li>Spy（测试间谍）：需要得到对象内部的状态的时候，而该对象对外又是封闭的，那么需要做一个测试间谍，事先学会反馈消息，然后潜入对象内部去获取对象的状态。测试间谍是一种测试替身，它用于记录过去发生的情况，这样测试在事后就能知道所发生的一切。</li>
+<li>Mock（模拟对象）：模拟对象是一个特殊的测试间谍，是一个在特定的情况下可以配置行为的对象，规定了在什么情况下，返回什么样的一个值的一种测试替身。Mock 已经有了非常成熟的对象库，包括 JMock、Mockito、EasyMock 等。</li>
+</ul>
+<h2 id="Java-断言机制"><a href="#Java-断言机制" class="headerlink" title="Java 断言机制"></a>Java 断言机制</h2><h3 id="assert"><a href="#assert" class="headerlink" title="assert"></a>assert</h3><p>assert 表达式 1</p>
+<p>// 表达式 1 的值为假则输出表达式 2 的值，需要在 jvm 的设置-ea 参数进行开启<br>assert 表达式 1：表达式 2</p>
+<h2 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h2><p>Junit 是 xUnit 的一个子集，在 c++、python、java 语言中测试框架的名字都不相同<br>xUnit 是一套基于测试驱动开发的测试框架<br>其中的断言机制：将程序预期的结果与程序运行的最终结果进行比对，确保对结果的可预知性<br><strong>依赖包</strong></p>
+<ul>
+<li>junit-4.12.jar</li>
+<li>hamcrest-core-1.3.jar</li>
+</ul>
+<h3 id="注解使用"><a href="#注解使用" class="headerlink" title="注解使用"></a>注解使用</h3><table>
+<thead>
+<tr>
+<th><strong>注解</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@BeforeClass</td>
+<td>全局只会之执行一次并且是第一次执行</td>
+</tr>
+<tr>
+<td>@AfterClass</td>
+<td>全局只会执行一次并且是最后一个执行</td>
+</tr>
+<tr>
+<td>@Before</td>
+<td>在测试方法运行之前执行</td>
+</tr>
+<tr>
+<td>@After</td>
+<td>在测试方法运行之后执行</td>
+</tr>
+<tr>
+<td>@Test</td>
+<td>测试方法</td>
+</tr>
+<tr>
+<td>@Ignore</td>
+<td>忽略此方法</td>
+</tr>
+<tr>
+<td>@Test(timeout = 1000)</td>
+<td>限时测试，超过这个时间系统会被强制终止</td>
+</tr>
+<tr>
+<td>@Test(expected = Exception.class)</td>
+<td>测试异常，是否抛出指定的异常</td>
+</tr>
+</tbody></table>
+<h3 id="参数化测试"><a href="#参数化测试" class="headerlink" title="参数化测试"></a>参数化测试</h3><p>传入测试的参数和对应的结果，进行批量化测试<br>@RunWith(Parametered.class)<br>public class MainTest() {<br>private int param;</p>
+<p>private int result;</p>
+<p>@Parameters<br>public static Collection selectParamResult() {<br>return Arrays.asList(new Object[][] {<br>{1, 1},<br>{1, 4},<br>{3, 9}<br>});<br>}</p>
+<p>@Test<br>public void square() {<br>      calculator.square(param);<br>      Testcase.AssertEquals(result, calculator.getResult());<br>}<br>}</p>
+<h3 id="TestCase"><a href="#TestCase" class="headerlink" title="TestCase"></a>TestCase</h3><p><img src="https://cdn.nlark.com/yuque/0/2021/png/1430920/1621231348177-fb9022db-8d44-45a8-9def-974fcf35edc5.png#clientId=u571283fb-348c-4&from=paste&height=157&id=u4e4a32fb&margin=%5Bobject%20Object%5D&originHeight=314&originWidth=393&originalType=url&status=done&style=none&taskId=uebdecc23-5d25-4c96-a280-a38cc67723d&width=196.5"><br>测试用例。为一个或多个方法提供测试方法，一般是一个 test。</p>
+<h3 id="TestSuite"><a href="#TestSuite" class="headerlink" title="TestSuite"></a>TestSuite</h3><p><img src="https://cdn.nlark.com/yuque/0/2021/png/1430920/1621231348182-f31f8a5b-c3ba-4c07-9a8a-a7f0fdd8a93f.png#clientId=u571283fb-348c-4&from=paste&height=122&id=u106ebccb&margin=%5Bobject%20Object%5D&originHeight=244&originWidth=267&originalType=url&status=done&style=none&taskId=u46f9716a-e9e5-49a1-9d8a-d7bfac8f405&width=133.5"><br>测试集合,即一组测试。一个 test suite 是把多个相关测试归入一组的快捷方式。如果自己没有定义，Junit 会自动提供一个 test suite ,包括 TestCase 中的所有测试。</p>
+<h2 id="TestNG"><a href="#TestNG" class="headerlink" title="TestNG"></a>TestNG</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>一个类似 Junit 的自动化框架</li>
+<li>使用它可以做功能，接口，单元，集成的自动化测试</li>
+<li>最常见的是结合 Selenium 做功能自动化测试</li>
+<li>Java 开发人员中使用最广泛的测试框架</li>
+<li>它使用 Java 注释去写测试方法</li>
+</ul>
+<p><strong>官网</strong><br>[<strong>TestNG</strong>] <a target="_blank" rel="noopener" href="https://testng.org/doc/index.html">https://testng.org/doc/index.html</a><br><strong>github</strong><br>[<strong>TestNG</strong>] <a target="_blank" rel="noopener" href="https://github.com/cbeust/testng/">https://github.com/cbeust/testng/</a></p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>引入需要的包支持</p>
+<h3 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h3><h4 id="Before"><a href="#Before" class="headerlink" title="Before"></a>Before</h4><h5 id="BeforeSuite"><a href="#BeforeSuite" class="headerlink" title="@BeforeSuite"></a>@BeforeSuite</h5><h5 id="BeforeTest"><a href="#BeforeTest" class="headerlink" title="@BeforeTest"></a>@BeforeTest</h5><h5 id="BeforeGroups"><a href="#BeforeGroups" class="headerlink" title="@BeforeGroups"></a>@BeforeGroups</h5><h5 id="BeforeClass"><a href="#BeforeClass" class="headerlink" title="@BeforeClass"></a>@BeforeClass</h5><h5 id="BeforeMethod"><a href="#BeforeMethod" class="headerlink" title="@BeforeMethod"></a>@BeforeMethod</h5><h4 id="After"><a href="#After" class="headerlink" title="After"></a>After</h4><h5 id="AfterSuite"><a href="#AfterSuite" class="headerlink" title="@AfterSuite"></a>@AfterSuite</h5><h5 id="AfterTest"><a href="#AfterTest" class="headerlink" title="@ AfterTest"></a>@ AfterTest</h5><h5 id="AfterGroups"><a href="#AfterGroups" class="headerlink" title="@AfterGroups"></a>@AfterGroups</h5><h5 id="AfterClass"><a href="#AfterClass" class="headerlink" title="@ AfterClass"></a>@ AfterClass</h5><h5 id="AfterMethod"><a href="#AfterMethod" class="headerlink" title="@ AfterMethod"></a>@ AfterMethod</h5><h4 id="DataProvider"><a href="#DataProvider" class="headerlink" title="@DataProvider"></a>@DataProvider</h4><p>标记一个方法是用来给其他测试方法提供数据的方法。要求该方法必须返回是 object[][]</p>
+<h4 id="Factory"><a href="#Factory" class="headerlink" title="@Factory"></a>@Factory</h4><p>标记这个方法是一个工厂，方法必须返回的是一个对象。</p>
+<h4 id="Listeners"><a href="#Listeners" class="headerlink" title="@Listeners"></a>@Listeners</h4><p>在一个测试方法上定义一个监听。例如 Selenium 自动化测试中需要用到这个事件监听功能，方便我们输出日志。</p>
+<h4 id="Parameters"><a href="#Parameters" class="headerlink" title="@Parameters"></a>@Parameters</h4><p>描述了如何给一个测试方法传提参数。<br>代码<br>import com.sun.tracing.ProviderName;<br>import org.testng.annotations.*;</p>
+<p>public class TestNG_Demo1 {</p>
+<p>@Test<br>  @Parameters({“Browser”, “Server”})<br>  public void test1(String browser, String server){<br>      System.out.println(“Hello”);<br>      System.out.println(“这次启动浏览器是： “+browser+” 测试服务器地址是： “+server);<br>  }<br>}<br>testng.xml 文件</p>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+    <parameter name="Browser" value="Chrome" />
+    <parameter name="Server" value="https://www.baidu.com" />
+    <test name="Java_Learn">
+      <classes>
+          <class name="com.java.learn.TestNG_Demo1"/>
+         <!-- 添加不同测试类文件 -->
+ 
+      </classes>
+    </test> <!-- Java_Learn -->
+</suite> <!-- Default Suite -->
+
+
+<h4 id="Test"><a href="#Test" class="headerlink" title="@Test"></a>@Test</h4><p>在@Test 下有很多选项可以设置，例如用例之间的依赖关系等。</p>
+<h5 id="timeOut"><a href="#timeOut" class="headerlink" title="timeOut"></a>timeOut</h5><p>设置超时的时间，超过时间系统被停止<br>import org.testng.annotations.Test;</p>
+<p>public class TimeoutTest {</p>
+<p>@Test(timeOut = 3000)<br>  public void loginTest(){<br>      try{<br>          Thread.sleep(3100);<br>      }catch (InterruptedException e){<br>      //超过指定的时间则抛出异常<br>          System.out.println(e.toString());<br>      }<br>  }<br>}</p>
+<h5 id="enabled"><a href="#enabled" class="headerlink" title="enabled"></a>enabled</h5><p>设置 true 和 false 来设置该条例是否被执行<br>import org.testng.annotations.Test;</p>
+<p>public class TestNG_Demo2 {</p>
+<p>@Test<br>  public void test1(){<br>      System.out.println(“test1”);<br>  }</p>
+<p>@Test(enabled=false)<br>  public void test2(){<br>      System.out.println(“test2”);<br>  }</p>
+<p>@Test<br>  public void test3(){<br>      System.out.println(“test3”);<br>  }<br>}</p>
+<h5 id="priority"><a href="#priority" class="headerlink" title="priority"></a>priority</h5><p>设置测试用例的优先级，priority 值越小，优先级越高，默认的 priority 值为 0，优先级别高的先进行执行，低的后进行执行，同样的优先级别则按照顺序进行执行<br>import org.testng.annotations.Test;</p>
+<p>public class TestNG_Demo2 {</p>
+<p>@Test(priority = 2)<br>  public void test1(){<br>      System.out.println(“test1”);<br>  }</p>
+<p>@Test(priority = 4)<br>  public void test2(){<br>      System.out.println(“test2”);<br>  }</p>
+<p>@Test(priority = 1)<br>  public void test3(){<br>      System.out.println(“test3”);<br>  }</p>
+<p>@Test<br>  public void test4(){<br>      System.out.println(“test4”);<br>  }<br>}</p>
+<h5 id="invocationCount"><a href="#invocationCount" class="headerlink" title="invocationCount"></a>invocationCount</h5><p>调用次数的统计，设置一个测试用例被调用执行的次数</p>
+<h5 id="invocationTimeOut"><a href="#invocationTimeOut" class="headerlink" title="invocationTimeOut"></a>invocationTimeOut</h5><p>和 invocationCount 结合进行使用，设置总的超时时间<br>import org.testng.annotations.Test;</p>
+<p>public class TimeoutTest {</p>
+<p>@Test(invocationCount = 5, invocationTimeOut = 5100)<br>  public void loginTest() throws InterruptedException{</p>
+<p>Thread.sleep(1000);<br>      System.out.println(“login test”);</p>
+<p>}<br>}</p>
+<h5 id="dependsOnMethods"><a href="#dependsOnMethods" class="headerlink" title="dependsOnMethods"></a>dependsOnMethods</h5><p>先运行指定的依赖方法再运行当前用例<br>import org.testng.annotations.Test;</p>
+<p>public class TestNG_Demo2 {</p>
+<pre><code>@Test(dependsOnMethods=&#123;&quot;test2&quot;&#125;)
+public void test1()&#123;
+    System.out.println(&quot;test1&quot;);
+&#125;
+
+@Test
+public void test2()&#123;
+    System.out.println(&quot;test2&quot;);
+&#125;
+</code></pre>
+<p>}<br>指定多个依赖方法<br>import org.testng.annotations.Test;</p>
+<p>public class TestNG_Demo2 {</p>
+<pre><code>@Test(dependsOnMethods=&#123;&quot;test2&quot;,&quot;test2&quot;&#125;)
+public void test1()&#123;
+    System.out.println(&quot;test1&quot;);
+&#125;
+
+@Test
+public void test2()&#123;
+    System.out.println(&quot;test2&quot;);
+&#125;
+
+@Test
+public void test3()&#123;
+    System.out.println(&quot;test3&quot;);
+&#125;
+</code></pre>
+<p>}</p>
+<h3 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h3><h4 id="Assert（硬断言）"><a href="#Assert（硬断言）" class="headerlink" title="Assert（硬断言）"></a>Assert（硬断言）</h4><p>//判断两者是否相等<br>assertEquals(actual, expected)</p>
+<p>//判断两者是否相等，后面跟上输出的信息<br>assertEquals(actual, expected, “message”)</p>
+<p>//判断两个对象是否相同，忽略排序位置<br>assertEqualsNoOrder(actual, expect)</p>
+<p>//这里来一个断言为假的方法，断言一个条件，如果返回是假，则测试通过，如果返回是真，抛出断言异常，打印 message 的内容。<br>assertFalse(布尔条件，“message”)</p>
+<p>//提供了断言一个条件为真的方法，如果条件表达式为真，该断言运行通过，如果表达式为假，抛出异常，打印 message 的消息。<br>assertTrue(条件表达式, “message”)</p>
+<p>//提供“不相等”断言方法，也是有 6 个针对不同数据类型的不相等的断言方法。这里我们介绍两个对象的不相等举例，如果相等，输出 message1 的内容。<br>assertNotEquals(actual, expect, “message”)</p>
+<p>//对象非空判断，断言对象不为空，否则，抛出异常，打印 message 的内容。<br>assertNotNull(object, “message1”)</p>
+<p>//断言两个对象相同，这里相同和上面的 Equals 不同，Equals 是值比较，而 Same 是内存地址比较<br>assertSame(actual, expect, “message”)</p>
+<p>//同样的，也有断言两个对象内存地址不相同的断言方法。<br>assertNotSame(actual, expect, “message”)</p>
+<h4 id="SoftAssert（软断言）"><a href="#SoftAssert（软断言）" class="headerlink" title="SoftAssert（软断言）"></a>SoftAssert（软断言）</h4><ul>
+<li>如果一个断言失败，会继续执行这个断言下的其他语句或者断言。</li>
+<li>也就是一个用例有多个断言，失败了其中一个，不影响其他断言的运行</li>
+<li>不要忘记调用 assertAll()在该用例的最后一个断言后面。</li>
+</ul>
+<p>设置 alwaysRun=true，不管前面的方法是否执行成功都能执行</p>
+<h3 id="TestNG-xml"><a href="#TestNG-xml" class="headerlink" title="TestNG.xml"></a>TestNG.xml</h3><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+  <test name="Java_Learn">
+    <classes>
+      <class name="com.java.learn.TestNG_Demo1"/>
+    </classes>
+  </test> 
+</suite>
+1）创建来源不同包、类、方法的测试套件
+2）包括一些选项，例如失败的用例可以重跑。
+3）支持使用正则表达式
+4）运行把外部参数传入测试方法
+5）支持配置多线程的执行环境
+通过添加不同包下类来使得一起进行测试
+
+<h4 id="依赖关系"><a href="#依赖关系" class="headerlink" title="依赖关系"></a>依赖关系</h4><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+ 
+    <test name="Testng_learn" >
+        <groups>
+            <dependencies>
+                <group name="app" depends-on="tomcat" />
+            </dependencies>
+        </groups>
+ 
+        <classes>
+            <class name="com.java.learn.TestDependenceDemo"/>
+        </classes>
+ 
+    </test> <!-- Java_Learn -->
+</suite> <!-- Default Suite -->
+
+<h4 id="测试类"><a href="#测试类" class="headerlink" title="测试类"></a>测试类</h4><p>Test Classes<br>测试类，一般我们新建一个 Java 类文件，如果里面方法有@Test，那么就是一个测试类文件。上面是写的复数。这个在 testng.xml 文件里可以体现，classes 下可以有一个或者多个测试类文件。Classes 相当于就是一个装 class 的容器，而 class 又相当于一个装 method 的容器。<br><classes><br><class name="com.java.learn.TestMethodDemo"/><br></classes></p>
+<h4 id="测试组"><a href="#测试组" class="headerlink" title="测试组"></a>测试组</h4><p>Test Groups<br>测试组，一个组可以包含多个 methods。还是可以组嵌套，也是就是一个组可以属于是另外一个组管理。<br>import org.testng.annotations.Test;</p>
+<p>public class TestGroupsDemo {</p>
+<pre><code>@Test(groups = &#123;&quot;API Test&quot;, &quot;Fucntion Test&quot;&#125;)
+public void test01()&#123;
+    System.out.println(&quot;API Testing and Function testing&quot;);
+&#125;
+
+@Test(groups = &#123;&quot;API Test&quot;&#125;)
+public void test02()&#123;
+    System.out.println(&quot;API Testing&quot;);
+&#125;
+
+@Test(groups = &#123;&quot;Function Test&quot;&#125;)
+public void test03()&#123;
+    System.out.println(&quot;Function testing&quot;);
+&#125;
+
+@Test
+public void test04()&#123;
+    System.out.println(&quot;not in API and Function testing&quot;);
+&#125;
+</code></pre>
+<p>}</p>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+ 
+    <test name="Testng_learn" >
+        <groups>
+            <run>
+                <include name="API Test"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.java.learn.TestGroupsDemo"/>
+        </classes>
+    </test> 
+</suite>
+利用正则匹配。有时候我们group的名称设置很长，我们记不住，这个时候就建议采用正则匹配，例如以API开头的group执行。
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+ 
+    <test name="Testng_learn" >
+        <groups>
+            <run>
+                <include name="API.*"/>
+                <include name="Function.*"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.java.learn.TestGroupsDemo"/>
+        </classes>
+    </test> <!-- Java_Learn -->
+</suite> <!-- Default Suite -->
+执行除API 和Funcation之外的用例
+除什么之外，我们可以用excloude标签来实现。
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+ 
+    <test name="Testng_learn" >
+        <groups>
+            <run>
+                <exclude name="API Test"/>
+                <exclude name="Function Test"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.java.learn.TestGroupsDemo"/>
+        </classes>
+    </test> <!-- Java_Learn -->
+</suite> <!-- Default Suite -->
+前面我们已经创建了两个组，一个API Test，一个叫Function Test。现在我们用一个All 的组来管理这两个组。只要我run标签里，写执行All,那么就相当于执行了API Test和Function Test。这个场景，在实际工作中是肯定要使用的。例如webui自动化中，执行全部的用例，其实就是一个模块设置一个组，这些模块组都归All组管。Testing.xml的设置如下
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+ 
+    <test name="Testng_learn" >
+        <groups>
+            <define name="all">
+                <include name="API Test"/>
+                <include name="Function Test"/>
+            </define>
+ 
+            <run>
+                <include name="all"/>
+            </run>
+        </groups>
+ 
+        <classes>
+            <class name="com.java.learn.TestGroupsDemo"/>
+        </classes>
+    </test>
+</suite>
+
+<h4 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h4><p>Test Methods<br>官方定义是，凡是方法（或者叫函数）前面添加了@Test 注释，就叫测试方法。</p>
+<h3 id="失败重跑"><a href="#失败重跑" class="headerlink" title="失败重跑"></a>失败重跑</h3><p>在 TestNG 中会自动记录你上一次运行情况，在 test-output 下会生成 html 格式报告，和把失败的用例都放在 testng-failed.xml，这个功能很强大。由于有了这个，我们就想，可不可以实现失败用例从新跑呢。我们手动执行 testng-failed.xml 当然可以去实现失败用例重新跑的需求，所以，我们重点在如何实现自动化手段去失败重新跑。把这个问题再细化，就是如何用 Java 代码是加载执行 testng.xml 文件。</p>
+<ol>
+<li>接口 IRetryAnallyzer 该接口的作用是提供去实现能够让用例运行失败重跑的设置。实现该接口必须要实现 retry(ITestResult result)这个方法。返回值类型是布尔型，如果返回是 True，那么就执行失败重跑，返回是 false，就不重跑。参数 result 是当前运行的测试用例的结果状态。</li>
+<li>接口 IAnnotationTransformer 该接口的作用是在 TestNG 执行过程中动态改变测试类中 Annotation 的参数，当前这个接口主要是针对@Test 注释。IAnnotationTransformer 监听器接口只有一个方法：transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod).下面我们写的几个类方法都是来源网上资料，都实现了上面提到的两个接口。</li>
+</ol>
+<h3 id="Listener-使用"><a href="#Listener-使用" class="headerlink" title="Listener 使用"></a>Listener 使用</h3><p>实现 ITestListener 接口<br>package demo1;</p>
+<p>import org.testng.ITestContext;<br>import org.testng.ITestListener;<br>import org.testng.ITestResult;</p>
+<p>public class ListenerDemo implements ITestListener {</p>
+<pre><code>@Override
+public void onTestStart(ITestResult iTestResult) &#123;
+
+&#125;
+
+@Override
+public void onTestSuccess(ITestResult iTestResult) &#123;
+
+&#125;
+
+@Override
+public void onTestFailure(ITestResult iTestResult) &#123;
+
+&#125;
+
+@Override
+public void onTestSkipped(ITestResult iTestResult) &#123;
+
+&#125;
+
+@Override
+public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) &#123;
+
+&#125;
+
+@Override
+public void onStart(ITestContext iTestContext) &#123;
+
+&#125;
+
+@Override
+public void onFinish(ITestContext iTestContext) &#123;
+
+&#125;
+</code></pre>
+<p>}<br>testng.xml 中设置 lisenter 的范围</p>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+    <listeners>
+        <listener class-name="demo2.ListenerDemo"/>
+    </listeners>
+ 
+    <test name="Testng_learn" >
+ 
+        <classes>
+            <class name="demo2.ListenerDemo"/>
+        </classes>
+ 
+    </test>
+</suite>
+
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/17/yuque/11_java_unit_testing/" data-id="ckos96kq70008hqnddqkhe405" data-title="11_java_unit_testing" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/05/17/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/05/17/yuque/unit_testing/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">unit_testing</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/05/17/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/17/yuque/11_java_unit_testing/">11_java_unit_testing</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/17/yuque/unit_testing/">unit_testing</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/14/yuque/java_specification/">java_specification</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/14/yuque/code_review/">code_review</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
