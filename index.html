@@ -74,7 +74,7 @@
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/05/20/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-05-20T07:10:07.015Z" itemprop="datePublished">2021-05-20</time>
+  <time class="dt-published" datetime="2021-05-20T07:23:13.246Z" itemprop="datePublished">2021-05-20</time>
 </a>
     
   </div>
@@ -110,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/20/hello-world/" data-id="ckowk1p5j0000r2ne5kwaepk3" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/20/hello-world/" data-id="ckowkihyk0000ffnga2i5ebu6" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -144,11 +144,46 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <blockquote>
+<p>brew.sh</p>
+</blockquote>
+<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>Homebrew is the easiest and most flexible way to install the UNIX tools Apple didn’t include with macOS. It can also install software not packaged for your Linux distribution to your home directory without requiringsudo.</p>
+<ul>
+<li>完全基于 Git 和 Ruby</li>
+<li>软件包安装在独立的目录，并且链接到/usr/local/bin</li>
+<li>安装到独立的目录，使得软件包易于卸载</li>
+<li>易于管理软件包</li>
+</ul>
+<p>​</p>
+<h2 id="Homebrew-目录"><a href="#Homebrew-目录" class="headerlink" title="Homebrew 目录"></a>Homebrew 目录</h2><ul>
+<li>/usr/local/Homebrew：Homebrew 程序本身的安装目录</li>
+<li>/usr/local/Cellar：存放 formula 的目录</li>
+<li>/usr/local/Caskroom：存放 cask 的目录</li>
+<li>/usr/local/opt：所有包忽略版本的存放目录</li>
+<li>/usr/local/bin：所有包二进制目录</li>
+<li>/usr/local/etc：所有包配置文件目录</li>
+<li>/usr/local/lib：所有包依赖库目录</li>
+<li>/usr/local/share：所有包文档文件目录</li>
+</ul>
+<h2 id="commands"><a href="#commands" class="headerlink" title="commands"></a>commands</h2><p>命令调试信息输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">--verbose</span><br><span class="line">--debug</span><br></pre></td></tr></table></figure>
+
+<p>基本操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"># 安装</span><br><span class="line">install formula</span><br><span class="line"></span><br><span class="line"># 卸载</span><br><span class="line">uninstall formula</span><br><span class="line"></span><br><span class="line"># 重新安装</span><br><span class="line">reinstall formula</span><br><span class="line"></span><br><span class="line"># 更细升级安装包</span><br><span class="line">upgrade formula</span><br><span class="line"></span><br><span class="line"># 列出已经安装的软件包</span><br><span class="line">list</span><br><span class="line"></span><br><span class="line"># 搜索查询软件包</span><br><span class="line">search [text | &#x2F;regex&#x2F;]</span><br><span class="line"></span><br><span class="line"># 列出安装软件的信息</span><br><span class="line">info formula</span><br><span class="line"></span><br><span class="line"># 打开软件官网</span><br><span class="line">home formula</span><br><span class="line"></span><br><span class="line"># 列出过时的formula</span><br><span class="line">outdated</span><br><span class="line"></span><br><span class="line"># 列出软件的依赖项</span><br><span class="line">deps formula</span><br><span class="line"></span><br><span class="line"># 检查配置问题</span><br><span class="line">doctor</span><br><span class="line"></span><br><span class="line"># 清理</span><br><span class="line">cleanup</span><br><span class="line"></span><br><span class="line"># 升级brew</span><br><span class="line">update</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>配置镜像源<br>替换 brew.git</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &quot;$(brew --repo)&quot;</span><br><span class="line">git remote set-url origin https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;brew.git</span><br></pre></td></tr></table></figure>
+
+<p>替换 homebrew-core.git</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &quot;$(brew --repo)&#x2F;Library&#x2F;Taps&#x2F;homebrew&#x2F;homebrew-core&quot;</span><br><span class="line">git remote set-url origin https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;homebrew-core.git</span><br></pre></td></tr></table></figure>
+
+<p>Homebrew Bottles 配置镜像<br>根据使用的 shell 进行配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &#39;export HOMEBREW_BOTTLE_DOMAIN&#x3D;https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;homebrew-bottles&#39; &gt;&gt; ~&#x2F;.zshrc</span><br><span class="line">source ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/20/yuque/homebrew/" data-id="ckowk1p5s0002r2nec419fwy4" data-title="homebrew" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/20/yuque/homebrew/" data-id="ckowkihys0002ffnghv6i5owk" data-title="homebrew" class="article-share-link">Share</a>
       
       
       
@@ -328,7 +363,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/17/yuque/software/" data-id="ckowk1p5v0005r2ne2hjo8xey" data-title="software" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/17/yuque/software/" data-id="ckowkihyv0005ffng096t73l7" data-title="software" class="article-share-link">Share</a>
       
       
       
@@ -735,7 +770,7 @@ public void onFinish(ITestContext iTestContext) &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/17/yuque/11_java_unit_testing/" data-id="ckowk1p61000ar2ne7huh44on" data-title="11_java_unit_testing" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/17/yuque/11_java_unit_testing/" data-id="ckowkihz1000affngfzsm5g6b" data-title="11_java_unit_testing" class="article-share-link">Share</a>
       
       
       
@@ -838,7 +873,7 @@ public void onFinish(ITestContext iTestContext) &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/17/yuque/unit_testing/" data-id="ckowk1p600009r2ne87fm79zn" data-title="unit_testing" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/17/yuque/unit_testing/" data-id="ckowkihyz0009ffng7fe829c9" data-title="unit_testing" class="article-share-link">Share</a>
       
       
       
@@ -919,7 +954,7 @@ public void onFinish(ITestContext iTestContext) &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/14/yuque/java_specification/" data-id="ckowk1p5t0003r2ne0i0uh2kx" data-title="java_specification" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/14/yuque/java_specification/" data-id="ckowkihyt0003ffnggbf5es3m" data-title="java_specification" class="article-share-link">Share</a>
       
       
       
@@ -984,7 +1019,7 @@ public void onFinish(ITestContext iTestContext) &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/14/yuque/code_review/" data-id="ckowk1p5q0001r2ne0vahg8o1" data-title="code_review" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/14/yuque/code_review/" data-id="ckowkihyq0001ffng8t9kgnj0" data-title="code_review" class="article-share-link">Share</a>
       
       
       
@@ -1023,7 +1058,7 @@ public void onFinish(ITestContext iTestContext) &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/13/yuque/mac/" data-id="ckowk1p5u0004r2neg5nvfv7r" data-title="mac" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/13/yuque/mac/" data-id="ckowkihyu0004ffng6bff9ebp" data-title="mac" class="article-share-link">Share</a>
       
       
       
@@ -1610,7 +1645,7 @@ public void onFinish(ITestContext iTestContext) &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/local_config/" data-id="ckowk1p67000br2ne16wc90vz" data-title="local_config" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/local_config/" data-id="ckowkihzb000bffng8usucgny" data-title="local_config" class="article-share-link">Share</a>
       
       
       
@@ -1649,7 +1684,7 @@ public void onFinish(ITestContext iTestContext) &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test_two/" data-id="ckowk1p5y0008r2nef4sd9zmo" data-title="test_two" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/test_two/" data-id="ckowkihyy0008ffngdmix92lt" data-title="test_two" class="article-share-link">Share</a>
       
       
       
