@@ -74,7 +74,7 @@
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/05/21/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-05-21T02:37:41.242Z" itemprop="datePublished">2021-05-21</time>
+  <time class="dt-published" datetime="2021-05-21T03:16:38.833Z" itemprop="datePublished">2021-05-21</time>
 </a>
     
   </div>
@@ -110,7 +110,184 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/hello-world/" data-id="ckoxpr77n0000gnn67f4tbynk" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/hello-world/" data-id="ckoxr57cg0000ncnebjcp0fcb" data-title="Hello World" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-yuque/linux_tools" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/21/yuque/linux_tools/" class="article-date">
+  <time class="dt-published" datetime="2021-05-21T03:16:27.000Z" itemprop="datePublished">2021-05-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/21/yuque/linux_tools/">linux_tools</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="linux-tool"><a href="#linux-tool" class="headerlink" title="linux_tool"></a>linux_tool</h1><h2 id="RPM-包常用下载地址"><a href="#RPM-包常用下载地址" class="headerlink" title="RPM 包常用下载地址"></a>RPM 包常用下载地址</h2><p>rpmfind:<br><a target="_blank" rel="noopener" href="http://rpmfind.net/linux/RPM/index.html">http://rpmfind.net/linux/RPM/index.html</a><br>pkgs:<br><a target="_blank" rel="noopener" href="https://pkgs.org/">https://pkgs.org/</a><br>fedora koji:<br><a target="_blank" rel="noopener" href="https://koji.fedoraproject.org/koji/index">https://koji.fedoraproject.org/koji/index</a><br>pbone:<br><a target="_blank" rel="noopener" href="http://rpm.pbone.net/">http://rpm.pbone.net/</a><br>源码：<br><a target="_blank" rel="noopener" href="https://src.fedoraproject.org/projects/rpms/*">https://src.fedoraproject.org/projects/rpms/%2A</a></p>
+<h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><p>sudo apt install zsh<br>sudo apt install curl<br>sh -c “$(curl -fsSL <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;">https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</a></p>
+<p>安装完后修改配置文件：<br>Oh-My-Zsh 的默认配置文件在：<del>/.zshrc<br>编辑</del>/.zshrc 修改主题为：agnoster： vim  ~/.zshrc<br>重启配置文件：sudo service  ~/.zshrc  <br>重启终端，即可生效！</p>
+<p>zsh 官网<br><a target="_blank" rel="noopener" href="https://ohmyz.sh/">https://ohmyz.sh/</a></p>
+<p>zsh 下切换 root 用户<br>sudo -s -H</p>
+<h2 id="htop"><a href="#htop" class="headerlink" title="htop"></a>htop</h2><p>后台监控软件<br><strong>特点</strong></p>
+<ul>
+<li>较 top 更加丰富的图形界面</li>
+<li>支持鼠标操作</li>
+<li>可以横向或者纵向浏览进程列表，以便可以看到所有的进程和完整的命令</li>
+<li>杀掉进程时可以直接选择而不需要输入进程号</li>
+</ul>
+<p><strong>使用</strong><br>F1 : 查看 htop 使用说明<br>F2 : 设置<br>F3 : 搜索进程<br>F4 : 过滤器，按关键字搜索<br>F5 : 显示树形结构<br>F6 : 选择排序方式<br>F7 : 减少 nice 值，这样就可以提高对应进程的优先级<br>F8 : 增加 nice 值，这样可以降低对应进程的优先级<br>F9 : 杀掉选中的进程<br>F10 : 退出 htop</p>
+<p>/ : 搜索字符<br>h : 显示帮助<br>l ：显示进程打开的文件: 如果安装了 lsof，按此键可以显示进程所打开的文件<br>u ：显示所有用户，并可以选择某一特定用户的进程<br>s : 将调用 strace 追踪进程的系统调用<br>t : 显示树形结构</p>
+<p>H ：显示/隐藏用户线程<br>I ：倒转排序顺序<br>K ：显示/隐藏内核线程    <br>M ：按内存占用排序<br>P ：按 CPU 排序    <br>T ：按运行时间排序</p>
+<p>上下键或 PgUP, PgDn : 移动选中进程<br>左右键或 Home, End : 移动列表    <br>Space(空格) : 标记/取消标记一个进程。命令可以作用于多个进程，例如 “kill”，将应用于所有已标记的进程<br><strong>安装</strong><br>yum install -y htop</p>
+<h2 id="lrzsz"><a href="#lrzsz" class="headerlink" title="lrzsz"></a>lrzsz</h2><p><strong>安装</strong><br>yum install -y lrzsz<br><strong>使用</strong><br>rz #从本地将文件拉到服务器上当前目录下<br>-B 使用 rz 上传时，文件是先写入缓冲区，然后再写入硬盘的。-B 后面跟着的数字就是修改这个缓冲区大小的，单位是 Bytes。如：rz -B 10<br>-D 把所上传的数据导向/dev/null，这是用于测试的<br>-e 转化所有的控制字符<br>-E 上传之前重命名已经存在的文件，防止覆盖</p>
+<p>sz #发送服务器上的文件到本地<br>-a 以文本方式传输（ascii）<br>-b 以二进制方式传输（binary）<br>-e 对控制字符转义（escape），这可以保证文件传输正确<br>-i 后接命令，在接收端执行命令</p>
+<h2 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h2><p><strong>安装</strong><br>yum install -y tree<br><strong>使用</strong><br>-a 显示所有文件和目录<br>-A 使用 ASNI 绘图字符显示树状图而非以 ASCII 字符组合<br>-C 在文件和目录清单加上色彩，便于区分这种类型<br>-d 显示目录名称而非内容<br>-D 列出文件或目录的更改时间<br>-f 在每个文件或目录之前，显示完整的相对路径名称<br>-F 在执行文件，目录，Socket，符号连接，管道名称名称，各自加上“*”，“/”，“=”，“@”，“|”号<br>-g 列出文件或目录的所属群组名称，没有对应的名称时，则显示群组识别码<br>-i 不以阶梯状列出文件或目录名称<br>-I&lt;范本样式&gt; 不现实符合范本样式的文件或目录名称<br>-l 如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录<br>-n 不在文件和目录清单上加上色彩<br>-N 直接列出文件和目录名称，包括控制字符<br>-p 列出权限标示<br>-P&lt;范本样式&gt; 只显示符合范本像是的文件或目录名称<br>-q 用“?”号取代控制字符，列出文件和目录名称<br>-s 列出文件或目录大小<br>-t 用文件和目录的更改时间排序<br>-u 列出文件或目录的拥有者名称，没有对应的名称时，则显示用户识别码<br>-x 将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该子目录予以排除在寻找范围外<br>-L 层级显示，后面跟要显示的层级数字</p>
+<h2 id="ius"><a href="#ius" class="headerlink" title="ius"></a>ius</h2><p><strong>官网</strong><br><a target="_blank" rel="noopener" href="https://ius.io/">https://ius.io/</a><br>yum 的扩展库</p>
+<h2 id="arp-scan"><a href="#arp-scan" class="headerlink" title="arp-scan"></a>arp-scan</h2><p><strong>仓库地址</strong><br><a target="_blank" rel="noopener" href="https://github.com/royhills/arp-scan">https://github.com/royhills/arp-scan</a><br><strong>安装</strong><br>git clone <a target="_blank" rel="noopener" href="https://github.com/royhills/arp-scan.git">https://github.com/royhills/arp-scan.git</a></p>
+<p>cd arp-scan</p>
+<p>// autoreconf 命令缺失需要安装 autoconf 和 automake<br>autoreconf –instal</p>
+<p>./configure</p>
+<p>make</p>
+<p>make install<br><strong>使用</strong><br>官方使用文档<br><a target="_blank" rel="noopener" href="https://nta.intertek.com/">https://nta.intertek.com/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/21/yuque/linux_tools/" data-id="ckoxr57cp0004ncnehinz5fn1" data-title="linux_tools" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-yuque/linux_terminal" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/21/yuque/linux_terminal/" class="article-date">
+  <time class="dt-published" datetime="2021-05-21T02:39:49.000Z" itemprop="datePublished">2021-05-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/21/yuque/linux_terminal/">linux_terminal</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><h3 id="top"><a href="#top" class="headerlink" title="top"></a>top</h3><p>系统内置的监控软件<br>特点<br><img src="https://cdn.nlark.com/yuque/0/2021/png/1430920/1621564798515-70bc4a30-5dc8-4c09-a4bb-edb42dfeaefc.png#clientId=ud5f6330c-c86f-4&from=paste&height=316&id=ua965c65f&margin=%5Bobject%20Object%5D&originHeight=632&originWidth=877&originalType=url&status=done&style=none&taskId=u6c814527-33b7-4275-a366-fca538e9349&width=438.5"><br>第一行<br>依次对应：系统当前时间，系统到目前为止运行的时间，当前登陆系统的用户数量，load average 后面的三个数字分别表示距离现在一分钟，五分钟，十五分钟的负载情况。<br>这行信息和命令 uptime 显示的信息相等<br>负载和你的 CPU core 的数量有关，可以通过以下查看:_grep -c processor /proc/cpuinfo_，如果使用的是 n 核 CPU，那么为 n.00 时，说明负载满了，高于这个值就应该警惕。<br>第二行<br>依次对应：tasks 表示任务（进程），73total 则表示现在有 73 个进程，其中处于运行中的有 1 个，72 个在休眠（挂起），stopped 状态即停止的进程数为 0，zombie 状态即僵尸的进程数为 0 个。<br>第三行<br>依次对应：us:user 用户空间占用 cpu 的百分比 sy:system 内核空间占用 cpu 的百分比 ni:niced 改变过优先级的进程占用 cpu 的百分比 id:空闲 cpu 百分比 wa:IO wait IO 等待占用 cpu 的百分比 hi:Hardware IRQ 硬中断 占用 cpu 的百分比 si:software 软中断 占用 cpu 的百分比 st:被 hypervisor 偷去的时间<br>第四行<br>依次对应：物理内存总量，空闲内存总量，使用中的内存总量，缓冲内存量第四行中使用中的内存总量（used）指的是现在系统内核控制的内存数，空闲内存总量（free）是内核还未纳入其管控范围的数量。纳入内核管理的内存不见得都在使用中，还包括过去使用过的现在可以被重复利用的内存，内核并不把这些可被重新使用的内存交还到 free 中去，因此在 linux 上 free 内存会越来越少，但不用为此担心<br>第五行<br>依次对应：交换区总量，空闲交换区总量，使用的交换区总量，可用交换取总量<br>对于内存监控，在 top 里我们要时刻监控第五行 swap 交换分区的 used，如果这个数值在不断的变化，说明内核在不断进行内存和 swap 的数据交换，这是真正的内存不够用了。<br>第六行<br>空行<br>第七行<br>依次对应：PID — 进程 idUSER — 进程所有者 PR — 进程优先级 NI — nice 值。负值表示高优先级，正值表示低优先级 VIRT — 进程使用的虚拟内存总量，单位 kb。VIRT=SWAP+RESRES — 进程使用的、未被换出的物理内存大小，单位 kb。RES=CODE+DATASHR — 共享内存大小，单位 kbS — 进程状态。D=不可中断的睡眠状态 R=运行 S=睡眠 T=跟踪/停止 Z=僵尸进程%CPU — 上次更新到现在的 CPU 时间占用百分比%MEM — 进程使用的物理内存百分比 TIME+ — 进程使用的 CPU 时间总计，单位 1/100 秒 COMMAND — 进程名称（命令名/命令行）<br>ni 值和 pr 值的区别<br>ni(nice)<br>静态优先级<br>反映线程的优先级的状态，取值范围-20<del>19，一共 40 个级别<br>值越小，反映进程的优先级越高，默认情况下，进程的优先级应该是从父进程继承而来的，默认是 0<br>nice 可以称为是静态的优先级，设定后除非我们去修改它，否则是不会变的。<br>使用 nice 和 renice 的命令来去修改<br>pr(priority)<br>动态优先级<br>内核中进程的优先级取值范围是通过一个宏定义的，这个宏的名字是 MAX_PRIO，它的值为 140。<br>这个值是由两个值相加得到的，一个是代表 nice 值取值范围的 NICE_WIDTH 宏，另一个是代表实时进程 realtime 优先级范围的 MAX_PT_PRIO 宏。<br>linux 实际上实现了 140 个优先级的范围，取值范围是从 0</del>139，值越小，优先级越高，nice 的值映射到此处为 100~139 的范围。<br>新产生的宏默认被定义为<br>#define DEFAULT_PRIO   (MAX_RT_PRIO + NICE_WIDTH / 2)<br>实际上对应的 nice 值就是 0<br>正常情况下，任何一个进程的优先级都是这个值，即使我们通过 nice 和 renice 命令调整了进程的优先级，它的取值范围也不会超出 100-139 的范围，除非这个进程是一个实时进程，那么它的优先级取值才会变成 0-99 这个范围中的一个。</p>
+<h3 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h3><p>特点<br>curl 命令是一个利用 URL 规则在 shell 终端命令行下工作的文件传输工具；它支持文件的上传和下载，所以是综合传输工具，但按传统，习惯称 curl 为下载工具。<br>作为一款强力工具，curl 支持包括 HTTP、HTTPS、ftp 等众多协议，还支持 POST、cookies、认证、从指定偏移处下载部分文件、用户代理字符串、限速、文件大小、进度条等特征；做网页处理流程和数据检索自动化。<br>使用<br>-c，–cookie-jar：将 cookie 写入到文件<br>-b，–cookie：从文件中读取 cookie<br>-C，–continue-at：断点续传<br>-d，–data：http post 方式传送数据<br>-D，–dump-header：把 header 信息写入到文件<br>-F，–from：模拟 http 表达提交数据<br>-s，–slient：减少输出信息<br>-o，–output：将信息输出到文件<br>-O，–remote-name：按照服务器上的文件名，存在本地<br>–l，–head：仅返回头部信息<br>-u，–user[user:pass]：设置 http 认证用户和密码<br>-T，–upload-file：上传文件<br>-e，–referer：指定引用地址<br>-x，–proxy：指定代理服务器地址和端口<br>-w，–write-out：输出指定格式内容<br>–retry：重试次数<br>–connect-timeout：指定尝试连接的最大时间/s</p>
+<h3 id="wget"><a href="#wget" class="headerlink" title="wget"></a>wget</h3><p>特点<br>从指定的 URL 下载文件，wget 非常稳定，它在带宽很窄的情况下和不稳定网络中有很强的适应性，如果是由于网络的原因下载失败，wget 会不断的尝试，直到整个文件下载完毕。如果是服务器打断下载过程，它会再次联到服务器上从停止的地方继续下载。这对从那些限定了链接时间的服务器上下载大文件非常有用。<br>wget 支持 HTTP，HTTPS 和 FTP 协议，可以使用 HTTP 代理。所谓的自动下载是指，wget 可以在用户退出系统的之后在后台执行。这意味这你可以登录系统，启动一个 wget 下载任务，然后退出系统，wget 将在后台执行直到任务完成，相对于其它大部分浏览器在下载大量数据时需要用户一直的参与，这省去了极大的麻烦。<br>使用<br>-V，–version：显示版本号<br>-h，–help：查看帮助<br>-b，–background：启动后转入后台执行<br>2.2 日志记录和输入文件参数<br>-o，–output-file=file：把记录写到 file 文件中<br>-a，–append-output=file：把记录追加到 file 文件中<br>-i，–input-file=file：从 file 读取 url 来下载<br>2.3 下载参数<br>-bind-address=address：指定本地使用地址<br>-t，-tries=number：设置最大尝试连接次数<br>-c，-continue：接着下载没有下载完的文件<br>-O，-output-document=file：将下载内容写入到 file 文件中<br>-spider：不下载文件<br>-T，-timeout=sec：设置响应超时时间<br>-w，-wait=sec：两次尝试之间间隔时间<br>–limit-rate=rate：限制下载速率<br>-progress=type：设置进度条<br>2.4 目录参数<br>-P，-directory-prefix=prefix：将文件保存到指定目录<br>2.5 HTTP 参数<br>-http-user=user：设置 http 用户名<br>-http-passwd=pass：设置 http 密码<br>-U，–user-agent=agent：伪装代理<br>-no-http-keep-alive：关闭 http 活动链接，变成永久链接<br>-cookies=off：不使用 cookies<br>-load-cookies=file：在开始会话前从 file 文件加载 cookies<br>-save-cookies=file：在会话结束将 cookies 保存到 file 文件<br>2.6 FTP 参数<br>-passive-ftp：默认值，使用被动模式<br>-active-ftp：使用主动模式<br>2.7 递归下载排除参数<br>-A，–accept=list：分号分割被下载扩展名的列表<br>-R，–reject=list：分号分割不被下载扩展名的列表<br>-D，–domains=list：分号分割被下载域的列表<br>–exclude-domains=list：分号分割不被下载域的列表</p>
+<h3 id="su"><a href="#su" class="headerlink" title="su"></a>su</h3><p>特点<br>su 命令用于切换当前用户身份到指定用户或者以指定用户的身份执行命令或程序。<br>普通用户切换到 root 用户，可以使用 su – 或 su root,但是必须输入 root 密码才能完成切换。root 用户切换到普通用户，可以使用 su username,不需要输入任何密码即可完成切换。<br>使用<br>-c 或–command 执行完指定的指令后，即恢复原来的身份<br>-f 或–fast 适用于 csh 与 tsch，使 shell 不用去读取启动文件<br>-l 或–login 改变身份时，也同时变更工作目录，以及 HOME,SHELL,USER,logname,此外，也会变更 PATH 变量<br>-m,-p 或–preserve-environment 变更身份时，不要变更环境变量<br>-s 或–shell 指定要执行的 shell<br>–help 显示帮助信息<br>–version 显示版本信息</p>
+<h2 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h2><h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><p>查看当前的系统 PATH 变量<br>echo $PATH</p>
+<ol>
+<li>修改方法一：// 终端输入命令 export PATH=/usr/local/mongodb/bin:$PATH//配置完后可以通过 echo $PATH 查看配置结果。生效方法：立即生效有效期限：临时改变，只能在当前的终端窗口中有效，当前窗口关闭后就会恢复原有的 path 配置用户局限：仅对当前用户</li>
+<li>修改方法二：// 通过修改.bashrc 文件:vim ~/.bashrc //在最后一行添上：export PATH=/usr/local/mongodb/bin:$PATH// 生效方法：（有以下两种）1、关闭当前终端窗口，重新打开一个新终端窗口就能生效 2、输入“source ~/.bashrc”命令，立即生效有效期限：永久有效用户局限：仅对当前用户</li>
+<li>修改方法三：// 通过修改 profile 文件:vim /etc/profile/export PATH //找到设置 PATH 的行，添加 export PATH=/usr/local/mongodb/bin:$PATH 生效方法：系统重启有效期限：永久有效用户局限：对所有用户</li>
+<li>修改方法四：通过修改 environment 文件:vim /etc/environment 在 PATH=”/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games”中加入“:/usr/local/mongodb/bin”生效方法：系统重启有效期限：永久有效用户局限：对所有用户// 可以在环境变量 PATH 中声明可执行文件的路径，路径之间用 : 分隔。/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/dmtsai/.local/bin:/home/dmtsai/bin</li>
+</ol>
+<h3 id="查看-cpu-的核数"><a href="#查看-cpu-的核数" class="headerlink" title="查看 cpu 的核数"></a>查看 cpu 的核数</h3><p>grep -c processor /proc/cpuinfo</p>
+<h3 id="查看版本信息"><a href="#查看版本信息" class="headerlink" title="查看版本信息"></a>查看版本信息</h3><p>cat /etc/redhat-release</p>
+<h3 id="输出显示当前-linux-语言包"><a href="#输出显示当前-linux-语言包" class="headerlink" title="输出显示当前 linux 语言包"></a>输出显示当前 linux 语言包</h3><p>echo $LANG</p>
+<h3 id="修改当前的时间和时区"><a href="#修改当前的时间和时区" class="headerlink" title="修改当前的时间和时区"></a>修改当前的时间和时区</h3><p>查看和修改 Linux 的时区</p>
+<ol>
+<li><p>查看当前时区<br>命令 ： “date -R”</p>
+</li>
+<li><p>修改设置 Linux 服务器时区<br>方法 A<br>命令 ： “tzselect”</p>
+</li>
+</ol>
+<p>方法 B 仅限于 RedHat Linux 和 CentOS<br>命令 ： “timeconfig”</p>
+<p>方法 C 适用于 Debian<br>命令 ： “dpkg-reconfigure tzdata”</p>
+<ol start="3">
+<li>复制相应的时区文件，替换系统时区文件；或者创建链接文件<br>cp /usr/share/zoneinfo/主时区/次时区 /etc/localtime</li>
+</ol>
+<p>例如：在设置中国时区使用亚洲/上海（+8）<br>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime<br>查看和修改 Linux 的时间</p>
+<ol>
+<li>查看时间和日期<br>命令 ： “date”</li>
+</ol>
+<p>2.设置时间和日期<br>例如：将系统日期设定成 2009 年 11 月 3 日的命令</p>
+<p>命令 ： “date -s 11/03/2009”</p>
+<p>将系统时间设定成下午 5 点 55 分 55 秒的命令</p>
+<p>命令 ： “date -s 17:55:55”</p>
+<ol start="3">
+<li>将当前时间和日期写入 BIOS，避免重启后失效<br>命令 ： “hwclock -w”</li>
+</ol>
+<p>注：</p>
+<p>date<br>不加参数可以直接看到当前日期时间</p>
+<p>cal<br>不加参数可以直接看到本月月历</p>
+<h3 id="查看修改系统登录的-shell"><a href="#查看修改系统登录的-shell" class="headerlink" title="查看修改系统登录的 shell"></a>查看修改系统登录的 shell</h3><p>chsh<br>chsh 命令本身并不复杂，它的功能比较单一，就是负责查看（显示）和修改我们系统的登录 Shell。想修改登录 Shell，首先要知道我们的系统安装了哪些 Shell。这里有两种方法可以查看。</p>
+<p>方法一：<br>[roc@roclinux ~]$ chsh -l<br>/bin/sh<br>/bin/bash<br>/sbin/nologin<br>/bin/zsh</p>
+<p>方法二：<br>[roc@roclinux ~]$ cat /etc/shells<br>/bin/sh<br>/bin/bash<br>/sbin/nologin<br>/bin/zsh</p>
+<p>其实 chsh -l 命令本质上也是去查看 /etc/shells 文件。<br>查看当前正在使用的 Shell<br>使用一个环境变量，就可以查看到当前正在使用的 Shell 啦：<br>[roc@roclinux ~]$ echo $SHELL<br>/bin/bash<br>注意：SHELL 一定要大写。可以看到，我们目前使用的 Shell 是 bash。</p>
+<p>听说 zsh 不错，于是我们就通过在命令行执行 zsh 命令切换到了 zsh 环境。可是，为什么查看当前 Shell 类型仍然是 /bin/bash 呢？<br>[roc@roclinux <del>]$ zsh<br>[roc@roclinux]</del>% echo $SHELL<br>/bin/bash<br>[roc@roclinux]~%</p>
+<p>请注意，我们虽然执行了 zsh，但是所谓“当前的 Shell”是一个大环境的概念，是针对一个已登录的用户而言的。而我们执行 zsh 只是启动了一个 zsh 的解释器程序而已，并没有改变大环境。如果想改变“当前的 Shell”，那么还是要求助于 chsh 才可以。<br>将 Shell 环境真正切换到 zsh<br>[roc@roclinux ~]$ chsh -s /bin/zsh<br>Changing shell for roc.<br>Password:<br>Shell changed.<br>使用 chsh 命令的-s 选项就可以修改登录的 Shell 了。</p>
+<p>如果我们这时候满怀欣喜地执行 echo $SHELL，就会发现然输出的仍是 /bin/bash。这是因为 chsh 改变的是我们登录 Shell 的配置，我们必须退出再重新登录 Shell，才可以完全投入到 zsh 的怀抱。</p>
+<p>真是一波三折，退出并重新登录后，终于看到了我们想要的 /bin/zsh 了：<br>[roc@roclinux]<del>% echo $SHELL<br>/bin/zsh<br>chsh -s 到底修改了哪里<br>chsh -s 其实修改的就是 /etc/passwd 文件中和我们所登录的用户名相对应的那一行。现在我们来查看一下：<br>[roc@roclinux]</del>% cat /etc/passwd|grep ^roc<br>roc:x:1001:1001::/home/roc:/bin/zsh</p>
+<p>可以发现，输出内容的最后部分已经变成了 /bin/zsh 了。重启系统的时候，Linux 就会读取这一命令来启动新的 Shell。</p>
+<p>好了，我们要恢复正常的工作环境，把 Shell 修改回我们熟悉的 /bin/bash 了：<br>[roc@roclinux]~% chsh -s /bin/bash<br>Changing Shell for roc.<br>Password:<br>Shell changed.</p>
+<h3 id="本地显示远程服务器-GUI-界面"><a href="#本地显示远程服务器-GUI-界面" class="headerlink" title="本地显示远程服务器 GUI 界面"></a>本地显示远程服务器 GUI 界面</h3><p><strong>X 协议</strong><br>Linux 本身是没有图形化界面的，所谓的图形化界面系统只不过中 Linux 下的应用程序。这一点和 Windows 不一样。Windows 从 Windows 95 开始，图形界面就直接在系统内核中实现了，是操作系统不可或缺的一部分。Linux 的图形化界面，底层都是基于 X 协议。<br>X 协议由 X server 和 X client 组成：</p>
+<ul>
+<li>X server 管理主机上与显示相关的硬件设置（如显卡、硬盘、鼠标等），它负责屏幕画面的绘制与显示，以及将输入设置（如键盘、鼠标）的动作告知 X client。</li>
+<li>X client (即 X 应用程序) 则主要负责事件的处理（即程序的逻辑）。</li>
+</ul>
+<p>举个例子，如果用户点击了鼠标左键，因为鼠标归 X server 管理，于是 X server 就捕捉到了鼠标点击这个动作，然后它将这个动作告诉 X client，因为 X client 负责程序逻辑，于是 X client 就根据程序预先设定的逻辑（例如画一个圆），告诉 X server 说：“请在鼠标点击的位置，画一个圆”。最后，X server 就响应 X client 的请求，在鼠标点击的位置，绘制并显示出一个圆。<br><strong>2. X11 Forwarding</strong><br>这么绕，有啥意义呢？当然有！<br>许多时候 X server 和 X client 在同一台主机上，这看起来没什么。但是， X server 和 X client 完全可以运行在不同的机器上，只要彼此通过 X 协议通信即可。于是，我们就可以做一些“神奇”的事情，比如像本文开头谈到的，在本地显示 (X server)，运行在服务器上的 GUI 程序 (X client)。这样的操作可以通过 SSH X11 Forwarding (转发) 来实现。<br>X11 中的 X 指的就是 X 协议，11 指的是采用 X 协议的第 11 个版本。<br><strong>配置</strong></p>
+<ol>
+<li>服务端#安装 X11 Forwarding 相关软件 yum install xorg-x11-xauth xorg-x11-fonts-* xorg-x11-font-utils xorg-x11-fonts-Type1 xclock#启动 X11 Forwardingvim /etc/ssh/sshd_config#将 X11Forwarding 和 X11UseLocalhost 前面的#去掉，并将 X11Forwarding 设置为 yes，X11UseLocalhost 设置为 no#AllowAgentForwarding yes#AllowTcpForwarding yes#GatewayPorts noX11Forwarding yes#X11DisplayOffset 10X11UseLocalhost no#重启 sshd 服务 systemctl restart sshd.service</li>
+<li>本地客户端安装接收的客户端软件，类似 mobaXterm、xmanager</li>
+<li>验证#服务端运行命令，在本地出现对应的图形化窗口 xclock</li>
+</ol>
+<p>运行图形界面的时候存在卡顿并且报 libGL error: unable to load driver: swrast_dri.so 错误，安装缺少的包<br>yum install -y mesa-libGLES-devel.x86_64 mesa-dri-drivers</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h3><p>查看 yum 版本信息<br>yum info yum<br>查看具体安装包信息<br>rpm -qi packagename<br>查找 yum 可以安装的安装包<br>yum search packagename</p>
+<h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><h3 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h3><p>//新建用户并创建家目录<br>useradd -d /home/username -m username</p>
+<p>//修改登录使用的默认 shell<br>usermod -s /bin/bash username</p>
+<p>//更改密码<br>passwd username</p>
+<p>//设置 root 权限<br>//方式一<br>chmod u+w /etc/sudoers<br>vim /etc/sudoers #在 root 底下添加一行<br>username ALL=(ALL) ALL<br>chmod u-w /etc/sudoers</p>
+<p>//方式二<br>chmod u+w /etc/sudoers<br>vim /etc/sudoers<br>去掉 %wheel ALL=(ALL) ALL 前面的注释<br>usermod -g root username<br>chmod u-w /etc/sudoers</p>
+<p>//方式三<br>修改/etc/passwd 文件，找需要修改的用户信息行，将用户 id 修改为 0<br>推荐使用方式一进行修改文件</p>
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><h3 id="ubuntu-设置-ssh"><a href="#ubuntu-设置-ssh" class="headerlink" title="ubuntu 设置 ssh"></a>ubuntu 设置 ssh</h3><p>Ubuntu 下安装 OpenSSH Server<br>apt-get install openssh-server</p>
+<p>修改 ssh 默认端口<br>ssh-server 配置文件位于/ etc/ssh/sshd_config，在这里可以定义 SSH 的服务端口，默认端口是 22，你可以自己定义成其他端口号，如 222。然后重启 SSH 服务：<br>/etc/init.d/ssh restart</p>
+<p>加快 ssh 登录时间</p>
+<p>vi /etc/ssh/sshd_config<br>找到 GSSAPI options 这一节，将下面两行注释掉：<br>#GSSAPIAuthentication yes<br>#GSSAPIDelegateCredentials no<br>然后重新启动 ssh 服务即可：<br>/etc/init.d/ssh restart</p>
+<p>———-Ubuntu 安装 g++</p>
+<p>如果使用： apt-get install g++ 提示错误<br>尝试使用 apt-get -f install 把欠缺的包安装完毕。<br>再次重试： apt-get install g++</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/21/yuque/linux_terminal/" data-id="ckoxr57d4000gncne10hw8vvj" data-title="linux_terminal" class="article-share-link">Share</a>
       
       
       
@@ -183,7 +360,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/windows_system/" data-id="ckoxpr78e000bgnn632ox74kj" data-title="windows_system" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/windows_system/" data-id="ckoxr57cy000cncnegf9s8ccy" data-title="windows_system" class="article-share-link">Share</a>
       
       
       
@@ -249,7 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/windows_terminal/" data-id="ckoxpr78f000cgnn67nnw8yp0" data-title="windows_terminal" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/windows_terminal/" data-id="ckoxr57cz000dncne5pknecuv" data-title="windows_terminal" class="article-share-link">Share</a>
       
       
       
@@ -320,7 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/windows_tools/" data-id="ckoxpr78h000dgnn62ap3503k" data-title="windows_tools" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/windows_tools/" data-id="ckoxr57d0000encneb2b97xaw" data-title="windows_tools" class="article-share-link">Share</a>
       
       
       
@@ -393,7 +570,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/plugin/" data-id="ckoxpr7860005gnn64osl88e1" data-title="plugin" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/plugin/" data-id="ckoxr57cs0006ncnee71ahkt6" data-title="plugin" class="article-share-link">Share</a>
       
       
       
@@ -466,7 +643,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/20/yuque/homebrew/" data-id="ckoxpr7820002gnn65sqa5bj4" data-title="homebrew" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/20/yuque/homebrew/" data-id="ckoxr57cn0002ncnef3y7abgy" data-title="homebrew" class="article-share-link">Share</a>
       
       
       
@@ -646,7 +823,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/17/yuque/software/" data-id="ckoxpr7870006gnn60ctofxi4" data-title="software" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/17/yuque/software/" data-id="ckoxr57ct0007ncne4pz63lmo" data-title="software" class="article-share-link">Share</a>
       
       
       
@@ -1053,191 +1230,7 @@ public void onFinish(ITestContext iTestContext) &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/17/yuque/11_java_unit_testing/" data-id="ckoxpr78i000egnn6botx7vqf" data-title="11_java_unit_testing" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-yuque/unit_testing" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/05/17/yuque/unit_testing/" class="article-date">
-  <time class="dt-published" datetime="2021-05-17T02:09:59.000Z" itemprop="datePublished">2021-05-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/05/17/yuque/unit_testing/">unit_testing</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>软件的质量不是测试出来的，是通过设计和维护出来的，软件质量的保证需要通过测试来进行验证</p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>单元测试是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。<br>程序单元是应用的最小可测试部件。在过程化编程中，一个单元就是单个程序、函数、过程等；对于面向对象编程，最小单元就是方法，包括基类（超类）、抽象类、或者派生类（子类）中的方法<br>​</p>
-<p>衡量 UT 的指标：<br>覆盖率：</p>
-<ul>
-<li>行覆盖率：可执行语句执行的比例</li>
-<li>函数覆盖率：函数被调用的比例</li>
-<li>分支覆盖率：判断语句分支被执行的比例</li>
-</ul>
-<p>​</p>
-<p>单元测试的重要性：</p>
-<ul>
-<li>能力建设：一个具备开发经验的开发人员，基本上都会编写单元测试。即便不会，可以通过培训来快速达成。从学习曲线上看，单元测试很容易上手。</li>
-<li>提升效率：越早发现发现 Bug，造成的浪费就会越小，单元测试本身就能够提供了快速反馈的机制。</li>
-<li>追求卓越：单元测试可以充当一个设计工具，它有助于开发人员去思考代码结构的设计，让代码更加有利于测试，知名的开源代码库从来不会缺乏单元测试。</li>
-</ul>
-<p>​</p>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>测试用例需要具备的特质：</p>
-<table>
-<thead>
-<tr>
-<th>FIRST</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>F - fast</td>
-<td>测试过程一定要快，快速启动，快速验证，快速失败</td>
-</tr>
-<tr>
-<td>I – isolate</td>
-<td>测试用例间要相互隔离，无前后依赖关系</td>
-</tr>
-<tr>
-<td>R – Repeatable</td>
-<td>测试用例是可重复执行的，不依赖外部可变环境（如时间、系统版本等）</td>
-</tr>
-<tr>
-<td>S – Self-validating</td>
-<td>测试用例需要具备自我验证的能力</td>
-</tr>
-<tr>
-<td>T – Timely</td>
-<td>测试用例如同普通代码，也需要定期、定时维护和执行</td>
-</tr>
-</tbody></table>
-<p>​</p>
-<p>测试用例测试的东西：</p>
-<table>
-<thead>
-<tr>
-<th>Right-BICEP</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Right - 结果正确</td>
-<td>检查期望结果是否正确</td>
-</tr>
-<tr>
-<td>B - 边界条件检查</td>
-<td>代码中的很多 Bug 都出现在边界条件附近</td>
-</tr>
-</tbody></table>
-<p>| I - 反向关联检查<br>| 使用反向逻辑关系来验证•例： 对于加密算法，使用解密算法反向检查其输出，验证解密后明文是否正确•例： 对于写操作 API，使用读操作 API 来反向检查验证 |<br>| C – 交叉检查<br>| 使用其它手段交叉验证。例： 对性能优化的算法，使用性能差但验证过的算法交叉检查。例： 使用不变量约束，检查操作的影响 |<br>| E - 强制错误条件发生<br>| 强制引发错误，验证对异常处理情况。例子：强制使得依赖的模块不可使用 |<br>| P - 满足性能需求<br>| 针对性能特性的测试验证。例： 安全防御模块是否由于频繁升级，导致性能非预期恶化 |</p>
-<h2 id="测试流程"><a href="#测试流程" class="headerlink" title="测试流程"></a>测试流程</h2><p><img src="https://gitee.com/goinhn/imageClouding/raw/master/upic/QNRnfE.png#id=GUi4k&originHeight=222&originWidth=1904&originalType=binary&status=done&style=none"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/17/yuque/unit_testing/" data-id="ckoxpr78c000agnn6eozj230f" data-title="unit_testing" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-yuque/java_specification" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/05/14/yuque/java_specification/" class="article-date">
-  <time class="dt-published" datetime="2021-05-14T09:22:57.000Z" itemprop="datePublished">2021-05-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/05/14/yuque/java_specification/">java_specification</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>强制：<br>源文件名必须和它包含的顶层类名保持一致，包括大小写，并以.java 作为后缀名<br>所有源文件编码必须是 UTF-8<br>除了换行符之外，ASCII 空格（0x20）是唯一合法的空格字符</p>
-<ul>
-<li>在所有的源代码中（包括字符、字符串以及注释中）出现的其他空格字符需要进行转义、如 Tab 用\t 表示</li>
-<li>缩紧必须是空格而不是 tab</li>
-</ul>
-<p>文件的换行符使用 Unix 格式<br>源文件顺序（每两个部分之间使用一个空行分隔，不允许多个空行）：</p>
-<ol>
-<li>许可证（license）或版权声明（copyright）</li>
-<li>package 语句<ol>
-<li>占据单独一行，允许超出 120 字符列宽限制</li>
-</ol>
-</li>
-<li>import 语句<ol>
-<li>非 static imports，禁止使用通配符 import</li>
-<li>每条 import 语句占据一行，允许超出 120 字符列宽限制</li>
-<li>所有未使用的 import 语句应该被删除</li>
-</ol>
-</li>
-<li>唯一的顶层类</li>
-</ol>
-<p>重载的方法必须放在一起<br>花括号</p>
-<ul>
-<li>左花括号（{）前不能换行</li>
-<li>在右花括号（}）前要有换行</li>
-<li>右边花括号后还要有 else 等代码则不换行，表示终止的右大括号后必须换行</li>
-</ul>
-<p>单行字符数字限制不超过 120 个，超出需要换行，换行时需要遵循如下的原则：</p>
-<ul>
-<li>第二行相对第一行缩进 4 个空格，从第三行开始，不再继续缩紧</li>
-<li>运算符与下文一起换行</li>
-<li>方法调用的点符号与下文一起换行</li>
-<li>方法调用中的多个参数需要换行时，在逗号后进行</li>
-<li>在括号前不要换行</li>
-</ul>
-<p>在以下情况增加空行：</p>
-<ul>
-<li>在类的不同成员间增加空行，包括：成员变量、构造函数、方法、内部类、静态初始化块、实例初始化块</li>
-<li>两个成员变量声明之间可以不加空行，空行通常对于成员变量进行逻辑分组</li>
-<li>方法体内，按需要增加空行，以便从逻辑上对语句进行分组</li>
-<li>禁止使用连续的空行</li>
-</ul>
-<p>添加在类、方法、构造函数、成员属性上的注解直接写在注释块之后，每个注解独占一行<br>方法名、参数名、成员变量、局部函数都统一使用 lowerCameICase 风格，遵从驼峰形式<br>类名使用 UpperCameCase 风格，以下情形除外：DO/BO/DTO/VO/AO/PO/UID<br>抽象类命名使用 Abstract 或 Base 开头；异常类命名使用 Exception 结尾；测试类的命名要以它测试的类的名称开始，以 Test 结尾<br>不允许任何魔法值（即未经预先定义的常量）直接出现在代码中。<br>常量的命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长<br>对于 Service 和 DAO 类，内部的实现类使用 Impl 的后缀与接口区别<br>所有的 POJO 类属性必须使用包装数据类型<br>所有覆写的方法，必须加@Override 注解<br>Object 的 equals 方法容易抛出空指针异常，应该使用常量或者确定值的对象来调用<br>定义 DO/DTO/VO 等 POJO 类的时候，不要设定任何属性的默认值<br>使用集合转换数组的方法，必须使用集合的 toArray(T[] array)，传入的是类型完全一样的数组，大小就是 list.size()<br>ArrayList 的 subList 场景中，高度注意对原集合的增加或者删除，均会导致子列表的遍历、增加、删除产生 ConcurrentModificationException 异常<br>不要在循环里进行集合元素的 remove/add 操作。remove 元素请使用 Iterator，如果使用并发操作需要对 Iterator 加锁<br>在一个 switch 块内，每个 case 要么通过 break/return 等来终止，要么注释说明到哪个 case 终止，在每个 switch 块红都需要包含一个 default 语句并放在最后，即使空代码<br>if/else/for/while/do 语句中必须使用花括号，即使只有一行代码，避免采用单行的编码方式<br>在高并发的场景下，避免使用“等于”判断作为终端或者退出的条件。使用大于或者小于的区间作为判断<br>类、类属性、类方法的注释必须使用 Javadoc 规范<br>捕获异常是为了处理异常，如果不处理请将他抛给外层的业务使用者<br>有 try 块放到了事务代码中，catch 异常后，如果需要回滚事务，一定要注意手动回滚<br>不要在 finally 块中使用 return<br>finally 块对象必须对资源对象、流对象进行关闭，有异常处理也要做 try-catch<br>StringBuilder 和 StringBuffer 不应该使用字符进行初始化，要使用字符串<br>获取的锁要在沿该方法的所有执行路径释放锁<br>循环要有终止的条件<br>synchronized 加锁的对象要使用 private final 进行修饰<br>异常捕获后要使用日志进行输出<br>​</p>
-<p>推荐：<br>所有的类都必须添加创建者和创建日期<br>​</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/14/yuque/java_specification/" data-id="ckoxpr7840003gnn62ur139jr" data-title="java_specification" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/17/yuque/11_java_unit_testing/" data-id="ckoxr57d3000fncned5h9cwf8" data-title="11_java_unit_testing" class="article-share-link">Share</a>
       
       
       
@@ -1289,19 +1282,19 @@ public void onFinish(ITestContext iTestContext) &#123;
           </li>
         
           <li>
+            <a href="/2021/05/21/yuque/linux_tools/">linux_tools</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/21/yuque/linux_terminal/">linux_terminal</a>
+          </li>
+        
+          <li>
             <a href="/2021/05/21/yuque/windows_system/">windows_system</a>
           </li>
         
           <li>
             <a href="/2021/05/21/yuque/windows_terminal/">windows_terminal</a>
-          </li>
-        
-          <li>
-            <a href="/2021/05/21/yuque/windows_tools/">windows_tools</a>
-          </li>
-        
-          <li>
-            <a href="/2021/05/21/yuque/plugin/">plugin</a>
           </li>
         
       </ul>
