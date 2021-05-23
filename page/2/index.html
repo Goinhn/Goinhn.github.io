@@ -162,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/17/yuque/unit_testing/" data-id="ckp16smue000bbin49e3i3vf9" data-title="unit_testing" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/17/yuque/unit_testing/" data-id="ckp189uwo000benn5eeetgc47" data-title="unit_testing" class="article-share-link">Share</a>
       
       
       
@@ -243,7 +243,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/14/yuque/java_specification/" data-id="ckp16smu40002bin42i2yh1g6" data-title="java_specification" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/14/yuque/java_specification/" data-id="ckp189uwd0002enn53zcm4qjw" data-title="java_specification" class="article-share-link">Share</a>
       
       
       
@@ -308,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/14/yuque/code_review/" data-id="ckp16smu30001bin471b016ev" data-title="code_review" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/14/yuque/code_review/" data-id="ckp189uwb0001enn5hdjh2eiy" data-title="code_review" class="article-share-link">Share</a>
       
       
       
@@ -347,7 +347,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/13/yuque/mac/" data-id="ckp16smu60004bin41ufb5ipx" data-title="mac" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/13/yuque/mac/" data-id="ckp189uwf0004enn5bny0h8gp" data-title="mac" class="article-share-link">Share</a>
       
       
       
@@ -385,7 +385,43 @@
 <h2 id="EPEL"><a href="#EPEL" class="headerlink" title="EPEL"></a>EPEL</h2><p>RHEL 以及他的衍生发行版如 CentOS、Scientific Linux 为了稳定，官方的 rpm repository 提供的 rpm 包往往是很滞后的，当然了，这样做这是无可厚非的，毕竟这是服务器版本，安全稳定是重点，官方的 rpm repository 提供的 rpm 包也不够丰富，自己编译比较麻烦<br>EPEL 的全称叫 Extra Packages for Enterprise Linux 。EPEL 是由 Fedora 社区打造，为 RHEL 及衍生发行版如 CentOS、Scientific Linux 等提供高质量软件包的项目。装上了 EPEL 之后，就相当于添加了一个第三方源。<br><strong>安装</strong><br><strong>命令行</strong><br>yum install -y epel-release<br><strong>源码安装</strong><br>// 根据系统的架构选择对应的类型<br><a target="_blank" rel="noopener" href="http://dl.fedoraproject.org/pub/epel/">http://dl.fedoraproject.org/pub/epel/</a></p>
 <p>// 指定进行安装<br>rpm -ivh <a target="_blank" rel="noopener" href="http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm">http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</a></p>
 <p>// 如果发生冲入可以删除冲入的包<br>yum remove epel-release</p>
-<p>// 更新数据<br>yum clean all &amp;&amp; yum makecache</p>
+<p>// 更新数据<br>yum clean all &amp;&amp; yum makecache<br>​</p>
+<h2 id="homebrew"><a href="#homebrew" class="headerlink" title="homebrew"></a>homebrew</h2><blockquote>
+<p>brew.sh</p>
+</blockquote>
+<h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>Homebrew is the easiest and most flexible way to install the UNIX tools Apple didn’t include with macOS. It can also install software not packaged for your Linux distribution to your home directory without requiringsudo.</p>
+<ul>
+<li>完全基于 Git 和 Ruby</li>
+<li>软件包安装在独立的目录，并且链接到/usr/local/bin</li>
+<li>安装到独立的目录，使得软件包易于卸载</li>
+<li>易于管理软件包</li>
+</ul>
+<p>​</p>
+<h3 id="Homebrew-目录"><a href="#Homebrew-目录" class="headerlink" title="Homebrew 目录"></a>Homebrew 目录</h3><ul>
+<li>/usr/local/Homebrew：Homebrew 程序本身的安装目录</li>
+<li>/usr/local/Cellar：存放 formula 的目录</li>
+<li>/usr/local/Caskroom：存放 cask 的目录</li>
+<li>/usr/local/opt：所有包忽略版本的存放目录</li>
+<li>/usr/local/bin：所有包二进制目录</li>
+<li>/usr/local/etc：所有包配置文件目录</li>
+<li>/usr/local/lib：所有包依赖库目录</li>
+<li>/usr/local/share：所有包文档文件目录</li>
+</ul>
+<h3 id="commands"><a href="#commands" class="headerlink" title="commands"></a>commands</h3><p>命令调试信息输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">--verbose</span><br><span class="line">--debug</span><br></pre></td></tr></table></figure>
+
+<p>基本操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"># 安装</span><br><span class="line">install formula</span><br><span class="line"></span><br><span class="line"># 卸载</span><br><span class="line">uninstall formula</span><br><span class="line"></span><br><span class="line"># 重新安装</span><br><span class="line">reinstall formula</span><br><span class="line"></span><br><span class="line"># 更细升级安装包</span><br><span class="line">upgrade formula</span><br><span class="line"></span><br><span class="line"># 列出已经安装的软件包</span><br><span class="line">list</span><br><span class="line"></span><br><span class="line"># 搜索查询软件包</span><br><span class="line">search [text | &#x2F;regex&#x2F;]</span><br><span class="line"></span><br><span class="line"># 列出安装软件的信息</span><br><span class="line">info formula</span><br><span class="line"></span><br><span class="line"># 打开软件官网</span><br><span class="line">home formula</span><br><span class="line"></span><br><span class="line"># 列出过时的formula</span><br><span class="line">outdated</span><br><span class="line"></span><br><span class="line"># 列出软件的依赖项</span><br><span class="line">deps formula</span><br><span class="line"></span><br><span class="line"># 检查配置问题</span><br><span class="line">doctor</span><br><span class="line"></span><br><span class="line"># 清理</span><br><span class="line">cleanup</span><br><span class="line"></span><br><span class="line"># 升级brew</span><br><span class="line">update</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置镜像源<br>替换 brew.git</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &quot;$(brew --repo)&quot;</span><br><span class="line">git remote set-url origin https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;brew.git</span><br></pre></td></tr></table></figure>
+
+<p>替换 homebrew-core.git</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &quot;$(brew --repo)&#x2F;Library&#x2F;Taps&#x2F;homebrew&#x2F;homebrew-core&quot;</span><br><span class="line">git remote set-url origin https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;homebrew-core.git</span><br></pre></td></tr></table></figure>
+
+<p>Homebrew Bottles 配置镜像<br>根据使用的 shell 进行配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &#39;export HOMEBREW_BOTTLE_DOMAIN&#x3D;https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;homebrew-bottles&#39; &gt;&gt; ~&#x2F;.zshrc</span><br><span class="line">source ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
+
 <h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><p>JDK 最新版本下载路径</p>
 <blockquote>
 <p>​<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase-downloads.html">https://www.oracle.com/java/technologies/javase-downloads.html</a></p>
@@ -396,23 +432,29 @@
 </blockquote>
 <p>在安装 jdk 的时候可以选择不安装 jre，因为 jdk 本身就已经自带了 jre</p>
 <h3 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h3><p><strong>下载指定包到本地进行安装</strong><br>配置环境变量</p>
-<h1 id="JAVA-HOME"><a href="#JAVA-HOME" class="headerlink" title="JAVA_HOME"></a>JAVA_HOME</h1><p>java 安装路径</p>
-<h1 id="path"><a href="#path" class="headerlink" title="path"></a>path</h1><p>%JAVA_HOME%\bin<br>%JAVA_HOME%\jre\bin</p>
-<h1 id="classpath"><a href="#classpath" class="headerlink" title="classpath"></a>classpath</h1><p>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar<br>1.5 之后不需要再配置 classpath，为了向下兼容进行配置<br>告诉 jvm 要使用或执行的 class 放在什么路径上，便于 jvm 加载 class 文件，.;表示当前路径，tools.jar 和 dt.jar 为类库路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># JAVA_HOME</span><br><span class="line">java安装路径</span><br><span class="line"></span><br><span class="line"># path</span><br><span class="line">%JAVA_HOME%\bin</span><br><span class="line">%JAVA_HOME%\jre\bin</span><br><span class="line"></span><br><span class="line"># classpath</span><br><span class="line">.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar</span><br></pre></td></tr></table></figure>
+
+<p>1.5 之后不需要再配置 classpath，为了向下兼容进行配置<br>告诉 jvm 要使用或执行的 class 放在什么路径上，便于 jvm 加载 class 文件，.;表示当前路径，tools.jar 和 dt.jar 为类库路径</p>
 <ul>
 <li>tools.jar 工具类库(编译和运行等)，它跟我们程序中用到的基础类库没有关系。我们注意到在 Path 中变量值 bin 目录下的各个 exe 工具的大小都很小，一般都在 27KB 左右，这是因为它们实际上仅仅相当于是一层代码的包装，这些工具的实现所要用到的类库都在 tools.jar 中，用压缩软件打开 tools.jar，你会发现有很多文件是和 bin 目录下的 exe 工具相对性的。当然，如果 tools.jar 的功能只有这些的话，那么我们根本不用把它加入到 CLASSPATH 变量中，因为 bin 目录下的工具自己可以完成对这些类库的调用，因此 tools.jar 应该还有其他的功能。在里面还可以看到有 Applet 和 RMI 等相关的文件，因此 tools.jar 应该还是远程调用等必须的 jar 包。tools.jar 的其他作用可以查看其他资料。</li>
 <li>dt.jar 运行环境类库，主要是 Swing 包，这一点通过用压缩软件打开 dt.jar 也可以看到。如果在开发时候没有用到 Swing 包，那么可以不用将 dt.jar 添加到 CLASSPATH 变量中。CLASSPATH 中的类库是由 Application ClassLoader 或者我们自定义的类加载器来加载的，这里当然不能包括基础类库，如果包括基础类库的话，并用两个不同的自定义类加载器去加载该基础类，那它得到的该基础类就不是唯一的了，这样便不能保证 Java 类的安全性。</li>
 <li>基本类库和扩展类库 rt.jar 基本类库是所有的 import java.* 开头的类，在 %JAVA_HOME%\jre\lib 目录下（如其中的 rt.jar、resource.jar ），类加载机制提到，该目录下的类会由 Bootstrap ClassLoader 自动加载，并通过亲委派模型保证了基础类库只会被 Bootstrap ClassLoader 加载，这也就保证了基础类的唯一性。</li>
 <li>扩展类库是所有的 import javax.* 开头的类，在 %JAVA_HOME%\jre\lib\ext 目录下，该目录下的类是由 Extension ClassLoader 自动加载，不需要我们指定。rt.jar 默认就在根 ClassLoader 的加载路径里面，放在 CLASSPATH 也是多此一举。</li>
 </ul>
-<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p><strong>安装包安装</strong><br>切换终端为 root 用户<br>su root<br>查看系统是否有自带的 jdk<br>// 检测是否有 jdk 环境<br>java -version</p>
-<p>// 检测 jdk 的安装包<br>rpm -qa | grep java</p>
-<p>// 删除安装包<br>rpm -e –nodeps + 包名<br>或者<br>yum remove</p>
-<p>// 检测是否删除干净<br>rpm -qa | grep java<br>新建 Java 目录<br>mkdir /usr/local/java<br>修改文件的权限<br>chmod 777 /usr/local/java<br>将安装包解压到安装目录<br>tar -zxvf jdk1.8.0_241.tar.gz<br>配置环境变量<br>vim /etc/profile</p>
-<p>// 添加内容<br>export JAVA_HOME=/usr/local/jdk1.8.0_241<br>export JRE_HOME=${JAVA_HOME}/jre<br>export PATH=${JAVA_HOME}/bin:${JRE_HOME}/bin:$PATH<br>export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib:${CLASSPATH}<br>重新加载配置文件<br>source /etc/profile<br><strong>yum 直接安装</strong><br>// 查看可安装的 jdk 版本<br>yum list java*</p>
-<p>// 选择需要 jdk 版本进行安装<br>yum install -y java-1.8.0-openjdk-devel.x86_64</p>
-<p>// 安装后的目录在/usr/lib/jvm 下<br><strong>rpm 源安装</strong><br>// 下载指定的 rpm 源<br>// 使用 rpm -ivh 进程安装<br>rpm -ivh ***.rpm</p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>jdk 各个目录介绍</p>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p><strong>安装包安装</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">切换终端为root用户</span><br><span class="line">su root</span><br><span class="line">查看系统是否有自带的jdk</span><br><span class="line">&#x2F;&#x2F; 检测是否有jdk环境</span><br><span class="line">java -version</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 检测jdk的安装包</span><br><span class="line">rpm -qa | grep java</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 删除安装包</span><br><span class="line">rpm -e --nodeps + 包名</span><br><span class="line">或者</span><br><span class="line">yum remove</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 检测是否删除干净</span><br><span class="line">rpm -qa | grep java</span><br><span class="line">新建Java目录</span><br><span class="line">mkdir &#x2F;usr&#x2F;local&#x2F;java</span><br><span class="line">修改文件的权限</span><br><span class="line">chmod 777 &#x2F;usr&#x2F;local&#x2F;java</span><br><span class="line">将安装包解压到安装目录</span><br><span class="line">tar -zxvf jdk1.8.0_241.tar.gz</span><br><span class="line">配置环境变量</span><br><span class="line">vim &#x2F;etc&#x2F;profile</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 添加内容</span><br><span class="line">export JAVA_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;jdk1.8.0_241</span><br><span class="line">export JRE_HOME&#x3D;$&#123;JAVA_HOME&#125;&#x2F;jre</span><br><span class="line">export PATH&#x3D;$&#123;JAVA_HOME&#125;&#x2F;bin:$&#123;JRE_HOME&#125;&#x2F;bin:$PATH</span><br><span class="line">export CLASSPATH&#x3D;.:$&#123;JAVA_HOME&#125;&#x2F;lib:$&#123;JRE_HOME&#125;&#x2F;lib:$&#123;CLASSPATH&#125;</span><br><span class="line">重新加载配置文件</span><br><span class="line">source &#x2F;etc&#x2F;profile</span><br></pre></td></tr></table></figure>
+
+<p><strong>yum 直接安装</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 查看可安装的jdk版本</span><br><span class="line">yum list java*</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 选择需要jdk版本进行安装</span><br><span class="line">yum install -y java-1.8.0-openjdk-devel.x86_64</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 安装后的目录在&#x2F;usr&#x2F;lib&#x2F;jvm下</span><br></pre></td></tr></table></figure>
+
+<p><strong>rpm 源安装</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 下载指定的rpm源</span><br><span class="line">&#x2F;&#x2F; 使用rpm -ivh进程安装</span><br><span class="line">rpm -ivh  ***.rpm</span><br></pre></td></tr></table></figure>
+
+<h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><p>官网下载 dmg 文件进行直接安装<br>配置环境变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 查看当前Java的home目录，将该home目录配置到环境变量中</span><br><span class="line"># &#x2F;usr&#x2F;libexec&#x2F;java_home -V</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 根据shell的环境来选择对应的配置文件</span><br><span class="line"># vim .zshrc</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 写入环境变量内容</span><br><span class="line">export JAVA_HOME&#x3D;&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines&#x2F;jdk.1.8.0_241.jdk&#x2F;Contents&#x2F;Home</span><br><span class="line">export JRE_HOME&#x3D;$&#123;JAVA_HOME&#125;&#x2F;jre</span><br><span class="line">export CLASSPATH&#x3D;.:$&#123;JAVA_HOME&#125;&#x2F;lib:$&#123;JRE_HOME&#125;&#x2F;lib</span><br><span class="line"></span><br><span class="line">export PATH&#x3D;$&#123;JAVA_HOME&#125;&#x2F;bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+<h3 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h3><p>jdk 各个目录介绍</p>
 <ul>
 <li>bin，提供 jdk 工具程序，包括 javac、Java、javadoc、appletviewer 等可执行程序</li>
 <li>include，存放用于本地访问的文件</li>
@@ -434,7 +476,12 @@
 <p>错误信息</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 缺少autoconf包</span><br><span class="line"></span><br><span class="line">yum install -y autoconf</span><br><span class="line">// In file included from credential-store.c:1:0:</span><br><span class="line">cache.h:40:18: fatal error: zlib.h: No such file or directory</span><br><span class="line"> <span class="comment">#include &lt;zlib.h&gt;</span></span><br><span class="line"></span><br><span class="line">yum install zlib （系统默认已经装上）</span><br><span class="line">yum install zlib-devel</span><br><span class="line">// Can<span class="string">&#x27;t locate ExtUtils/MakeMaker.pm in @INC</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">yum install perl-ExtUtils-MakeMaker</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// # perl Makefile.PL</span></span><br><span class="line"><span class="string">*** Module::AutoInstall version 1.06</span></span><br><span class="line"><span class="string">*** Checking for Perl dependencies...</span></span><br><span class="line"><span class="string">Can&#x27;</span>t locate CPAN.pm <span class="keyword">in</span> @INC (@INC contains: inc /usr/<span class="built_in">local</span>/lib64/perl5 /usr/<span class="built_in">local</span>/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at inc/Module/AutoInstall.pm line 304.</span><br><span class="line"></span><br><span class="line">yum -y install perl-CPAN</span><br></pre></td></tr></table></figure>
 
-<h3 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h3><h4 id="windows-2"><a href="#windows-2" class="headerlink" title="windows"></a>windows</h4><p>配置全局信息</p>
+<h3 id="mac-1"><a href="#mac-1" class="headerlink" title="mac"></a>mac</h3><p>brew 直接安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+
+<p>安装程序安装<br>源码安装<br>​</p>
+<p>​</p>
+<h3 id="配置-2"><a href="#配置-2" class="headerlink" title="配置"></a>配置</h3><h4 id="windows-2"><a href="#windows-2" class="headerlink" title="windows"></a>windows</h4><p>配置全局信息</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 设置全局的用户名</span><br><span class="line">git config --global user.name <span class="string">&#x27;goinhn&#x27;</span></span><br><span class="line">// 配置全局的邮箱</span><br><span class="line">git config --global user.email <span class="string">&#x27;gooooinhn@gmail.com&#x27;</span></span><br><span class="line"></span><br><span class="line">// 查看全局的信息</span><br><span class="line">git config --list</span><br></pre></td></tr></table></figure>
 
 <p>​</p>
@@ -461,7 +508,7 @@
 <p>// 将文件解压到安装目录<br>tar -zxvf apache-tomcat-8.5.57.tar.gz</p>
 <p>//配置环境变量<br>export CATALINA_HOME=/usr/local/apache-tomcat-8.5.57<br>export path=${CATALINA_HOME}/bin</p>
 <p>// 配置字符集<br>cd /usr/local/apache-tomcat-7.0.73/conf<br>vim server.xml<br>找到配置 8080 端口的位置，在节点末尾添加 URIEncoding=”UTF-8”</p>
-<h3 id="配置-2"><a href="#配置-2" class="headerlink" title="配置"></a>配置</h3><h4 id="windows-4"><a href="#windows-4" class="headerlink" title="windows"></a>windows</h4><p>中文乱码修改<br>页面输出乱码<br>// service.xml 配置未注明编码格式，浏览器本身有自己的显示编码格式，tomcat 的输出也有自己的格式，甚至我们在编写代码的过程中也可以指定输出的编码格式。所以这类原因导致的乱码，需要我们保持各种编码格式统一<br>1、在 tomcat 中将 server.xml 的我们所用的端口的配置添加 URIEncoding=”UTF-8”<br><Connector port="8080" protocol="HTTP/1.1"
+<h3 id="配置-3"><a href="#配置-3" class="headerlink" title="配置"></a>配置</h3><h4 id="windows-4"><a href="#windows-4" class="headerlink" title="windows"></a>windows</h4><p>中文乱码修改<br>页面输出乱码<br>// service.xml 配置未注明编码格式，浏览器本身有自己的显示编码格式，tomcat 的输出也有自己的格式，甚至我们在编写代码的过程中也可以指定输出的编码格式。所以这类原因导致的乱码，需要我们保持各种编码格式统一<br>1、在 tomcat 中将 server.xml 的我们所用的端口的配置添加 URIEncoding=”UTF-8”<br><Connector port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443" URIEncoding="UTF-8" /></p>
 <p>2、在 html 的<html></html>标签内加上 meta 标签</p>
@@ -476,113 +523,16 @@
 <user username="mangager" password="123456" roles="manager-gui" />
 
 <h2 id="MAVEN"><a href="#MAVEN" class="headerlink" title="MAVEN"></a>MAVEN</h2><p>官网<br><a target="_blank" rel="noopener" href="http://maven.apache.org/">http://maven.apache.org/</a></p>
-<h3 id="windows-5"><a href="#windows-5" class="headerlink" title="windows"></a>windows</h3><p><strong>安装包安装</strong><br>需要先安装 Java 的环境<br>下载安装包解压到安装路径<br>环境变量<br>MAVEN_HOME<br>/local/maven/apache-maven3.6.1</p>
-<p>M2_HOME<br>/local/maven/apache-maven3.6.1</p>
-<p>path<br>%MAVEN_HOME%/bin</p>
-<h3 id="Linux-4"><a href="#Linux-4" class="headerlink" title="Linux"></a>Linux</h3><p>先安装 Java 环境<br>// 下载指定的包<br>wget <a target="_blank" rel="noopener" href="https://mirror.bit.edu.cn/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz">https://mirror.bit.edu.cn/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz</a></p>
-<p>// 新建安装目录<br>mkdir /usr/local/maven</p>
-<p>// 添加权限<br>chmod 777 -R /usr/local/maven</p>
-<p>// 解压安装包<br>tar -zxvf apache-maven-3.6.3-bin.tar.gz</p>
-<p>// 配置环境变量<br>export MAVEN_HOME=/usr/local/maven/apache-maven-3.6.3<br>export M2_HOME=/usr/local/maven/apache-maven-3.6.3<br>export path=${MAVEN_HOME}/bin:${M2_HOME}/bin</p>
-<p>// 设置配置本地仓库位置<br>// 修改镜像源</p>
-<h3 id="配置-3"><a href="#配置-3" class="headerlink" title="配置"></a>配置</h3><p>设置本地资源库位置<br>// 修改 maven 安装目录下的 conf 下的 setting.xml</p>
-<p><localRepository>D:\repository\maven</localRepository><br>修改仓库镜像源<br>// 在 setting.xml 中的 mirrors 下添加</p>
-<!--aliyun central mirrors-->
+<h3 id="windows-5"><a href="#windows-5" class="headerlink" title="windows"></a>windows</h3><p><strong>安装包安装</strong><br>需要先安装 Java 的环境<br>下载安装包解压到安装路径<br>环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MAVEN_HOME</span><br><span class="line">&#x2F;local&#x2F;maven&#x2F;apache-maven3.6.1</span><br><span class="line"></span><br><span class="line">M2_HOME</span><br><span class="line">&#x2F;local&#x2F;maven&#x2F;apache-maven3.6.1</span><br><span class="line"></span><br><span class="line">path</span><br><span class="line">%MAVEN_HOME%&#x2F;bin</span><br></pre></td></tr></table></figure>
 
-<pre><code>    &lt;mirror&gt;
-        &lt;name&gt;aliyun-central-maven&lt;/name&gt;
-        &lt;id&gt;aliyun-central&lt;/id&gt;
-        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-        &lt;url&gt;http://maven.aliyun.com/nexus/content/repositories/central/&lt;/url&gt;
-    &lt;/mirror&gt;
+<h3 id="Linux-4"><a href="#Linux-4" class="headerlink" title="Linux"></a>Linux</h3><p>先安装 Java 环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 下载指定的包</span><br><span class="line">wget https:&#x2F;&#x2F;mirror.bit.edu.cn&#x2F;apache&#x2F;maven&#x2F;maven-3&#x2F;3.6.3&#x2F;binaries&#x2F;apache-maven-3.6.3-bin.tar.gz</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 新建安装目录</span><br><span class="line">mkdir &#x2F;usr&#x2F;local&#x2F;maven</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 添加权限</span><br><span class="line">chmod 777 -R &#x2F;usr&#x2F;local&#x2F;maven</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 解压安装包</span><br><span class="line">tar -zxvf apache-maven-3.6.3-bin.tar.gz</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 配置环境变量</span><br><span class="line">export MAVEN_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;maven&#x2F;apache-maven-3.6.3</span><br><span class="line">export M2_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;maven&#x2F;apache-maven-3.6.3</span><br><span class="line">export path&#x3D;$&#123;MAVEN_HOME&#125;&#x2F;bin:$&#123;M2_HOME&#125;&#x2F;bin</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 设置配置本地仓库位置</span><br><span class="line">&#x2F;&#x2F; 修改镜像源</span><br></pre></td></tr></table></figure>
 
-    &lt;!-- aliyun public mirrors  --&gt;
-    &lt;mirror&gt;
-        &lt;name&gt;aliyun-groups-maven&lt;/name&gt;
-        &lt;id&gt;aliyun-public&lt;/id&gt;
-        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-        &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
-    &lt;/mirror&gt;
+<h3 id="mac-2"><a href="#mac-2" class="headerlink" title="mac"></a>mac</h3><p>下载.tar.gz 文件，解压到指定的文件夹下<br>在对应的 shell 下进行配置环境即可，同时修改 settings.xml 文件的配置</p>
+<h3 id="配置-4"><a href="#配置-4" class="headerlink" title="配置"></a>配置</h3><p>设置本地资源库位置<br>// 修改 maven 安装目录下的 conf 下的 setting.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line">&lt;localRepository&gt;D:\repository\maven&lt;&#x2F;localRepository&gt;</span><br><span class="line">修改仓库镜像源</span><br><span class="line">&#x2F;&#x2F; 在setting.xml中的mirrors下添加</span><br><span class="line"></span><br><span class="line">&lt;!--aliyun central mirrors--&gt;</span><br><span class="line">        &lt;mirror&gt;</span><br><span class="line">        	&lt;name&gt;aliyun-central-maven&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;id&gt;aliyun-central&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;central&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;url&gt;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;repositories&#x2F;central&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- aliyun public mirrors  --&gt;</span><br><span class="line">        &lt;mirror&gt;</span><br><span class="line">        	&lt;name&gt;aliyun-groups-maven&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;id&gt;aliyun-public&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;central&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;url&gt;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;groups&#x2F;public&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- ibiblio mirrors --&gt;</span><br><span class="line">		&lt;mirror&gt;</span><br><span class="line">        	&lt;name&gt;ibiblio-maven&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;id&gt;ibiblio&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;central&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;url&gt;http:&#x2F;&#x2F;mirrors.ibiblio.org&#x2F;pub&#x2F;mirrors&#x2F;maven2&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- springio mirrors --&gt;</span><br><span class="line">		&lt;mirror&gt;</span><br><span class="line">			&lt;name&gt;springio-maven&lt;&#x2F;name&gt;</span><br><span class="line">			&lt;id&gt;springio&lt;&#x2F;id&gt;</span><br><span class="line">			&lt;mirrorOf&gt;central&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">			&lt;url&gt;https:&#x2F;&#x2F;repo.spring.io&#x2F;libs-snapshot&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">		&lt;&#x2F;mirror&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- repo1 mirrors --&gt;</span><br><span class="line">		&lt;mirror&gt;</span><br><span class="line">        	&lt;name&gt;repo1-maven&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;id&gt;repo1&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;$&#123;repo1&#125;&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;url&gt;http:&#x2F;&#x2F;repo1.maven.org&#x2F;maven2&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- repo1 apache mirrors --&gt;</span><br><span class="line">		&lt;mirror&gt;</span><br><span class="line">        	&lt;name&gt;repo1-apache-maven&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;id&gt;repo1-apache&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;$&#123;repo1-apache&#125;&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;url&gt;http:&#x2F;&#x2F;repo1.maven.apache.org&#x2F;maven2&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- repo2 mirrors --&gt;</span><br><span class="line">        &lt;mirror&gt;</span><br><span class="line">        	&lt;name&gt;repo2-maven&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;id&gt;repo2&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;$&#123;repo2&#125;&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;url&gt;http:&#x2F;&#x2F;repo2.maven.org&#x2F;maven2&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- uk mirrors --&gt;</span><br><span class="line">		&lt;mirror&gt;</span><br><span class="line">        	&lt;name&gt;uk-maven&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;id&gt;uk&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;$&#123;uk&#125;&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;url&gt;http:&#x2F;&#x2F;uk.maven.org&#x2F;maven2&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- google mirrors --&gt;</span><br><span class="line">		&lt;mirror&gt;</span><br><span class="line">        	&lt;name&gt;google-maven&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;id&gt;google&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;$&#123;google&#125;&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;url&gt;http:&#x2F;&#x2F;maven.google.com&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- china-mirrors --&gt;</span><br><span class="line">		&lt;mirror&gt;</span><br><span class="line">        	&lt;name&gt;china-maven&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;id&gt;china&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;$&#123;china&#125;&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;url&gt;http:&#x2F;&#x2F;maven.net.cn&#x2F;content&#x2F;groups&#x2F;public&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br><span class="line"></span><br><span class="line">		&lt;!-- oschina-mirrors --&gt;</span><br><span class="line">		&lt;mirror&gt;</span><br><span class="line">        	&lt;name&gt;oschina-maven&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;id&gt;oschina&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;$&#123;oschina&#125;&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">            &lt;url&gt;http:&#x2F;&#x2F;maven.oschina.net&#x2F;content&#x2F;groups&#x2F;public&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- jboss mirrors --&gt;</span><br><span class="line">        &lt;mirror&gt;</span><br><span class="line">        	&lt;name&gt;jboss-groups-maven&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;id&gt;jboss-group&lt;&#x2F;id&gt;</span><br><span class="line">            &lt;mirrorOf&gt;$&#123;jboss-groups&#125;&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">&lt;url&gt;http:&#x2F;&#x2F;repository.jboss.org&#x2F;nexus&#x2F;content&#x2F;groups&#x2F;public&#x2F;&lt;&#x2F;url&gt;</span><br><span class="line">        &lt;&#x2F;mirror&gt;</span><br></pre></td></tr></table></figure>
 
-    &lt;!-- ibiblio mirrors --&gt;
-    &lt;mirror&gt;
-        &lt;name&gt;ibiblio-maven&lt;/name&gt;
-        &lt;id&gt;ibiblio&lt;/id&gt;
-        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-        &lt;url&gt;http://mirrors.ibiblio.org/pub/mirrors/maven2/&lt;/url&gt;
-    &lt;/mirror&gt;
-
-    &lt;!-- springio mirrors --&gt;
-    &lt;mirror&gt;
-        &lt;name&gt;springio-maven&lt;/name&gt;
-        &lt;id&gt;springio&lt;/id&gt;
-        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-        &lt;url&gt;https://repo.spring.io/libs-snapshot/&lt;/url&gt;
-    &lt;/mirror&gt;
-
-    &lt;!-- repo1 mirrors --&gt;
-    &lt;mirror&gt;
-        &lt;name&gt;repo1-maven&lt;/name&gt;
-        &lt;id&gt;repo1&lt;/id&gt;
-        &lt;mirrorOf&gt;$&#123;repo1&#125;&lt;/mirrorOf&gt;
-        &lt;url&gt;http://repo1.maven.org/maven2/&lt;/url&gt;
-    &lt;/mirror&gt;
-
-    &lt;!-- repo1 apache mirrors --&gt;
-    &lt;mirror&gt;
-        &lt;name&gt;repo1-apache-maven&lt;/name&gt;
-        &lt;id&gt;repo1-apache&lt;/id&gt;
-        &lt;mirrorOf&gt;$&#123;repo1-apache&#125;&lt;/mirrorOf&gt;
-        &lt;url&gt;http://repo1.maven.apache.org/maven2/&lt;/url&gt;
-    &lt;/mirror&gt;
-
-    &lt;!-- repo2 mirrors --&gt;
-    &lt;mirror&gt;
-        &lt;name&gt;repo2-maven&lt;/name&gt;
-        &lt;id&gt;repo2&lt;/id&gt;
-        &lt;mirrorOf&gt;$&#123;repo2&#125;&lt;/mirrorOf&gt;
-        &lt;url&gt;http://repo2.maven.org/maven2/&lt;/url&gt;
-    &lt;/mirror&gt;
-
-    &lt;!-- uk mirrors --&gt;
-    &lt;mirror&gt;
-        &lt;name&gt;uk-maven&lt;/name&gt;
-        &lt;id&gt;uk&lt;/id&gt;
-        &lt;mirrorOf&gt;$&#123;uk&#125;&lt;/mirrorOf&gt;
-        &lt;url&gt;http://uk.maven.org/maven2/&lt;/url&gt;
-    &lt;/mirror&gt;
-
-    &lt;!-- google mirrors --&gt;
-    &lt;mirror&gt;
-        &lt;name&gt;google-maven&lt;/name&gt;
-        &lt;id&gt;google&lt;/id&gt;
-        &lt;mirrorOf&gt;$&#123;google&#125;&lt;/mirrorOf&gt;
-        &lt;url&gt;http://maven.google.com/&lt;/url&gt;
-    &lt;/mirror&gt;
-
-    &lt;!-- china-mirrors --&gt;
-    &lt;mirror&gt;
-        &lt;name&gt;china-maven&lt;/name&gt;
-        &lt;id&gt;china&lt;/id&gt;
-        &lt;mirrorOf&gt;$&#123;china&#125;&lt;/mirrorOf&gt;
-        &lt;url&gt;http://maven.net.cn/content/groups/public/&lt;/url&gt;
-    &lt;/mirror&gt;
-
-    &lt;!-- oschina-mirrors --&gt;
-    &lt;mirror&gt;
-        &lt;name&gt;oschina-maven&lt;/name&gt;
-        &lt;id&gt;oschina&lt;/id&gt;
-        &lt;mirrorOf&gt;$&#123;oschina&#125;&lt;/mirrorOf&gt;
-        &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt;
-    &lt;/mirror&gt;
-
-    &lt;!-- jboss mirrors --&gt;
-    &lt;mirror&gt;
-        &lt;name&gt;jboss-groups-maven&lt;/name&gt;
-        &lt;id&gt;jboss-group&lt;/id&gt;
-        &lt;mirrorOf&gt;$&#123;jboss-groups&#125;&lt;/mirrorOf&gt;
-</code></pre>
-<p><url><a target="_blank" rel="noopener" href="http://repository.jboss.org/nexus/content/groups/public/">http://repository.jboss.org/nexus/content/groups/public/</a></url><br></mirror></p>
 <h2 id="node"><a href="#node" class="headerlink" title="node"></a>node</h2><p>官网<br><a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a><br>npm 官网<br><a target="_blank" rel="noopener" href="https://npm.taobao.org/mirrors/npm/">https://npm.taobao.org/mirrors/npm/</a><br>nvm 官网<br><a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases">https://github.com/coreybutler/nvm-windows/releases</a><br>nodist 官网 nod<br><a target="_blank" rel="noopener" href="https://github.com/nullivex/nodist/releases">https://github.com/nullivex/nodist/releases</a></p>
 <h3 id="windows-6"><a href="#windows-6" class="headerlink" title="windows"></a>windows</h3><p><strong>nodejs 安装包安装</strong><br><strong>nvm 管理工具安装</strong><br>// 删除原有的 node 环境</p>
 <p>// 下载指定的安装程序，安装的路径最好不要带有空格<br><a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases">https://github.com/coreybutler/nvm-windows/releases</a></p>
@@ -650,39 +600,57 @@
 <p>// 解压安装包到指定的目录<br>unzip -d /usr/local/gradle gradle-6.6-bin.zip</p>
 <p>// 配置环境变量<br>export GRADLE_HOME=/usr/local/gradle/gradle-6.6<br>export path=%GRADLE_HOME%/bin</p>
 <p>// 激活一下配置文件<br>source /etc/profile</p>
-<h2 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h2><p>Anaconda 指的是一个开源的 Python 发行版本，其包含了 conda、Python 等 180 多个科学包及其依赖项。 因为包含了大量的科学包，Anaconda 的下载文件比较大（约 531 MB），如果只需要某些包，或者需要节省带宽或存储空间，也可以使用 Miniconda 这个较小的发行版（仅包含 conda 和 Python）。<br>官网<br><a target="_blank" rel="noopener" href="https://www.anaconda.com/">https://www.anaconda.com/</a></p>
-<h3 id="windows-10"><a href="#windows-10" class="headerlink" title="windows"></a>windows</h3><p>// 从官网下载指定的安装包进行安装</p>
-<p>// 配置环境变量<br>软件安装的时候可以自动生成<br>也可以手动进行配置<br>%ANACONDA_HOME%;<br>%ANACONDA_HOME%\Library\mingw-w64\bin;<br>%ANACONDA_HOME%\Library\usr\bin;<br>%ANACONDA_HOME%\Library\bin;<br>%ANACONDA_HOME%\Scripts;</p>
-<h3 id="Linux-9"><a href="#Linux-9" class="headerlink" title="Linux"></a>Linux</h3><p>// 下载 sh 文件直接安装<br>bash Anaconda3-2020.07-Linux-x86_64.sh</p>
-<p>// 配置环境变量<br>export ANACONDA_HOME=/usr/local/anaconda<br>export path=${ANACONDA_HOME}/bin</p>
-<p>// 修改镜像<br>// 在用户目录下生成配置文件.condarc，配置的信息最终都修改到这里<br>conda config</p>
-<p>// 设置清华镜像源<br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</a><br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge</a><br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/</a></p>
-<p>// 设置中科大镜像源<br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/anaconda/pkgs/main/">https://mirrors.ustc.edu.cn/anaconda/pkgs/main/</a><br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/anaconda/pkgs/free/">https://mirrors.ustc.edu.cn/anaconda/pkgs/free/</a><br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/">https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/</a><br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/">https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/</a><br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/">https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/</a><br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/">https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/</a></p>
-<h1 id="设置搜索时显示通道地址"><a href="#设置搜索时显示通道地址" class="headerlink" title="设置搜索时显示通道地址"></a>设置搜索时显示通道地址</h1><p>conda config –set show_channel_urls yes</p>
-<p>// 若源不生效，试着把.condarc 文件中的 - defaults 那行去掉，就不会出现这个问题了<br>// 删除源<br>conda config –remove-key channels</p>
-<h3 id="配置-4"><a href="#配置-4" class="headerlink" title="配置"></a>配置</h3><p>镜像<br>// 在用户目录下生成配置文件.condarc，配置的信息最终都修改到这里<br>conda config</p>
-<p>// 设置清华镜像源<br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</a><br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge</a><br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/</a></p>
-<p>// 设置中科大镜像源<br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/anaconda/pkgs/main/">https://mirrors.ustc.edu.cn/anaconda/pkgs/main/</a><br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/anaconda/pkgs/free/">https://mirrors.ustc.edu.cn/anaconda/pkgs/free/</a><br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/">https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/</a><br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/">https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/</a><br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/">https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/</a><br>conda config –add channels <a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/">https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/</a></p>
-<h1 id="设置搜索时显示通道地址-1"><a href="#设置搜索时显示通道地址-1" class="headerlink" title="设置搜索时显示通道地址"></a>设置搜索时显示通道地址</h1><p>conda config –set show_channel_urls yes</p>
-<p>// 若源不生效，试着把.condarc 文件中的 - defaults 那行去掉，就不会出现这个问题了<br>// 删除源<br>conda config –remove-key channels</p>
-<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p>官网<br><a target="_blank" rel="noopener" href="https://www.python.org/">https://www.python.org/</a></p>
-<h3 id="windows-11"><a href="#windows-11" class="headerlink" title="windows"></a>windows</h3><p>// 下载指定的安装包</p>
-<p>// 安装程序进行安装</p>
-<p>// 如在安装的时候没有指定环境变量，需要设置环境变量</p>
-<h3 id="Linux-10"><a href="#Linux-10" class="headerlink" title="Linux"></a>Linux</h3><p>大部分的 linux 的发行版会自带 python2 的环境<br><strong>命令行安装</strong><br>yum install -y python3.8<br><strong>源码安装</strong><br>// 官网下载最新的源码<br>wget <a target="_blank" rel="noopener" href="https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz">https://www.python.org/ftp/python/3.8.5/Python-3.8.5.tgz</a></p>
-<p>// 新建安装目录，授予权限<br>mkdir /usr/local/python<br>chmod 777 -R /usr/local/python</p>
-<p>// 解压下载的安装包<br>tar -zxvf Python-3.8.5.tgz</p>
-<p>// 配置安装路径<br>./configure –prefix=/usr/local/python</p>
-<p>// 编译<br>make<br>// 安装<br>make install</p>
-<h3 id="配置-5"><a href="#配置-5" class="headerlink" title="配置"></a>配置</h3><h4 id="Linux-11"><a href="#Linux-11" class="headerlink" title="Linux"></a>Linux</h4><p>// linux 下 python 命令默认调用的是 Python 2.x 开发环境，如果你习惯使用 Python 3.x，感觉每次输入 python3 命令有点麻烦，那么你可以修改配置，让 python 命令转而调用 Python 3.x 开发环境。具体命令如下：<br>$sudo unlink /usr/bin/python<br>$sudo ln -s /usr/bin/python3.8 /usr/bin/python</p>
+<h2 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h2><p>Anaconda 指的是一个开源的 Python 发行版本，其包含了 conda、Python 等 180 多个科学包及其依赖项。 因为包含了大量的科学包，Anaconda 的下载文件比较大（约 531 MB），如果只需要某些包，或者需要节省带宽或存储空间，也可以使用 Miniconda 这个较小的发行版（仅包含 conda 和 Python）</p>
+<blockquote>
+<p>​<a target="_blank" rel="noopener" href="https://www.anaconda.com/">https://www.anaconda.com/</a></p>
+</blockquote>
+<h3 id="windows-10"><a href="#windows-10" class="headerlink" title="windows"></a>windows</h3><p>// 从官网下载指定的安装包进行安装<br>// 配置环境变量<br>软件安装的时候可以自动生成<br>也可以手动进行配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%ANACONDA_HOME%;</span><br><span class="line">%ANACONDA_HOME%\Library\mingw-w64\bin;</span><br><span class="line">%ANACONDA_HOME%\Library\usr\bin;</span><br><span class="line">%ANACONDA_HOME%\Library\bin;</span><br><span class="line">%ANACONDA_HOME%\Scripts;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Linux-9"><a href="#Linux-9" class="headerlink" title="Linux"></a>Linux</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 下载sh文件直接安装</span><br><span class="line">bash Anaconda3-2020.07-Linux-x86_64.sh</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 配置环境变量</span><br><span class="line">export ANACONDA_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;anaconda</span><br><span class="line">export path&#x3D;$&#123;ANACONDA_HOME&#125;&#x2F;bin</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 修改镜像</span><br><span class="line">&#x2F;&#x2F; 在用户目录下生成配置文件.condarc，配置的信息最终都修改到这里</span><br><span class="line">conda config</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 设置清华镜像源</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;free&#x2F;</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;conda-forge</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;msys2&#x2F;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 设置中科大镜像源</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;main&#x2F;</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;free&#x2F;</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;conda-forge&#x2F;</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;msys2&#x2F;</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;bioconda&#x2F;</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;menpo&#x2F;</span><br><span class="line"></span><br><span class="line"># 设置搜索时显示通道地址</span><br><span class="line">conda config --set show_channel_urls yes</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 若源不生效，试着把.condarc文件中的 - defaults那行去掉，就不会出现这个问题了</span><br><span class="line">&#x2F;&#x2F; 删除源</span><br><span class="line">conda config --remove-key channels</span><br></pre></td></tr></table></figure>
+
+<h3 id="mac-3"><a href="#mac-3" class="headerlink" title="mac"></a>mac</h3><p>直接从官网下载安装的脚本</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.anaconda.com/products/individual#Downloads">https://www.anaconda.com/products/individual#Downloads</a></p>
+</blockquote>
+<p>运行脚本即可<br>在用户下的.zshrc 或者其它的环境变量文件中配置环境变量即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ANACNODA_HOME=/usr/<span class="built_in">local</span>/anaconda3</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> path=<span class="variable">$&#123;ANACONDA_HOME&#125;</span>/bin</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+<p>brew 安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; search后发现只有图形界面的版本</span><br><span class="line"># brew install anaconda --cask</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-5"><a href="#配置-5" class="headerlink" title="配置"></a>配置</h3><p>镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 在用户目录下生成配置文件.condarc，配置的信息最终都修改到这里</span><br><span class="line">conda config</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 设置清华镜像源</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;free&#x2F;</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;conda-forge</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;msys2&#x2F;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 设置中科大镜像源</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;main&#x2F;</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;anaconda&#x2F;pkgs&#x2F;free&#x2F;</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;conda-forge&#x2F;</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;msys2&#x2F;</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;bioconda&#x2F;</span><br><span class="line">conda config --add channels https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;anaconda&#x2F;cloud&#x2F;menpo&#x2F;</span><br><span class="line"></span><br><span class="line"># 设置搜索时显示通道地址</span><br><span class="line">conda config --set show_channel_urls yes</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 若源不生效，试着把.condarc文件中的 - defaults那行去掉，就不会出现这个问题了</span><br><span class="line">&#x2F;&#x2F; 删除源</span><br><span class="line">conda config --remove-key channels</span><br></pre></td></tr></table></figure>
+
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><blockquote>
+<p>​<a target="_blank" rel="noopener" href="https://www.python.org/">https://www.python.org/</a></p>
+</blockquote>
+<h3 id="windows-11"><a href="#windows-11" class="headerlink" title="windows"></a>windows</h3><p>// 下载指定的安装包<br>// 安装程序进行安装<br>// 如在安装的时候没有指定环境变量，需要设置环境变量</p>
+<h3 id="Linux-10"><a href="#Linux-10" class="headerlink" title="Linux"></a>Linux</h3><p>大部分的 linux 的发行版会自带 python2 的环境<br><strong>命令行安装</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y python3.8</span><br></pre></td></tr></table></figure>
+
+<p><strong>源码安装</strong><br>// 官网下载最新的源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 官网下载最新的源码</span><br><span class="line">wget https:&#x2F;&#x2F;www.python.org&#x2F;ftp&#x2F;python&#x2F;3.8.5&#x2F;Python-3.8.5.tgz</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 新建安装目录，授予权限</span><br><span class="line">mkdir &#x2F;usr&#x2F;local&#x2F;python</span><br><span class="line">chmod 777 -R &#x2F;usr&#x2F;local&#x2F;python</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 解压下载的安装包</span><br><span class="line">tar -zxvf Python-3.8.5.tgz</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 配置安装路径</span><br><span class="line">.&#x2F;configure  --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;python</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 编译</span><br><span class="line">make</span><br><span class="line">&#x2F;&#x2F; 安装</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<h3 id="mac-4"><a href="#mac-4" class="headerlink" title="mac"></a>mac</h3><p>直接从官网系在安装程序包<br>brew 安装</p>
+<h3 id="配置-6"><a href="#配置-6" class="headerlink" title="配置"></a>配置</h3><h4 id="Linux-11"><a href="#Linux-11" class="headerlink" title="Linux"></a>Linux</h4><p>// linux 下 python 命令默认调用的是 Python 2.x 开发环境，如果你习惯使用 Python 3.x，感觉每次输入 python3 命令有点麻烦，那么你可以修改配置，让 python 命令转而调用 Python 3.x 开发环境。具体命令如下：<br>$sudo unlink /usr/bin/python<br>$sudo ln -s /usr/bin/python3.8 /usr/bin/python<br>​</p>
+<h4 id="pip-镜像"><a href="#pip-镜像" class="headerlink" title="pip 镜像"></a>pip 镜像</h4><p>国内源地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple</span><br><span class="line">https:&#x2F;&#x2F;pypi.mirrors.ustc.edu.cn&#x2F;simple</span><br><span class="line">http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>windows<br>在 C:\Users\xx\pip 在新建文件 pip.ini，写入配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url &#x3D; https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host &#x3D; pypi.tuna.tsinghua.edu.cn</span><br></pre></td></tr></table></figure>
+
+<p>linux&amp;mac<br>在文件～/.pip/pip.conf，写入配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url &#x3D; https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host &#x3D; pypi.tuna.tsinghua.edu.cn</span><br></pre></td></tr></table></figure>
+
 <h2 id="Jmeter"><a href="#Jmeter" class="headerlink" title="Jmeter"></a>Jmeter</h2><p>官网<br><a target="_blank" rel="noopener" href="https://jmeter.apache.org/">https://jmeter.apache.org/</a><br>Jmeter 插件管理器<br><a target="_blank" rel="noopener" href="https://jmeter-plugins.org/install/Install/">https://jmeter-plugins.org/install/Install/</a></p>
-<h3 id="windows-12"><a href="#windows-12" class="headerlink" title="windows"></a>windows</h3><p>// 下载编译好的安装包解压到指定的位置即可</p>
-<p>// 配置环境变量<br>JMETER_HOME=\local\jmeter\apache-jmeter-5.3<br>// 在 classpath 中添加<br>;%JMETER_HOME%\lib\ext\ApacheJMeter_core.jar;%JMETER_HOME%\lib\jorphan.jar;%JMETER_HOME%\lib/logkit-2.0.jar;</p>
+<h3 id="windows-12"><a href="#windows-12" class="headerlink" title="windows"></a>windows</h3><p>// 下载编译好的安装包解压到指定的位置即可<br>// 配置环境变量<br>JMETER_HOME=\local\jmeter\apache-jmeter-5.3<br>// 在 classpath 中添加<br>;%JMETER_HOME%\lib\ext\ApacheJMeter_core.jar;%JMETER_HOME%\lib\jorphan.jar;%JMETER_HOME%\lib/logkit-2.0.jar;</p>
 <p>// 点击 jmeter.bat 即可启动该工具</p>
 <h3 id="Linux-12"><a href="#Linux-12" class="headerlink" title="Linux"></a>Linux</h3><p>// 下载编译好的安装包解压到指定的位置即可</p>
 <p>// 配置环境变量<br>JMETER_HOME=\local\jmeter\apache-jmeter-5.3<br>// 在 classpath 中添加<br>;%JMETER_HOME%\lib\ext\ApacheJMeter_core.jar;%JMETER_HOME%\lib\jorphan.jar;%JMETER_HOME%\lib/logkit-2.0.jar;</p>
 <p>// 点击 jmeter.sh 即可启动该工具</p>
-<h3 id="配置-6"><a href="#配置-6" class="headerlink" title="配置"></a>配置</h3><h4 id="安装-jmeter-插件管理器"><a href="#安装-jmeter-插件管理器" class="headerlink" title="安装 jmeter 插件管理器"></a>安装 jmeter 插件管理器</h4><p>下载插件管理器的 jar 包，放置在 lib/ext 目录下即可</p>
+<h3 id="配置-7"><a href="#配置-7" class="headerlink" title="配置"></a>配置</h3><h4 id="安装-jmeter-插件管理器"><a href="#安装-jmeter-插件管理器" class="headerlink" title="安装 jmeter 插件管理器"></a>安装 jmeter 插件管理器</h4><p>下载插件管理器的 jar 包，放置在 lib/ext 目录下即可</p>
 <h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><p>官网<br><a target="_blank" rel="noopener" href="https://redis.io/">https://redis.io/</a><br><a target="_blank" rel="noopener" href="https://redis.cn/">https://redis.cn/</a><br>windows 下维护版本<br><a target="_blank" rel="noopener" href="https://github.com/MicrosoftArchive/redis/releases">https://github.com/MicrosoftArchive/redis/releases</a></p>
 <h3 id="windows-13"><a href="#windows-13" class="headerlink" title="windows"></a>windows</h3><p><strong>安装包安装</strong><br>//点击下载 msi 安装包程序，点击直接进行安装，安装的时候点击配置环境变量</p>
 <p>// redis 各个目录介绍<br>redis-server.exe：服务端程序，提供 redis 服务<br>redis-cli.exe: 客户端程序，通过它连接 redis 服务并进行操作<br>redis-check-dump.exe：本地数据库检查<br>redis-check-aof.exe：更新日志检查<br>redis-benchmark.exe：性能测试，用以模拟同时由 N 个客户端发送 M 个 SETs/GETs 查询 (类似于 Apache 的 ab 工具).<br>redis.windows.conf: 配置文件，将 redis 作为普通软件使用的配置，命令行关闭则 redis 关闭<br>redis.windows-service.conf：配置文件，将 redis 作为系统服务的配置，用以区别开两种不同的使用方式<br><strong>便携版安装</strong><br>// 下载 zip 安装包，解压到指定的目录</p>
@@ -698,7 +666,7 @@
 <p>// 进入目录，进行编译安装<br>make<br>cd src<br>make install</p>
 <p>// 安装为系统服务并后台启动、根据不同的情况修改不同的配置<br>cd utils<br>./install_server.sh</p>
 <p>// 查看 redis 服务启动状态<br>systemctl status redis_6379.service</p>
-<h3 id="配置-7"><a href="#配置-7" class="headerlink" title="配置"></a>配置</h3><p>// 设置允许远程连接，重启服务<br>vim /etc/redis/6379.conf<br>ip 绑定修改为 bind 0.0.0.0</p>
+<h3 id="配置-8"><a href="#配置-8" class="headerlink" title="配置"></a>配置</h3><p>// 设置允许远程连接，重启服务<br>vim /etc/redis/6379.conf<br>ip 绑定修改为 bind 0.0.0.0</p>
 <p>// 设置密码，重启服务<br>vim /etc/redis/6379.conf<br>requirepass 123</p>
 <h2 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h2><p>官网<br><a target="_blank" rel="noopener" href="https://www.mysql.com/">https://www.mysql.com/</a><br>mysql 社区版本下载地址<br><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p>
 <h3 id="windows-14"><a href="#windows-14" class="headerlink" title="windows"></a>windows</h3><p>// 卸载原有的 mysql 环境<br>win + r 打开运行窗口，输入 services.msc，关闭 mysql 服务<br>控制面板 -》 卸载程序 -》 卸载 mysql<br>win + r 打开运行窗口，输入 regedit 打开注册表，找到如下目录进行删除<br>HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Eventlog\Application\MySQL<br>HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\Eventlog\Application\MySQL<br>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application\MySQL<br>打开 cmd，输入 sc delete mysql，删除 mysql 服务，services.msc 中的服务内容在重启主机后消失<br>删除 mysql 安装目录下的文件</p>
@@ -728,7 +696,7 @@
 <p>// 检查 mysqld 是否已经生效<br>chkconfig –list mysqld</p>
 <p>// 启动 mysql 服务<br>service mysqld start</p>
 <p>// 将 mysql 加入环境变量<br>export MYSQL_HOME=/usr/local/mysql/mysql-5.7.30<br>export path=${MYSQL_HOME}/bin</p>
-<h3 id="配置-8"><a href="#配置-8" class="headerlink" title="配置"></a>配置</h3><p><strong>登录</strong><br>mysql -h hostname|hostlP -p port -u username -p DatabaseName -e “SQL 语句”mysql -u root -p<br>-h：指定连接 MySQL 服务器的地址。可以用两种方式表示，hostname 为主机名，hostIP 为主机 IP 地址。<br>-p：指定连接 MySQL 服务器的端口号，port 为连接的端口号。MySQL 的默认端口号是 3306，因此如果不指定该参数，默认使用 3306 连接 MySQL 服务器。<br>-u：指定连接 MySQL 服务器的用户名，username 为用户名。<br>-p：提示输入密码，即提示 Enter password。<br>DatabaseName：指定连接到 MySQL 服务器后，登录到哪一个数据库中。如果没有指定，默认为 mysql 数据库。<br>-e：指定需要执行的 SQL 语句，登录 MySQL 服务器后执行这个 SQL 语句，然后退出 MySQL 服务器。<br><strong>修改密码</strong><br>使用 alter 进行修改密码<br>ALTER USER USER() IDENTIFIED BY ‘Reid790!@#$’;<br>Query OK, 0 rows affected (0.00 sec)</p>
+<h3 id="配置-9"><a href="#配置-9" class="headerlink" title="配置"></a>配置</h3><p><strong>登录</strong><br>mysql -h hostname|hostlP -p port -u username -p DatabaseName -e “SQL 语句”mysql -u root -p<br>-h：指定连接 MySQL 服务器的地址。可以用两种方式表示，hostname 为主机名，hostIP 为主机 IP 地址。<br>-p：指定连接 MySQL 服务器的端口号，port 为连接的端口号。MySQL 的默认端口号是 3306，因此如果不指定该参数，默认使用 3306 连接 MySQL 服务器。<br>-u：指定连接 MySQL 服务器的用户名，username 为用户名。<br>-p：提示输入密码，即提示 Enter password。<br>DatabaseName：指定连接到 MySQL 服务器后，登录到哪一个数据库中。如果没有指定，默认为 mysql 数据库。<br>-e：指定需要执行的 SQL 语句，登录 MySQL 服务器后执行这个 SQL 语句，然后退出 MySQL 服务器。<br><strong>修改密码</strong><br>使用 alter 进行修改密码<br>ALTER USER USER() IDENTIFIED BY ‘Reid790!@#$’;<br>Query OK, 0 rows affected (0.00 sec)</p>
 <p>mysql&gt; ALTER USER ‘root’@’localhost’ IDENTIFIED BY ‘Tom579#$%^&amp;’; #针对 localhost<br>Query OK, 0 rows affected (0.00 sec)</p>
 <p>或者先关闭其密码策略修改<br>mysql&gt; select @@validate_password_length;<br>ERROR 1820 (HY000): Unknown error 1820<br>mysql&gt; ALTER USER USER() IDENTIFIED BY ‘12345678’;<br>Query OK, 0 rows affected (0.00 sec)<br>使用 set 修改用户密码<br>在 MySQL 中，只有 root 用户可以通过更新 MySQL 数据库来更改密码。使用 root 用户登录到 MySQL 服务器后，可以使用 SET 语句来修改普通用户密码。语法格式如下：<br>SET PASSWORD FOR ‘username’@’hostname’ = PASSWORD (‘newpwd’);<br>其中，username 参数是普通用户的用户名，hostname 参数是普通用户的主机名，newpwd 是要更改的新密码。<br>注意：新密码必须使用 PASSWORD() 函数来加密，如果不使用 PASSWORD() 加密，也会执行成功，但是用户会无法登录。<br>如果是普通用户修改密码，可省略 FOR 子句来更改自己的密码。语法格式如下：<br>SET PASSWORD = PASSWORD(‘newpwd’);<br>使用 update 修改用户密码<br>使用 root 用户登录 MySQL 服务器后，可以使用 UPDATE 语句修改 MySQL 数据库的 user 表的 authentication_string 字段，从而修改普通用户的密码。UPDATA 语句的语法如下：<br>UPDATE MySQL.user SET authentication_string = PASSWORD(“newpwd”) WHERE User = “username” AND Host = “hostname”;<br>其中，username 参数是普通用户的用户名，hostname 参数是普通用户的主机名，newpwd 是要更改的新密码。<br>注意，执行 UPDATE 语句后，需要执行 FLUSH PRIVILEGES 语句重新加载用户权限。<br>使用 grant 修改密码<br>除了前面介绍的方法，还可以在全局级别使用 GRANT USAGE 语句指定某个账户的密码而不影响账户当前的权限。需要注意的是，使用 GRANT 语句修改密码，必须拥有 GRANT 权限。一般情况下最好使用该方法来指定或修改密码。语法格式如下：<br>GRANT USAGE ON <em>.</em> TO ‘user’@’hostname’ IDENTIFIED BY ‘newpwd’;<br>其中，username 参数是普通用户的用户名，hostname 参数是普通用户的主机名，newpwd 是要更改的新密码。<br>使用 mysqladmin 命令在命令行指定新密码<br>root 用户可以使用 mysqladmin 命令来修改密码，mysqladmin 的语法格式如下：<br>mysqladmin -u username -h hostname -p password “newpwd”<br>语法参数说明如下：<br>usermame 指需要修改密码的用户名称，在这里指定为 root 用户；<br>hostname 指需要修改密码的用户主机名，该参数可以不写，默认是 localhost；<br>password 为关键字，而不是指旧密码；<br>newpwd 为新设置的密码，必须用双引号括起来。如果使用单引号会引发错误，可能会造成修改后的密码不是你想要的。<br>使用 SET 语句修改 root 用户的密码<br>SET PASSWORD 语句可以用来重新设置其他用户的登录密码或者自己使用的账户的密码。使用 SET 语句修改密码的语法结构如下：<br>SET PASSWORD = PASSWORD (“rootpwd”);<br>跳过安全验证 skip-grant-tables<br>// 在忘记 MySQL 密码的情况下，可以通过 –skip-grant-tables 关闭服务器的认证，然后重置 root 的密码，具体操作步骤如下。<br>// 输入 mysqld –console –skip-grant-tables –shared-memory 命令。–skip-grant-tables 会让 MySQL 服务器跳过验证步骤，允许所有用户以匿名的方式，无需做密码验证就可以直接登录 MySQL 服务器，并且拥有所有的操作权限。<br>// 上一个 DOS 窗口不要关闭，打开一个新的 DOS 窗口，此时仅输入 mysql 命令，不需要用户名和密码，即可连接到 MySQL。<br>// 输入命令 update mysql.user set authentication_string=password(‘root’) where user=’root’ and Host =’localhost’; 设置新密码。<br>注意：MySQL 5.7 版本中的 user 表里已经去掉了 password 字段，改为了 authentication_string。<br>// 刷新权限（必须步骤），输入 flush privileges;命令。<br>// 重启 mysql 服务键入新密码登录即可<br>使用 mysql_secure_installation<br>[root@node1 db]# mysql_secure_installation</p>
 <p>Securing the MySQL server deployment.</p>
@@ -934,7 +902,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/local_config/" data-id="ckp16smv1000hbin42ibzb6r2" data-title="local_config" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/local_config/" data-id="ckp189uxf000henn5aed54fvo" data-title="local_config" class="article-share-link">Share</a>
       
       
       
@@ -973,7 +941,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test_two/" data-id="ckp16smuc000abin4685uetc9" data-title="test_two" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/test_two/" data-id="ckp189uwm000aenn59zuva5hu" data-title="test_two" class="article-share-link">Share</a>
       
       
       
@@ -1012,7 +980,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test_one/" data-id="ckp16smub0009bin46tpy9neu" data-title="test_one" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/test_one/" data-id="ckp189uwl0009enn52cbt9n3v" data-title="test_one" class="article-share-link">Share</a>
       
       
       
@@ -1051,7 +1019,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test/" data-id="ckp16smua0008bin4fnu88i72" data-title="test" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/test/" data-id="ckp189uwk0008enn50zd4ftg1" data-title="test" class="article-share-link">Share</a>
       
       
       
