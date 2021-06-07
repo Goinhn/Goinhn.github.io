@@ -73,8 +73,8 @@
   
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/06/02/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-06-02T11:53:31.613Z" itemprop="datePublished">2021-06-02</time>
+    <a href="/2021/06/07/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2021-06-07T09:10:38.466Z" itemprop="datePublished">2021-06-07</time>
 </a>
     
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/02/hello-world/">Hello World</a>
+      <a class="p-name article-title" href="/2021/06/07/hello-world/">Hello World</a>
     </h1>
   
 
@@ -110,7 +110,57 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/02/hello-world/" data-id="ckpfew4v60000jenb46n80fj9" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/07/hello-world/" data-id="ckpmea2270000fxn66cyi6k1g" data-title="Hello World" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-yuque/api安全保证" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/02/yuque/api%E5%AE%89%E5%85%A8%E4%BF%9D%E8%AF%81/" class="article-date">
+  <time class="dt-published" datetime="2021-06-02T12:28:14.000Z" itemprop="datePublished">2021-06-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/02/yuque/api%E5%AE%89%E5%85%A8%E4%BF%9D%E8%AF%81/">api安全保证</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>开放接口存在的问题：</p>
+<ul>
+<li>请求来源是否合法</li>
+<li>请求参数是否被篡改</li>
+<li>请求的唯一性</li>
+</ul>
+<p>​</p>
+<h2 id="参数签名"><a href="#参数签名" class="headerlink" title="参数签名"></a>参数签名</h2><p>设置发送参数中对应的安全参数，signature、nonce、timestamp</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;key1&quot;</span>: <span class="string">&quot;value1&quot;</span>,</span><br><span class="line">  <span class="string">&quot;key2&quot;</span>: <span class="string">&quot;value2&quot;</span>,</span><br><span class="line">  <span class="string">&quot;key3&quot;</span>: <span class="string">&quot;value3&quot;</span>,</span><br><span class="line">  <span class="string">&quot;security&quot;</span>: &#123;</span><br><span class="line">  	// 签名算法生成的签名</span><br><span class="line">  	<span class="string">&quot;signature&quot;</span>: <span class="string">&quot;9070D6BBE067283F2A25BE9ACBE0211A&quot;</span>,</span><br><span class="line">    // 随机数</span><br><span class="line">    <span class="string">&quot;nonce&quot;</span>: <span class="string">&quot;fahi7481fsa&quot;</span>,</span><br><span class="line">    // 当前的时间戳</span><br><span class="line">    <span class="string">&quot;timestamp&quot;</span>: <span class="string">&quot;1622638158&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>signature = sign_function(nonce + secert + timestamp + key1value1key2value2key3value3)<br>将其它的参数按照字母的顺序进行排序进行拼接，同时加上最后的随机数、时间戳、后台的秘密数字。计算签名之后传递给后端进行校验，后端设置统一的拦截器进行校验。通过统一相同的签名算法。<br>​</p>
+<p>timestamp 保证重放攻击，当前的链接在一定的时间内有效。<br>nonuc 保证当前的签名算法隐秘性，使得被找到规律性的可能降低<br>secert 保证加密签名的唯一性</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/02/yuque/api%E5%AE%89%E5%85%A8%E4%BF%9D%E8%AF%81/" data-id="ckpmea22f0002fxn6dxqp578c" data-title="api安全保证" class="article-share-link">Share</a>
       
       
       
@@ -155,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/01/yuque/project_communication/" data-id="ckpfew4vk000ajenb3nmm0r5m" data-title="project_communication" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/01/yuque/project_communication/" data-id="ckpmea22q000bfxn6dki19ri2" data-title="project_communication" class="article-share-link">Share</a>
       
       
       
@@ -271,7 +321,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/01/yuque/project_management/" data-id="ckpfew4vl000bjenb7pvhe3mm" data-title="project_management" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/01/yuque/project_management/" data-id="ckpmea22r000cfxn61vni8nev" data-title="project_management" class="article-share-link">Share</a>
       
       
       
@@ -361,7 +411,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/30/yuque/R&D%20Documentation/" data-id="ckpfew4vb0001jenbh1h8arpy" data-title="R&amp;D Documentation" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/30/yuque/R&D%20Documentation/" data-id="ckpmea22d0001fxn6cu2wcq01" data-title="R&amp;D Documentation" class="article-share-link">Share</a>
       
       
       
@@ -431,7 +481,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/26/yuque/presentation_skill/" data-id="ckpfew4vj0009jenbh19wca0u" data-title="presentation_skill" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/26/yuque/presentation_skill/" data-id="ckpmea22o000afxn6fquo3ohp" data-title="presentation_skill" class="article-share-link">Share</a>
       
       
       
@@ -469,7 +519,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/26/yuque/code_skill/" data-id="ckpfew4ve0003jenbgyluhk1h" data-title="code_skill" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/26/yuque/code_skill/" data-id="ckpmea22h0004fxn67pr82x4t" data-title="code_skill" class="article-share-link">Share</a>
       
       
       
@@ -531,7 +581,7 @@
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 配置如下的两条规则</span><br><span class="line">Regular expression: \*\*B0100</span><br><span class="line">Action: Run Silent Coprocess</span><br><span class="line">Parameters: /usr/<span class="built_in">local</span>/bin/iterm2-send-zmodem.sh</span><br><span class="line"></span><br><span class="line">Regular expression: \*\*B00000000000000</span><br><span class="line">Action: Run Silent Coprocess</span><br><span class="line">Parameters: /usr/<span class="built_in">local</span>/bin/iterm2-recv-zmodem.sh</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/03VoOC.png#id=YhK6r&originHeight=128&originWidth=802&originalType=binary&status=done&style=none"></p>
+<p><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/03VoOC.png#id=YhK6r&originHeight=128&originWidth=802&originalType=binary%E2%88%B6=1&status=done&style=none"></p>
 <h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><p>zsh：shell 工具<br>oh-my-zsh：zsh 搭配的开源配置的工具<br>​</p>
 <p>安装 oh-my-zsh</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
@@ -544,13 +594,39 @@
 <p>安装缺少的字体</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 下载字体库</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/powerline/fonts</span><br><span class="line"></span><br><span class="line">// 安装字体库</span><br><span class="line"><span class="built_in">cd</span> fonts &amp;&amp; ./install.sh</span><br></pre></td></tr></table></figure>
 
-<p>在 iterm 中选择安装的字体<br><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/xUUisZ.png#id=ttDC5&originHeight=946&originWidth=1886&originalType=binary&status=done&style=none"><br>配置自动提醒插件</p>
+<p>在 iterm 中选择安装的字体<br><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/xUUisZ.png#id=ttDC5&originHeight=946&originWidth=1886&originalType=binary%E2%88%B6=1&status=done&style=none"><br>配置自动提醒插件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 下载指定的插件</span><br><span class="line"><span class="built_in">cd</span> ~/.oh-my-zsh/custom/plugins/</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions.git</span><br><span class="line"></span><br><span class="line">// 添加插件</span><br><span class="line">vim ~/.zshrc</span><br><span class="line">plugins=(</span><br><span class="line">   git</span><br><span class="line">   zsh-autosuggestions</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 修改提示字体的颜色</span><br><span class="line">vim ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh</span><br><span class="line"><span class="built_in">typeset</span> -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=<span class="string">&#x27;fg=4&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+<p>zsh 环境变量文件：</p>
+<ul>
+<li>.zshenv<ul>
+<li>.zshenv 总是被读取,所以通常把$PATH,$EDITOR 等变量写在这里,这样无论是在 shell 交互,或者运行程序都会读取此文件</li>
+</ul>
+</li>
+<li>.zshrc<ul>
+<li>.zshrc 主要用在交互 shell,所以主要是为 shell 服务的,比如对 shell 做的一些个性化设置都可以在这里写入</li>
+</ul>
+</li>
+<li>.zlogin<ul>
+<li>.zlogin 在 login shell 的时候读取,所以比如 X 系统启动的时候会读取此文件,所以不会再运行中重复读取</li>
+</ul>
+</li>
+<li>.zprofile<ul>
+<li>.zprofile 是给 ksh 用户的一个.zlogin 的替代品,所以我们如果使用了.zlogin 就不必再关心此文件</li>
+</ul>
+</li>
+<li>.zlogout<ul>
+<li>.zlogout 这个就很好理解了, 退出终端的时候读取,用于做一些清理工作,一般我们也用不上</li>
+</ul>
+</li>
+</ul>
+<p>读取的顺序：<br>.zshenv → [.zprofile if login] → [.zshrc if interactive] → [.zlogin if login] → [.zlogout sometimes].</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/mac_terminal/" data-id="ckpfew4vh0007jenbalbx9gji" data-title="mac_terminal" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/mac_terminal/" data-id="ckpmea22m0008fxn69nf68kta" data-title="mac_terminal" class="article-share-link">Share</a>
       
       
       
@@ -614,7 +690,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/linux_tools/" data-id="ckpfew4vg0005jenb6lu5fi70" data-title="linux_tools" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/linux_tools/" data-id="ckpmea22k0006fxn62sfo3oaw" data-title="linux_tools" class="article-share-link">Share</a>
       
       
       
@@ -743,80 +819,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/linux_terminal/" data-id="ckpfew4vu000ljenbdvaygj6h" data-title="linux_terminal" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-yuque/windows_system" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/05/21/yuque/windows_system/" class="article-date">
-  <time class="dt-published" datetime="2021-05-21T02:32:58.000Z" itemprop="datePublished">2021-05-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/05/21/yuque/windows_system/">windows_system</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="系统下载"><a href="#系统下载" class="headerlink" title="系统下载"></a>系统下载</h2><ul>
-<li><p>Microsoft 官方网址</p>
-<blockquote>
-<p>​<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/software-download">https://www.microsoft.com/zh-cn/software-download</a></p>
-</blockquote>
-</li>
-<li><p>MSDN</p>
-<blockquote>
-<p>​<a target="_blank" rel="noopener" href="https://msdn.itellyou.cn/">https://msdn.itellyou.cn/</a></p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://next.itellyou.cn/">https://next.itellyou.cn/</a></p>
-</blockquote>
-<p>​</p>
-<h2 id="文件校验"><a href="#文件校验" class="headerlink" title="文件校验"></a>文件校验</h2><p>通过校验文件的哈希值来查看是否是官方正版的系统镜像</p>
-<h3 id="certutil"><a href="#certutil" class="headerlink" title="certutil"></a>certutil</h3><p>文档</p>
-<blockquote>
-<p>​<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil">https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil</a></p>
-</blockquote>
-<p>certutil -hashfile filepath hashtype</p>
-<h3 id="get-filehash"><a href="#get-filehash" class="headerlink" title="get-filehash"></a>get-filehash</h3><p>官方文档</p>
-<blockquote>
-<p>​<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7">https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7</a></p>
-</blockquote>
-<p>get-filehash filepath -algorithm hashtype|format-list<br>// 如果校验的文件路径比较复杂，例如路径中包含空格、括号等特殊符号，需要在路径前后加上英文的双引号<br>// 不添加-algorithm hashtype 的话默认为 sha256 校验</p>
-<h2 id="文件类型"><a href="#文件类型" class="headerlink" title="文件类型"></a>文件类型</h2><h3 id="iso"><a href="#iso" class="headerlink" title="iso"></a>iso</h3><p>ISO 映像是一种<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%85%89%E7%A2%9F">光盘</a>的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E5%AD%98%E6%A1%A3%E6%96%87%E4%BB%B6&action=edit&redlink=1">存档文件</a>，是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%A3%81%E7%9B%98%E6%98%A0%E5%83%8F">磁盘映像</a>的类型之一，数据由一张<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%85%89%E7%A2%9F">光盘</a>的每个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%A3%81%E7%9B%98%E6%89%87%E5%8C%BA">扇区</a>组成，这包括光盘的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F">文件系统</a>。<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/ISO%E6%98%A0%E5%83%8F#cite_note-1">[1]</a>ISO映像文件通常采用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D">文件扩展名</a>.iso。名称ISO取自用于<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/CD-ROM">CD-ROM</a>介质的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/ISO_9660">ISO 9660</a>文件系统，但ISO映像也可包含<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%95%B8%E7%A2%BC%E5%A4%9A%E5%8A%9F%E8%83%BD%E5%BD%B1%E9%9F%B3%E5%85%89%E7%A2%9F">DVD</a>和<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%93%9D%E5%85%89%E5%85%89%E7%9B%98">蓝光光盘</a>使用的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%80%9A%E7%94%A8%E5%85%89%E7%A2%9F%E6%A0%BC%E5%BC%8F">UDF</a>（ISO/IEC 13346）文件系统。<br>ISO 映像可以使用三种方式创建：使用磁盘映像软件从光盘创建，使用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%85%89%E7%9B%98%E5%88%B6%E4%BD%9C%E8%BD%AF%E4%BB%B6%E5%88%97%E8%A1%A8">光盘制作软件</a>从一系列文件创建，从另一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E7%A3%81%E7%9B%98%E6%98%A0%E5%83%8F%E6%96%87%E4%BB%B6&action=edit&redlink=1">磁盘映像文件</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E8%BD%AC%E6%8D%A2&action=edit&redlink=1">转换</a>而成。在可引导光盘上分发的软件很多都有可下载的 ISO 映像格式，并且类似的 ISO 映像大多可以写入光盘（例如 CD 或 DVD）中。</p>
-<h3 id="ngr"><a href="#ngr" class="headerlink" title="ngr"></a>ngr</h3><p>是以.nrg 作为<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%87%92%E9%8C%84">刻录</a>映像档的扩展名，是由<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Nero_AG">Nero AG</a>公司为<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Nero_Burning_ROM">Nero Burning ROM</a>工具软件而创建。<br>一些相对于 Nero Burning ROM 的刻录软件，例如<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Alcohol_120%25">Alcohol 120%</a>和<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Daemon_Tools">Daemon Tools</a>等，都可以虚拟光盘设备读取 NRG 档。<br>但普遍来说，NRG 档不是站在时代的尖端（例如 ISO 映像档），而 Nero AG 旗下的软件皆与其有着兼容性。</p>
-<h3 id="img"><a href="#img" class="headerlink" title="img"></a>img</h3><p><strong>IMG</strong>是一种文件归档格式（archive format），主要是为了创建磁盘的映像文件（disk image），它可以用来封装存储整个磁盘（通常指软磁盘，Floppy Disk 或 Diskette）或整片光盘的内容，使用”.IMG”这个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D">扩展名</a>的文件就是利用这种文件格式来创建的。<br>.IMG 这个文件格式可视为<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/ISO_9000">.ISO</a>格式的一种<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E8%B6%85%E9%9B%86%E5%90%88&action=edit&redlink=1">超集合</a>。由于.ISO 只能封存使用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=ISO9660&action=edit&redlink=1">ISO9660</a>和<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%80%9A%E7%94%A8%E5%85%89%E7%A2%9F%E6%A0%BC%E5%BC%8F">UDF</a>这两种<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%AA%94%E6%A1%88%E7%B3%BB%E7%B5%B1">文件系统</a>的存储介质，意即.ISO 只能拿来封存<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/CD">CD</a>或<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/DVD">DVD</a>，因此才发展出了.IMG，它是以.ISO 格式为基础另外新增可封存使用其它文件系统的存储介质的能力，.IMG 可<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%90%91%E5%BE%8C%E7%9B%B8%E5%AE%B9">向后兼容</a>于.ISO，如果是拿来封存 CD 或 DVD，则使用.IMG 和.ISO 这两种格式所产生出来的内容是一样的。<br>不要将这个文件格式误认为是<em>麦金塔磁盘映像档</em>（Macintosh Disk Image），麦金塔磁盘映像档是由 Aladdin Systems（现在称为 Allume Systems）ShrinkWrap 与 Apple Disk Copy for Mac OS 这两个工具软件所共享的扩展名。</p>
-<h3 id="gho"><a href="#gho" class="headerlink" title="gho"></a>gho</h3><p>GHO 文件简单来说就是一个系统的压缩包，是用克隆工具打包好的一个完整系统，又称 GHOST 系统，我们用一键还原工具备份系统就会生成一个 GHO 文件，但是这样的 GHO 文件只适应于本台电脑，一但电脑配置不相同，就会出现驱动不兼容而蓝屏。为了解决就这个问题，于是就出现各种 GHOST 系统，能够安装在所有不同的电脑上，因为在 GHO 文件中添加了 IDE ATA / ATAPI 控制器驱动，和各种硬件的万能驱动，能够在安装时能识别电脑的硬件并为电脑安装上驱动，所以 GHOST 系统更受欢迎，因为安装速度更快，而且在安装后不用为系统安装驱动了。</p>
-<h2 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h2><p>Legacy BIOS 模式下的 Windows 只允许被装在 MBR 分区表下面。<br>UEFI BIOS 模式下的 Windows 只允许被装在 GPT 分区下。</p>
-<h3 id="系统内直接安装"><a href="#系统内直接安装" class="headerlink" title="系统内直接安装"></a>系统内直接安装</h3><p>通过系统内的恢复和高级启动的方式来直接进行重置系统<br><img src="https://cdn.nlark.com/yuque/0/2021/png/1430920/1621564388615-59d4adbf-fdf5-4d07-a3c8-df67c8a92361.png#clientId=u85cc1486-0fa3-4&from=paste&height=372&id=u66c83567&margin=%5Bobject%20Object%5D&originHeight=743&originWidth=1010&originalType=url&status=done&style=none&taskId=u580322bd-8e1b-4c20-848b-e8096144096&width=505"></p>
-<h3 id="PE-系统安装"><a href="#PE-系统安装" class="headerlink" title="PE 系统安装"></a>PE 系统安装</h3><p>通过 PE 工具箱来制作 PE 系统，一般放置在 U 盘中，在电脑开机时进入 boot 启动界面来选择进入 U 盘中的 PE 系统，通过分区工具来还原分区并将新的系统装入分区中</p>
-<h3 id="微软官方安装"><a href="#微软官方安装" class="headerlink" title="微软官方安装"></a>微软官方安装</h3><p>进入官方的系统安装网站，下载官方的安装工具软件（MediaCreationTool2004.exe）来进行安装</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/windows_system/" data-id="ckpfew4vq000hjenb49v6baft" data-title="windows_system" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/linux_terminal/" data-id="ckpmea231000mfxn65x2j4kuz" data-title="linux_terminal" class="article-share-link">Share</a>
       
       
       
@@ -864,7 +867,11 @@
       <ul>
         
           <li>
-            <a href="/2021/06/02/hello-world/">Hello World</a>
+            <a href="/2021/06/07/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/02/yuque/api%E5%AE%89%E5%85%A8%E4%BF%9D%E8%AF%81/">api安全保证</a>
           </li>
         
           <li>
@@ -877,10 +884,6 @@
         
           <li>
             <a href="/2021/05/30/yuque/R&D%20Documentation/">R&amp;D Documentation</a>
-          </li>
-        
-          <li>
-            <a href="/2021/05/26/yuque/presentation_skill/">presentation_skill</a>
           </li>
         
       </ul>

@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>test_two | Hexo</title>
+  <title>api安全保证 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="this is two">
+  <meta name="description" content="开放接口存在的问题：  请求来源是否合法 请求参数是否被篡改 请求的唯一性  ​ 参数签名设置发送参数中对应的安全参数，signature、nonce、timestamp 12345678910111213&amp;#123;	&quot;key1&quot;: &quot;value1&quot;,  &quot;key2&quot;: &quot;value2&quot;,  &quot;key3&amp;q">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test_two">
-<meta property="og:url" content="http://example.com/2021/04/20/yuque/test_two/index.html">
+<meta property="og:title" content="api安全保证">
+<meta property="og:url" content="http://example.com/2021/06/02/yuque/api%E5%AE%89%E5%85%A8%E4%BF%9D%E8%AF%81/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="this is two">
+<meta property="og:description" content="开放接口存在的问题：  请求来源是否合法 请求参数是否被篡改 请求的唯一性  ​ 参数签名设置发送参数中对应的安全参数，signature、nonce、timestamp 12345678910111213&amp;#123;	&quot;key1&quot;: &quot;value1&quot;,  &quot;key2&quot;: &quot;value2&quot;,  &quot;key3&amp;q">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-04-20T04:19:09.000Z">
-<meta property="article:modified_time" content="2021-06-07T09:11:17.672Z">
+<meta property="article:published_time" content="2021-06-02T12:28:14.000Z">
+<meta property="article:modified_time" content="2021-06-07T09:11:17.700Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -73,10 +73,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-yuque/test_two" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-yuque/api安全保证" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/04/20/yuque/test_two/" class="article-date">
-  <time class="dt-published" datetime="2021-04-20T04:19:09.000Z" itemprop="datePublished">2021-04-20</time>
+    <a href="/2021/06/02/yuque/api%E5%AE%89%E5%85%A8%E4%BF%9D%E8%AF%81/" class="article-date">
+  <time class="dt-published" datetime="2021-06-02T12:28:14.000Z" itemprop="datePublished">2021-06-02</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      test_two
+      api安全保证
     </h1>
   
 
@@ -95,12 +95,23 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>this is two</p>
+        <p>开放接口存在的问题：</p>
+<ul>
+<li>请求来源是否合法</li>
+<li>请求参数是否被篡改</li>
+<li>请求的唯一性</li>
+</ul>
+<p>​</p>
+<h2 id="参数签名"><a href="#参数签名" class="headerlink" title="参数签名"></a>参数签名</h2><p>设置发送参数中对应的安全参数，signature、nonce、timestamp</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;key1&quot;</span>: <span class="string">&quot;value1&quot;</span>,</span><br><span class="line">  <span class="string">&quot;key2&quot;</span>: <span class="string">&quot;value2&quot;</span>,</span><br><span class="line">  <span class="string">&quot;key3&quot;</span>: <span class="string">&quot;value3&quot;</span>,</span><br><span class="line">  <span class="string">&quot;security&quot;</span>: &#123;</span><br><span class="line">  	// 签名算法生成的签名</span><br><span class="line">  	<span class="string">&quot;signature&quot;</span>: <span class="string">&quot;9070D6BBE067283F2A25BE9ACBE0211A&quot;</span>,</span><br><span class="line">    // 随机数</span><br><span class="line">    <span class="string">&quot;nonce&quot;</span>: <span class="string">&quot;fahi7481fsa&quot;</span>,</span><br><span class="line">    // 当前的时间戳</span><br><span class="line">    <span class="string">&quot;timestamp&quot;</span>: <span class="string">&quot;1622638158&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>signature = sign_function(nonce + secert + timestamp + key1value1key2value2key3value3)<br>将其它的参数按照字母的顺序进行排序进行拼接，同时加上最后的随机数、时间戳、后台的秘密数字。计算签名之后传递给后端进行校验，后端设置统一的拦截器进行校验。通过统一相同的签名算法。<br>​</p>
+<p>timestamp 保证重放攻击，当前的链接在一定的时间内有效。<br>nonuc 保证当前的签名算法隐秘性，使得被找到规律性的可能降低<br>secert 保证加密签名的唯一性</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test_two/" data-id="ckpmea22u000gfxn6e67yfer6" data-title="test_two" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/02/yuque/api%E5%AE%89%E5%85%A8%E4%BF%9D%E8%AF%81/" data-id="ckpmea22f0002fxn6dxqp578c" data-title="api安全保证" class="article-share-link">Share</a>
       
       
       
@@ -110,19 +121,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/04/20/yuque/local_config/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/06/07/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          local_config
+          Hello World
         
       </div>
     </a>
   
   
-    <a href="/2021/04/20/yuque/test_one/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/06/01/yuque/project_communication/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">test_one</div>
+      <div class="article-nav-title">project_communication</div>
     </a>
   
 </nav>
