@@ -74,7 +74,7 @@
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/06/30/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-06-30T13:20:01.690Z" itemprop="datePublished">2021-06-30</time>
+  <time class="dt-published" datetime="2021-06-30T13:28:58.678Z" itemprop="datePublished">2021-06-30</time>
 </a>
     
   </div>
@@ -110,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/30/hello-world/" data-id="ckqjib8xs000098n70u171snr" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/30/hello-world/" data-id="ckqjina1d00009zn89u8o7pzd" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -145,7 +145,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <p>定义一个枚举的类型<br>枚举类的默认构造方法是 private，使用的时候不需要加权限修改参数</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">ColorEnum</span> </span>&#123;</span><br><span class="line">    YELLOW(),</span><br><span class="line">    BLUE,</span><br><span class="line">    GREEN,</span><br><span class="line">    RED,</span><br><span class="line">    ORANGE,</span><br><span class="line">    BLACK,</span><br><span class="line">    WHITE;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer code;</span><br><span class="line">    <span class="keyword">private</span> String desc;</span><br><span class="line"></span><br><span class="line">    ColoreEnum(Integer code, String desc) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">ColorEnum</span> </span>&#123;</span><br><span class="line">    YELLOW(),</span><br><span class="line">    BLUE,</span><br><span class="line">    GREEN,</span><br><span class="line">    RED,</span><br><span class="line">    ORANGE,</span><br><span class="line">    BLACK,</span><br><span class="line">    WHITE;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer code;</span><br><span class="line">    <span class="keyword">private</span> String desc;</span><br><span class="line"></span><br><span class="line">    ColoreEnum(Integer code, String desc) &#123;</span><br><span class="line">    	<span class="keyword">this</span>.code = code;</span><br><span class="line">        <span class="keyword">this</span>.desc = desc;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">return</span> <span class="keyword">this</span>.code;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDesc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.desc;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>结合 switch 普通进行使用：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public static void testSwitchEnum(ColorEnum colorEnum) &#123;</span><br><span class="line">       switch (colorEnum) &#123;</span><br><span class="line">           <span class="keyword">case</span> YELLOW:</span><br><span class="line">               <span class="built_in">break</span>;</span><br><span class="line">           <span class="keyword">case</span> BLACK:</span><br><span class="line">               <span class="built_in">break</span>;</span><br><span class="line">           default:</span><br><span class="line">               <span class="built_in">break</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
@@ -154,11 +154,17 @@
 <blockquote>
 <p>an enum switch case label must be the unqualified name of an enumeration constant</p>
 </blockquote>
+<p>​</p>
+<p>根据输入的参数判断属于哪一个枚举类型，返回对应的枚举类型：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ColorEnum <span class="title">of</span><span class="params">(Integer code)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(ColorEnum colorEnum : ColorEnum.values()) &#123;</span><br><span class="line">    	<span class="keyword">if</span>(colorEnum.getCode().equals(code) &#123;</span><br><span class="line">        	<span class="keyword">return</span> colorEnum;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用 Stream 进行改写：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ColorEnum <span class="title">of</span><span class="params">(Integer code)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Stream.of(ColorEnum.values())</span><br><span class="line">        .filter(p -&gt; p.code.equals(code))</span><br><span class="line">        .findAny()</span><br><span class="line">        .orElse(<span class="keyword">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/30/yuque/switch%E9%9B%86%E5%90%88%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/" data-id="ckqjib8ye000f98n77kg21vqy" data-title="switch集合枚举类型" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/30/yuque/switch%E9%9B%86%E5%90%88%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/" data-id="ckqjina1y000f9zn86ymnaiw2" data-title="switch集合枚举类型" class="article-share-link">Share</a>
       
       
       
@@ -224,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/08/yuque/springboot/" data-id="ckqjib8yd000e98n7646z0uey" data-title="springboot" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/08/yuque/springboot/" data-id="ckqjina1x000e9zn8g0ixaok1" data-title="springboot" class="article-share-link">Share</a>
       
       
       
@@ -274,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/02/yuque/api%E5%AE%89%E5%85%A8%E4%BF%9D%E8%AF%81/" data-id="ckqjib8y0000298n73ztp9lhb" data-title="api安全保证" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/02/yuque/api%E5%AE%89%E5%85%A8%E4%BF%9D%E8%AF%81/" data-id="ckqjina1k00029zn84nfm9634" data-title="api安全保证" class="article-share-link">Share</a>
       
       
       
@@ -319,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/01/yuque/project_communication/" data-id="ckqjib8yb000b98n778i8g37i" data-title="project_communication" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/01/yuque/project_communication/" data-id="ckqjina1u000b9zn8cyzdelr3" data-title="project_communication" class="article-share-link">Share</a>
       
       
       
@@ -435,7 +441,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/01/yuque/project_management/" data-id="ckqjib8yb000c98n7ewylfbdr" data-title="project_management" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/01/yuque/project_management/" data-id="ckqjina1v000c9zn890wdfx15" data-title="project_management" class="article-share-link">Share</a>
       
       
       
@@ -525,7 +531,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/30/yuque/R&D%20Documentation/" data-id="ckqjib8xy000198n7db71bacw" data-title="R&amp;D Documentation" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/30/yuque/R&D%20Documentation/" data-id="ckqjina1i00019zn81cnoawdf" data-title="R&amp;D Documentation" class="article-share-link">Share</a>
       
       
       
@@ -595,7 +601,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/26/yuque/presentation_skill/" data-id="ckqjib8y9000a98n7ao78an66" data-title="presentation_skill" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/26/yuque/presentation_skill/" data-id="ckqjina1s000a9zn896ef36yx" data-title="presentation_skill" class="article-share-link">Share</a>
       
       
       
@@ -633,7 +639,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/26/yuque/code_skill/" data-id="ckqjib8y3000498n7gsobcrhx" data-title="code_skill" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/26/yuque/code_skill/" data-id="ckqjina1m00049zn81hxshmm6" data-title="code_skill" class="article-share-link">Share</a>
       
       
       
@@ -740,7 +746,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/mac_terminal/" data-id="ckqjib8y7000898n7hws0g0p7" data-title="mac_terminal" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/mac_terminal/" data-id="ckqjina1q00089zn87lj207yf" data-title="mac_terminal" class="article-share-link">Share</a>
       
       
       
