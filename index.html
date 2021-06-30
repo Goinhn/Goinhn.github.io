@@ -73,8 +73,8 @@
   
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/06/29/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-06-29T01:58:04.720Z" itemprop="datePublished">2021-06-29</time>
+    <a href="/2021/06/30/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2021-06-30T13:20:01.690Z" itemprop="datePublished">2021-06-30</time>
 </a>
     
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/29/hello-world/">Hello World</a>
+      <a class="p-name article-title" href="/2021/06/30/hello-world/">Hello World</a>
     </h1>
   
 
@@ -110,7 +110,55 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/29/hello-world/" data-id="ckqheijtm0000alna27iye8ha" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/30/hello-world/" data-id="ckqjib8xs000098n70u171snr" data-title="Hello World" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-yuque/switch集合枚举类型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/30/yuque/switch%E9%9B%86%E5%90%88%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-06-30T12:57:38.000Z" itemprop="datePublished">2021-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/30/yuque/switch%E9%9B%86%E5%90%88%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/">switch集合枚举类型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>定义一个枚举的类型<br>枚举类的默认构造方法是 private，使用的时候不需要加权限修改参数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">ColorEnum</span> </span>&#123;</span><br><span class="line">    YELLOW(),</span><br><span class="line">    BLUE,</span><br><span class="line">    GREEN,</span><br><span class="line">    RED,</span><br><span class="line">    ORANGE,</span><br><span class="line">    BLACK,</span><br><span class="line">    WHITE;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer code;</span><br><span class="line">    <span class="keyword">private</span> String desc;</span><br><span class="line"></span><br><span class="line">    ColoreEnum(Integer code, String desc) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结合 switch 普通进行使用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public static void testSwitchEnum(ColorEnum colorEnum) &#123;</span><br><span class="line">       switch (colorEnum) &#123;</span><br><span class="line">           <span class="keyword">case</span> YELLOW:</span><br><span class="line">               <span class="built_in">break</span>;</span><br><span class="line">           <span class="keyword">case</span> BLACK:</span><br><span class="line">               <span class="built_in">break</span>;</span><br><span class="line">           default:</span><br><span class="line">               <span class="built_in">break</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>switch 的 case 语句中的枚举类型的必须是枚举常量的非限定名称，即写的时候不能加类名，否则会报如下的错误：</p>
+<blockquote>
+<p>an enum switch case label must be the unqualified name of an enumeration constant</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/30/yuque/switch%E9%9B%86%E5%90%88%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/" data-id="ckqjib8ye000f98n77kg21vqy" data-title="switch集合枚举类型" class="article-share-link">Share</a>
       
       
       
@@ -176,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/08/yuque/springboot/" data-id="ckqheijua000ealna1epq1prm" data-title="springboot" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/08/yuque/springboot/" data-id="ckqjib8yd000e98n7646z0uey" data-title="springboot" class="article-share-link">Share</a>
       
       
       
@@ -226,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/02/yuque/api%E5%AE%89%E5%85%A8%E4%BF%9D%E8%AF%81/" data-id="ckqheijtu0002alna7egid0wp" data-title="api安全保证" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/02/yuque/api%E5%AE%89%E5%85%A8%E4%BF%9D%E8%AF%81/" data-id="ckqjib8y0000298n73ztp9lhb" data-title="api安全保证" class="article-share-link">Share</a>
       
       
       
@@ -271,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/01/yuque/project_communication/" data-id="ckqheiju6000balna6q6agpxm" data-title="project_communication" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/01/yuque/project_communication/" data-id="ckqjib8yb000b98n778i8g37i" data-title="project_communication" class="article-share-link">Share</a>
       
       
       
@@ -387,7 +435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/01/yuque/project_management/" data-id="ckqheiju7000calna7kb6e5j6" data-title="project_management" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/06/01/yuque/project_management/" data-id="ckqjib8yb000c98n7ewylfbdr" data-title="project_management" class="article-share-link">Share</a>
       
       
       
@@ -477,7 +525,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/30/yuque/R&D%20Documentation/" data-id="ckqheijts0001alnafzb799cc" data-title="R&amp;D Documentation" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/30/yuque/R&D%20Documentation/" data-id="ckqjib8xy000198n7db71bacw" data-title="R&amp;D Documentation" class="article-share-link">Share</a>
       
       
       
@@ -547,7 +595,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/26/yuque/presentation_skill/" data-id="ckqheiju4000aalna32ii29zp" data-title="presentation_skill" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/26/yuque/presentation_skill/" data-id="ckqjib8y9000a98n7ao78an66" data-title="presentation_skill" class="article-share-link">Share</a>
       
       
       
@@ -585,7 +633,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/26/yuque/code_skill/" data-id="ckqheijtx0004alna7qdh4qnw" data-title="code_skill" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/26/yuque/code_skill/" data-id="ckqjib8y3000498n7gsobcrhx" data-title="code_skill" class="article-share-link">Share</a>
       
       
       
@@ -692,71 +740,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/mac_terminal/" data-id="ckqheiju20008alnagz0m6c9c" data-title="mac_terminal" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-yuque/linux_tools" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/05/21/yuque/linux_tools/" class="article-date">
-  <time class="dt-published" datetime="2021-05-21T03:16:27.000Z" itemprop="datePublished">2021-05-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/05/21/yuque/linux_tools/">linux_tools</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="linux-tool"><a href="#linux-tool" class="headerlink" title="linux_tool"></a>linux_tool</h1><h2 id="RPM-包常用下载地址"><a href="#RPM-包常用下载地址" class="headerlink" title="RPM 包常用下载地址"></a>RPM 包常用下载地址</h2><p>rpmfind:<br><a target="_blank" rel="noopener" href="http://rpmfind.net/linux/RPM/index.html">http://rpmfind.net/linux/RPM/index.html</a><br>pkgs:<br><a target="_blank" rel="noopener" href="https://pkgs.org/">https://pkgs.org/</a><br>fedora koji:<br><a target="_blank" rel="noopener" href="https://koji.fedoraproject.org/koji/index">https://koji.fedoraproject.org/koji/index</a><br>pbone:<br><a target="_blank" rel="noopener" href="http://rpm.pbone.net/">http://rpm.pbone.net/</a><br>源码：<br><a target="_blank" rel="noopener" href="https://src.fedoraproject.org/projects/rpms/*">https://src.fedoraproject.org/projects/rpms/%2A</a></p>
-<h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><p>sudo apt install zsh<br>sudo apt install curl<br>sh -c “$(curl -fsSL <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;">https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</a></p>
-<p>安装完后修改配置文件：<br>Oh-My-Zsh 的默认配置文件在：<del>/.zshrc<br>编辑</del>/.zshrc 修改主题为：agnoster： vim  ~/.zshrc<br>重启配置文件：sudo service  ~/.zshrc  <br>重启终端，即可生效！</p>
-<p>zsh 官网<br><a target="_blank" rel="noopener" href="https://ohmyz.sh/">https://ohmyz.sh/</a></p>
-<p>zsh 下切换 root 用户<br>sudo -s -H</p>
-<h2 id="htop"><a href="#htop" class="headerlink" title="htop"></a>htop</h2><p>后台监控软件<br><strong>特点</strong></p>
-<ul>
-<li>较 top 更加丰富的图形界面</li>
-<li>支持鼠标操作</li>
-<li>可以横向或者纵向浏览进程列表，以便可以看到所有的进程和完整的命令</li>
-<li>杀掉进程时可以直接选择而不需要输入进程号</li>
-</ul>
-<p><strong>使用</strong><br>F1 : 查看 htop 使用说明<br>F2 : 设置<br>F3 : 搜索进程<br>F4 : 过滤器，按关键字搜索<br>F5 : 显示树形结构<br>F6 : 选择排序方式<br>F7 : 减少 nice 值，这样就可以提高对应进程的优先级<br>F8 : 增加 nice 值，这样可以降低对应进程的优先级<br>F9 : 杀掉选中的进程<br>F10 : 退出 htop</p>
-<p>/ : 搜索字符<br>h : 显示帮助<br>l ：显示进程打开的文件: 如果安装了 lsof，按此键可以显示进程所打开的文件<br>u ：显示所有用户，并可以选择某一特定用户的进程<br>s : 将调用 strace 追踪进程的系统调用<br>t : 显示树形结构</p>
-<p>H ：显示/隐藏用户线程<br>I ：倒转排序顺序<br>K ：显示/隐藏内核线程    <br>M ：按内存占用排序<br>P ：按 CPU 排序    <br>T ：按运行时间排序</p>
-<p>上下键或 PgUP, PgDn : 移动选中进程<br>左右键或 Home, End : 移动列表    <br>Space(空格) : 标记/取消标记一个进程。命令可以作用于多个进程，例如 “kill”，将应用于所有已标记的进程<br><strong>安装</strong><br>yum install -y htop</p>
-<h2 id="lrzsz"><a href="#lrzsz" class="headerlink" title="lrzsz"></a>lrzsz</h2><p><strong>安装</strong><br>yum install -y lrzsz<br><strong>使用</strong><br>rz #从本地将文件拉到服务器上当前目录下<br>-B 使用 rz 上传时，文件是先写入缓冲区，然后再写入硬盘的。-B 后面跟着的数字就是修改这个缓冲区大小的，单位是 Bytes。如：rz -B 10<br>-D 把所上传的数据导向/dev/null，这是用于测试的<br>-e 转化所有的控制字符<br>-E 上传之前重命名已经存在的文件，防止覆盖</p>
-<p>sz #发送服务器上的文件到本地<br>-a 以文本方式传输（ascii）<br>-b 以二进制方式传输（binary）<br>-e 对控制字符转义（escape），这可以保证文件传输正确<br>-i 后接命令，在接收端执行命令</p>
-<h2 id="tree"><a href="#tree" class="headerlink" title="tree"></a>tree</h2><p><strong>安装</strong><br>yum install -y tree<br><strong>使用</strong><br>-a 显示所有文件和目录<br>-A 使用 ASNI 绘图字符显示树状图而非以 ASCII 字符组合<br>-C 在文件和目录清单加上色彩，便于区分这种类型<br>-d 显示目录名称而非内容<br>-D 列出文件或目录的更改时间<br>-f 在每个文件或目录之前，显示完整的相对路径名称<br>-F 在执行文件，目录，Socket，符号连接，管道名称名称，各自加上“*”，“/”，“=”，“@”，“|”号<br>-g 列出文件或目录的所属群组名称，没有对应的名称时，则显示群组识别码<br>-i 不以阶梯状列出文件或目录名称<br>-I&lt;范本样式&gt; 不现实符合范本样式的文件或目录名称<br>-l 如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录<br>-n 不在文件和目录清单上加上色彩<br>-N 直接列出文件和目录名称，包括控制字符<br>-p 列出权限标示<br>-P&lt;范本样式&gt; 只显示符合范本像是的文件或目录名称<br>-q 用“?”号取代控制字符，列出文件和目录名称<br>-s 列出文件或目录大小<br>-t 用文件和目录的更改时间排序<br>-u 列出文件或目录的拥有者名称，没有对应的名称时，则显示用户识别码<br>-x 将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该子目录予以排除在寻找范围外<br>-L 层级显示，后面跟要显示的层级数字</p>
-<h2 id="ius"><a href="#ius" class="headerlink" title="ius"></a>ius</h2><p><strong>官网</strong><br><a target="_blank" rel="noopener" href="https://ius.io/">https://ius.io/</a><br>yum 的扩展库</p>
-<h2 id="arp-scan"><a href="#arp-scan" class="headerlink" title="arp-scan"></a>arp-scan</h2><p><strong>仓库地址</strong><br><a target="_blank" rel="noopener" href="https://github.com/royhills/arp-scan">https://github.com/royhills/arp-scan</a><br><strong>安装</strong><br>git clone <a target="_blank" rel="noopener" href="https://github.com/royhills/arp-scan.git">https://github.com/royhills/arp-scan.git</a></p>
-<p>cd arp-scan</p>
-<p>// autoreconf 命令缺失需要安装 autoconf 和 automake<br>autoreconf –instal</p>
-<p>./configure</p>
-<p>make</p>
-<p>make install<br><strong>使用</strong><br>官方使用文档<br><a target="_blank" rel="noopener" href="https://nta.intertek.com/">https://nta.intertek.com/</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/linux_tools/" data-id="ckqheiju00006alnaekzx48p3" data-title="linux_tools" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/mac_terminal/" data-id="ckqjib8y7000898n7hws0g0p7" data-title="mac_terminal" class="article-share-link">Share</a>
       
       
       
@@ -804,7 +788,11 @@
       <ul>
         
           <li>
-            <a href="/2021/06/29/hello-world/">Hello World</a>
+            <a href="/2021/06/30/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/30/yuque/switch%E9%9B%86%E5%90%88%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/">switch集合枚举类型</a>
           </li>
         
           <li>
@@ -817,10 +805,6 @@
         
           <li>
             <a href="/2021/06/01/yuque/project_communication/">project_communication</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/01/yuque/project_management/">project_management</a>
           </li>
         
       </ul>
