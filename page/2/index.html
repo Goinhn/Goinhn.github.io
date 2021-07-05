@@ -71,6 +71,113 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-yuque/mac_terminal" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/21/yuque/mac_terminal/" class="article-date">
+  <time class="dt-published" datetime="2021-05-21T10:24:01.000Z" itemprop="datePublished">2021-05-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/21/yuque/mac_terminal/">mac_terminal</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="终端配置"><a href="#终端配置" class="headerlink" title="终端配置"></a>终端配置</h2><p>rm 命令防止误删<br>通过配置脚本实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;zsh</span><br><span class="line"></span><br><span class="line">TRASH_DIR&#x3D;&quot;~&#x2F;.Trash&quot;</span><br><span class="line"></span><br><span class="line">for i in $*; do</span><br><span class="line">    mv $i $TRASH_DIR&#x2F;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<p>将文件保存为 safe_rm<br>设置别名 alias rm=’safe_rm’<br>永久有效将该命令加入 profile 等环境变量中去</p>
+<p>使用 trash 命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install trash</span><br><span class="line"></span><br><span class="line">alias rm&#x3D;&#39;trash&#39;</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+<p>​</p>
+<h2 id="iterm2"><a href="#iterm2" class="headerlink" title="iterm2"></a>iterm2</h2><p>开源 ssh 客户端，配合 macOS 使用更佳</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://iterm2.com/">https://iterm2.com/</a></p>
+</blockquote>
+<p>服务器共享文件：<br>lrzsz</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// brew进行安装</span><br><span class="line"><span class="comment"># brew install lrzsz</span></span><br></pre></td></tr></table></figure>
+
+<p>下载需要的脚本，将脚本放置在/usr/local/bin 下<br>iterm2-send-zmodem.sh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Author: Matt Mastracci (matthew@mastracci.com)</span></span><br><span class="line"><span class="comment"># AppleScript from http://stackoverflow.com/questions/4309087/cancel-button-on-osascript-in-a-bash-script</span></span><br><span class="line"><span class="comment"># licensed under cc-wiki with attribution required</span></span><br><span class="line"><span class="comment"># Remainder of script public domain</span></span><br><span class="line"></span><br><span class="line">osascript -e <span class="string">&#x27;tell application &quot;iTerm2&quot; to version&#x27;</span> &gt; /dev/null 2&gt;&amp;1 &amp;&amp; NAME=iTerm2 || NAME=iTerm</span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$NAME</span> = <span class="string">&quot;iTerm&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">	FILE=`osascript -e <span class="string">&#x27;tell application &quot;iTerm&quot; to activate&#x27;</span> -e <span class="string">&#x27;tell application &quot;iTerm&quot; to set thefile to choose file with prompt &quot;Choose a file to send&quot;&#x27;</span> -e <span class="string">&quot;do shell script (\&quot;echo \&quot;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&quot;\&quot;)&quot;</span>`</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	FILE=`osascript -e <span class="string">&#x27;tell application &quot;iTerm2&quot; to activate&#x27;</span> -e <span class="string">&#x27;tell application &quot;iTerm2&quot; to set thefile to choose file with prompt &quot;Choose a file to send&quot;&#x27;</span> -e <span class="string">&quot;do shell script (\&quot;echo \&quot;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&quot;\&quot;)&quot;</span>`</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$FILE</span> = <span class="string">&quot;&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">echo</span> Cancelled.</span><br><span class="line">	<span class="comment"># Send ZModem cancel</span></span><br><span class="line">	<span class="built_in">echo</span> -e \\x18\\x18\\x18\\x18\\x18</span><br><span class="line">	sleep 1</span><br><span class="line">	<span class="built_in">echo</span></span><br><span class="line">	<span class="built_in">echo</span> \<span class="comment"># Cancelled transfer</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	/usr/<span class="built_in">local</span>/bin/sz <span class="string">&quot;<span class="variable">$FILE</span>&quot;</span> -e -b</span><br><span class="line">	sleep 1</span><br><span class="line">	<span class="built_in">echo</span></span><br><span class="line">	<span class="built_in">echo</span> \<span class="comment"># Received $FILE</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<p>iterm2-recv-zmodem.sh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Author: Matt Mastracci (matthew@mastracci.com)</span></span><br><span class="line"><span class="comment"># AppleScript from http://stackoverflow.com/questions/4309087/cancel-button-on-osascript-in-a-bash-script</span></span><br><span class="line"><span class="comment"># licensed under cc-wiki with attribution required</span></span><br><span class="line"><span class="comment"># Remainder of script public domain</span></span><br><span class="line"></span><br><span class="line">osascript -e <span class="string">&#x27;tell application &quot;iTerm2&quot; to version&#x27;</span> &gt; /dev/null 2&gt;&amp;1 &amp;&amp; NAME=iTerm2 || NAME=iTerm</span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$NAME</span> = <span class="string">&quot;iTerm&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">	FILE=`osascript -e <span class="string">&#x27;tell application &quot;iTerm&quot; to activate&#x27;</span> -e <span class="string">&#x27;tell application &quot;iTerm&quot; to set thefile to choose folder with prompt &quot;Choose a folder to place received files in&quot;&#x27;</span> -e <span class="string">&quot;do shell script (\&quot;echo \&quot;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&quot;\&quot;)&quot;</span>`</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	FILE=`osascript -e <span class="string">&#x27;tell application &quot;iTerm2&quot; to activate&#x27;</span> -e <span class="string">&#x27;tell application &quot;iTerm2&quot; to set thefile to choose folder with prompt &quot;Choose a folder to place received files in&quot;&#x27;</span> -e <span class="string">&quot;do shell script (\&quot;echo \&quot;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&quot;\&quot;)&quot;</span>`</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$FILE</span> = <span class="string">&quot;&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">echo</span> Cancelled.</span><br><span class="line">	<span class="comment"># Send ZModem cancel</span></span><br><span class="line">	<span class="built_in">echo</span> -e \\x18\\x18\\x18\\x18\\x18</span><br><span class="line">	sleep 1</span><br><span class="line">	<span class="built_in">echo</span></span><br><span class="line">	<span class="built_in">echo</span> \<span class="comment"># Cancelled transfer</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$FILE</span>&quot;</span></span><br><span class="line">	/usr/<span class="built_in">local</span>/bin/rz -E -e -b</span><br><span class="line">	sleep 1</span><br><span class="line">	<span class="built_in">echo</span></span><br><span class="line">	<span class="built_in">echo</span></span><br><span class="line">	<span class="built_in">echo</span> \<span class="comment"># Sent \-\&gt; $FILE</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 增加脚本权限</span><br><span class="line">chmod +x  /usr/<span class="built_in">local</span>/bin/iterm2-send-zmodem.sh</span><br><span class="line">chmod +x  /usr/<span class="built_in">local</span>/bin/iterm2-recv-zmodem.sh</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// iterm2进行配置</span><br><span class="line">点击iterm2 -&gt; perferences -&gt; profiles -&gt; Advanced -&gt; Triggers</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 配置如下的两条规则</span><br><span class="line">Regular expression: \*\*B0100</span><br><span class="line">Action: Run Silent Coprocess</span><br><span class="line">Parameters: /usr/<span class="built_in">local</span>/bin/iterm2-send-zmodem.sh</span><br><span class="line"></span><br><span class="line">Regular expression: \*\*B00000000000000</span><br><span class="line">Action: Run Silent Coprocess</span><br><span class="line">Parameters: /usr/<span class="built_in">local</span>/bin/iterm2-recv-zmodem.sh</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/03VoOC.png#id=YhK6r&originHeight=128&originWidth=802&originalType=binary%E2%88%B6=1&status=done&style=none"></p>
+<h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><p>zsh：shell 工具<br>oh-my-zsh：zsh 搭配的开源配置的工具<br>​</p>
+<p>安装 oh-my-zsh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>所有的配置都在.zshrc 文件中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 主题配置</span><br><span class="line">ZSH_THEME=<span class="string">&quot;agnoster&quot;</span></span><br><span class="line"></span><br><span class="line">// 修改只显示用户名</span><br><span class="line"><span class="function"><span class="title">prompt_context</span></span>() &#123;</span><br><span class="line">  <span class="keyword">if</span> [[ <span class="string">&quot;<span class="variable">$USER</span>&quot;</span> != <span class="string">&quot;<span class="variable">$DEFAULT_USER</span>&quot;</span> || -n <span class="string">&quot;<span class="variable">$SSH_CLIENT</span>&quot;</span> ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="comment">#prompt_segment black default &quot;%(!.%&#123;%F&#123;yellow&#125;%&#125;.)%n@%m&quot;</span></span><br><span class="line">    prompt_segment black default <span class="string">&quot;%(!.%&#123;%F&#123;yellow&#125;%&#125;.)<span class="variable">$USER</span>&quot;</span></span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>安装缺少的字体</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 下载字体库</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/powerline/fonts</span><br><span class="line"></span><br><span class="line">// 安装字体库</span><br><span class="line"><span class="built_in">cd</span> fonts &amp;&amp; ./install.sh</span><br></pre></td></tr></table></figure>
+
+<p>在 iterm 中选择安装的字体<br><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/xUUisZ.png#id=ttDC5&originHeight=946&originWidth=1886&originalType=binary%E2%88%B6=1&status=done&style=none"><br>配置自动提醒插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 下载指定的插件</span><br><span class="line"><span class="built_in">cd</span> ~/.oh-my-zsh/custom/plugins/</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions.git</span><br><span class="line"></span><br><span class="line">// 添加插件</span><br><span class="line">vim ~/.zshrc</span><br><span class="line">plugins=(</span><br><span class="line">   git</span><br><span class="line">   zsh-autosuggestions</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 修改提示字体的颜色</span><br><span class="line">vim ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh</span><br><span class="line"><span class="built_in">typeset</span> -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=<span class="string">&#x27;fg=4&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+<p>zsh 环境变量文件：</p>
+<ul>
+<li>.zshenv<ul>
+<li>.zshenv 总是被读取,所以通常把$PATH,$EDITOR 等变量写在这里,这样无论是在 shell 交互,或者运行程序都会读取此文件</li>
+</ul>
+</li>
+<li>.zshrc<ul>
+<li>.zshrc 主要用在交互 shell,所以主要是为 shell 服务的,比如对 shell 做的一些个性化设置都可以在这里写入</li>
+</ul>
+</li>
+<li>.zlogin<ul>
+<li>.zlogin 在 login shell 的时候读取,所以比如 X 系统启动的时候会读取此文件,所以不会再运行中重复读取</li>
+</ul>
+</li>
+<li>.zprofile<ul>
+<li>.zprofile 是给 ksh 用户的一个.zlogin 的替代品,所以我们如果使用了.zlogin 就不必再关心此文件</li>
+</ul>
+</li>
+<li>.zlogout<ul>
+<li>.zlogout 这个就很好理解了, 退出终端的时候读取,用于做一些清理工作,一般我们也用不上</li>
+</ul>
+</li>
+</ul>
+<p>读取的顺序：<br>.zshenv → [.zprofile if login] → [.zshrc if interactive] → [.zlogin if login] → [.zlogout sometimes].</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/21/yuque/mac_terminal/" data-id="ckqqakzkj0009a1n84zlea3s7" data-title="mac_terminal" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-yuque/linux_tools" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/05/21/yuque/linux_tools/" class="article-date">
@@ -123,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/linux_tools/" data-id="ckqmbctsp00069gn797up5vzd" data-title="linux_tools" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/linux_tools/" data-id="ckqqakzki0007a1n86sgy8wpv" data-title="linux_tools" class="article-share-link">Share</a>
       
       
       
@@ -252,7 +359,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/linux_terminal/" data-id="ckqmbctt6000o9gn7gja66bwv" data-title="linux_terminal" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/linux_terminal/" data-id="ckqqakzl2000pa1n840t70dxi" data-title="linux_terminal" class="article-share-link">Share</a>
       
       
       
@@ -325,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/windows_system/" data-id="ckqmbctt1000k9gn7csq0a7zw" data-title="windows_system" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/windows_system/" data-id="ckqqakzkt000la1n8ejhzf64s" data-title="windows_system" class="article-share-link">Share</a>
       
       
       
@@ -391,7 +498,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/windows_terminal/" data-id="ckqmbctt2000l9gn78l5jblwu" data-title="windows_terminal" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/windows_terminal/" data-id="ckqqakzku000ma1n88j3cexy5" data-title="windows_terminal" class="article-share-link">Share</a>
       
       
       
@@ -462,7 +569,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/windows_tools/" data-id="ckqmbctt3000m9gn7a1zofkh8" data-title="windows_tools" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/windows_tools/" data-id="ckqqakzkv000na1n898125ze4" data-title="windows_tools" class="article-share-link">Share</a>
       
       
       
@@ -536,7 +643,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/21/yuque/plugin/" data-id="ckqmbctsr00099gn7eco770lu" data-title="plugin" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/21/yuque/plugin/" data-id="ckqqakzkk000aa1n87qan2kpg" data-title="plugin" class="article-share-link">Share</a>
       
       
       
@@ -726,7 +833,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/17/yuque/software/" data-id="ckqmbctsw000d9gn7h9l5c81p" data-title="software" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/17/yuque/software/" data-id="ckqqakzko000ea1n857m74rng" data-title="software" class="article-share-link">Share</a>
       
       
       
@@ -1133,7 +1240,7 @@ public void onFinish(ITestContext iTestContext) &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/17/yuque/11_java_unit_testing/" data-id="ckqmbctt5000n9gn72s3m908e" data-title="11_java_unit_testing" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/17/yuque/11_java_unit_testing/" data-id="ckqqakzl1000oa1n8crr40mqu" data-title="11_java_unit_testing" class="article-share-link">Share</a>
       
       
       
@@ -1236,88 +1343,7 @@ public void onFinish(ITestContext iTestContext) &#123;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/17/yuque/unit_testing/" data-id="ckqmbctt0000j9gn7epkhftg6" data-title="unit_testing" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-yuque/java_specification" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/05/14/yuque/java_specification/" class="article-date">
-  <time class="dt-published" datetime="2021-05-14T09:22:57.000Z" itemprop="datePublished">2021-05-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/05/14/yuque/java_specification/">java_specification</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>强制：<br>源文件名必须和它包含的顶层类名保持一致，包括大小写，并以.java 作为后缀名<br>所有源文件编码必须是 UTF-8<br>除了换行符之外，ASCII 空格（0x20）是唯一合法的空格字符</p>
-<ul>
-<li>在所有的源代码中（包括字符、字符串以及注释中）出现的其他空格字符需要进行转义、如 Tab 用\t 表示</li>
-<li>缩紧必须是空格而不是 tab</li>
-</ul>
-<p>文件的换行符使用 Unix 格式<br>源文件顺序（每两个部分之间使用一个空行分隔，不允许多个空行）：</p>
-<ol>
-<li>许可证（license）或版权声明（copyright）</li>
-<li>package 语句<ol>
-<li>占据单独一行，允许超出 120 字符列宽限制</li>
-</ol>
-</li>
-<li>import 语句<ol>
-<li>非 static imports，禁止使用通配符 import</li>
-<li>每条 import 语句占据一行，允许超出 120 字符列宽限制</li>
-<li>所有未使用的 import 语句应该被删除</li>
-</ol>
-</li>
-<li>唯一的顶层类</li>
-</ol>
-<p>重载的方法必须放在一起<br>花括号</p>
-<ul>
-<li>左花括号（{）前不能换行</li>
-<li>在右花括号（}）前要有换行</li>
-<li>右边花括号后还要有 else 等代码则不换行，表示终止的右大括号后必须换行</li>
-</ul>
-<p>单行字符数字限制不超过 120 个，超出需要换行，换行时需要遵循如下的原则：</p>
-<ul>
-<li>第二行相对第一行缩进 4 个空格，从第三行开始，不再继续缩紧</li>
-<li>运算符与下文一起换行</li>
-<li>方法调用的点符号与下文一起换行</li>
-<li>方法调用中的多个参数需要换行时，在逗号后进行</li>
-<li>在括号前不要换行</li>
-</ul>
-<p>在以下情况增加空行：</p>
-<ul>
-<li>在类的不同成员间增加空行，包括：成员变量、构造函数、方法、内部类、静态初始化块、实例初始化块</li>
-<li>两个成员变量声明之间可以不加空行，空行通常对于成员变量进行逻辑分组</li>
-<li>方法体内，按需要增加空行，以便从逻辑上对语句进行分组</li>
-<li>禁止使用连续的空行</li>
-</ul>
-<p>添加在类、方法、构造函数、成员属性上的注解直接写在注释块之后，每个注解独占一行<br>方法名、参数名、成员变量、局部函数都统一使用 lowerCameICase 风格，遵从驼峰形式<br>类名使用 UpperCameCase 风格，以下情形除外：DO/BO/DTO/VO/AO/PO/UID<br>抽象类命名使用 Abstract 或 Base 开头；异常类命名使用 Exception 结尾；测试类的命名要以它测试的类的名称开始，以 Test 结尾<br>不允许任何魔法值（即未经预先定义的常量）直接出现在代码中。<br>常量的命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长<br>对于 Service 和 DAO 类，内部的实现类使用 Impl 的后缀与接口区别<br>所有的 POJO 类属性必须使用包装数据类型<br>所有覆写的方法，必须加@Override 注解<br>Object 的 equals 方法容易抛出空指针异常，应该使用常量或者确定值的对象来调用<br>定义 DO/DTO/VO 等 POJO 类的时候，不要设定任何属性的默认值<br>使用集合转换数组的方法，必须使用集合的 toArray(T[] array)，传入的是类型完全一样的数组，大小就是 list.size()<br>ArrayList 的 subList 场景中，高度注意对原集合的增加或者删除，均会导致子列表的遍历、增加、删除产生 ConcurrentModificationException 异常<br>不要在循环里进行集合元素的 remove/add 操作。remove 元素请使用 Iterator，如果使用并发操作需要对 Iterator 加锁<br>在一个 switch 块内，每个 case 要么通过 break/return 等来终止，要么注释说明到哪个 case 终止，在每个 switch 块红都需要包含一个 default 语句并放在最后，即使空代码<br>if/else/for/while/do 语句中必须使用花括号，即使只有一行代码，避免采用单行的编码方式<br>在高并发的场景下，避免使用“等于”判断作为终端或者退出的条件。使用大于或者小于的区间作为判断<br>类、类属性、类方法的注释必须使用 Javadoc 规范<br>捕获异常是为了处理异常，如果不处理请将他抛给外层的业务使用者<br>有 try 块放到了事务代码中，catch 异常后，如果需要回滚事务，一定要注意手动回滚<br>不要在 finally 块中使用 return<br>finally 块对象必须对资源对象、流对象进行关闭，有异常处理也要做 try-catch<br>StringBuilder 和 StringBuffer 不应该使用字符进行初始化，要使用字符串<br>获取的锁要在沿该方法的所有执行路径释放锁<br>循环要有终止的条件<br>synchronized 加锁的对象要使用 private final 进行修饰<br>异常捕获后要使用日志进行输出<br>​</p>
-<p>推荐：<br>所有的类都必须添加创建者和创建日期<br>​</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/14/yuque/java_specification/" data-id="ckqmbctso00059gn73hrcdoyr" data-title="java_specification" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/17/yuque/unit_testing/" data-id="ckqqakzkt000ka1n8ap4q12rb" data-title="unit_testing" class="article-share-link">Share</a>
       
       
       
@@ -1365,7 +1391,11 @@ public void onFinish(ITestContext iTestContext) &#123;
       <ul>
         
           <li>
-            <a href="/2021/07/02/hello-world/">Hello World</a>
+            <a href="/2021/07/05/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/02/yuque/git/">git</a>
           </li>
         
           <li>
@@ -1378,10 +1408,6 @@ public void onFinish(ITestContext iTestContext) &#123;
         
           <li>
             <a href="/2021/06/02/yuque/api%E5%AE%89%E5%85%A8%E4%BF%9D%E8%AF%81/">api安全保证</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/01/yuque/project_communication/">project_communication</a>
           </li>
         
       </ul>

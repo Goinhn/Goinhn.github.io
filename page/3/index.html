@@ -71,6 +71,87 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-yuque/java_specification" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/14/yuque/java_specification/" class="article-date">
+  <time class="dt-published" datetime="2021-05-14T09:22:57.000Z" itemprop="datePublished">2021-05-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/14/yuque/java_specification/">java_specification</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>强制：<br>源文件名必须和它包含的顶层类名保持一致，包括大小写，并以.java 作为后缀名<br>所有源文件编码必须是 UTF-8<br>除了换行符之外，ASCII 空格（0x20）是唯一合法的空格字符</p>
+<ul>
+<li>在所有的源代码中（包括字符、字符串以及注释中）出现的其他空格字符需要进行转义、如 Tab 用\t 表示</li>
+<li>缩紧必须是空格而不是 tab</li>
+</ul>
+<p>文件的换行符使用 Unix 格式<br>源文件顺序（每两个部分之间使用一个空行分隔，不允许多个空行）：</p>
+<ol>
+<li>许可证（license）或版权声明（copyright）</li>
+<li>package 语句<ol>
+<li>占据单独一行，允许超出 120 字符列宽限制</li>
+</ol>
+</li>
+<li>import 语句<ol>
+<li>非 static imports，禁止使用通配符 import</li>
+<li>每条 import 语句占据一行，允许超出 120 字符列宽限制</li>
+<li>所有未使用的 import 语句应该被删除</li>
+</ol>
+</li>
+<li>唯一的顶层类</li>
+</ol>
+<p>重载的方法必须放在一起<br>花括号</p>
+<ul>
+<li>左花括号（{）前不能换行</li>
+<li>在右花括号（}）前要有换行</li>
+<li>右边花括号后还要有 else 等代码则不换行，表示终止的右大括号后必须换行</li>
+</ul>
+<p>单行字符数字限制不超过 120 个，超出需要换行，换行时需要遵循如下的原则：</p>
+<ul>
+<li>第二行相对第一行缩进 4 个空格，从第三行开始，不再继续缩紧</li>
+<li>运算符与下文一起换行</li>
+<li>方法调用的点符号与下文一起换行</li>
+<li>方法调用中的多个参数需要换行时，在逗号后进行</li>
+<li>在括号前不要换行</li>
+</ul>
+<p>在以下情况增加空行：</p>
+<ul>
+<li>在类的不同成员间增加空行，包括：成员变量、构造函数、方法、内部类、静态初始化块、实例初始化块</li>
+<li>两个成员变量声明之间可以不加空行，空行通常对于成员变量进行逻辑分组</li>
+<li>方法体内，按需要增加空行，以便从逻辑上对语句进行分组</li>
+<li>禁止使用连续的空行</li>
+</ul>
+<p>添加在类、方法、构造函数、成员属性上的注解直接写在注释块之后，每个注解独占一行<br>方法名、参数名、成员变量、局部函数都统一使用 lowerCameICase 风格，遵从驼峰形式<br>类名使用 UpperCameCase 风格，以下情形除外：DO/BO/DTO/VO/AO/PO/UID<br>抽象类命名使用 Abstract 或 Base 开头；异常类命名使用 Exception 结尾；测试类的命名要以它测试的类的名称开始，以 Test 结尾<br>不允许任何魔法值（即未经预先定义的常量）直接出现在代码中。<br>常量的命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长<br>对于 Service 和 DAO 类，内部的实现类使用 Impl 的后缀与接口区别<br>所有的 POJO 类属性必须使用包装数据类型<br>所有覆写的方法，必须加@Override 注解<br>Object 的 equals 方法容易抛出空指针异常，应该使用常量或者确定值的对象来调用<br>定义 DO/DTO/VO 等 POJO 类的时候，不要设定任何属性的默认值<br>使用集合转换数组的方法，必须使用集合的 toArray(T[] array)，传入的是类型完全一样的数组，大小就是 list.size()<br>ArrayList 的 subList 场景中，高度注意对原集合的增加或者删除，均会导致子列表的遍历、增加、删除产生 ConcurrentModificationException 异常<br>不要在循环里进行集合元素的 remove/add 操作。remove 元素请使用 Iterator，如果使用并发操作需要对 Iterator 加锁<br>在一个 switch 块内，每个 case 要么通过 break/return 等来终止，要么注释说明到哪个 case 终止，在每个 switch 块红都需要包含一个 default 语句并放在最后，即使空代码<br>if/else/for/while/do 语句中必须使用花括号，即使只有一行代码，避免采用单行的编码方式<br>在高并发的场景下，避免使用“等于”判断作为终端或者退出的条件。使用大于或者小于的区间作为判断<br>类、类属性、类方法的注释必须使用 Javadoc 规范<br>捕获异常是为了处理异常，如果不处理请将他抛给外层的业务使用者<br>有 try 块放到了事务代码中，catch 异常后，如果需要回滚事务，一定要注意手动回滚<br>不要在 finally 块中使用 return<br>finally 块对象必须对资源对象、流对象进行关闭，有异常处理也要做 try-catch<br>StringBuilder 和 StringBuffer 不应该使用字符进行初始化，要使用字符串<br>获取的锁要在沿该方法的所有执行路径释放锁<br>循环要有终止的条件<br>synchronized 加锁的对象要使用 private final 进行修饰<br>异常捕获后要使用日志进行输出<br>​</p>
+<p>推荐：<br>所有的类都必须添加创建者和创建日期<br>​</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/14/yuque/java_specification/" data-id="ckqqakzkh0006a1n8h5y1bg5c" data-title="java_specification" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-yuque/code_review" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/05/14/yuque/code_review/" class="article-date">
@@ -124,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/14/yuque/code_review/" data-id="ckqmbctsm00039gn7f0vfhrec" data-title="code_review" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/14/yuque/code_review/" data-id="ckqqakzke0003a1n8eylagmp0" data-title="code_review" class="article-share-link">Share</a>
       
       
       
@@ -239,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/13/yuque/mac/" data-id="ckqmbctsp00079gn75r2x3b75" data-title="mac" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/13/yuque/mac/" data-id="ckqqakzki0008a1n81wos2e25" data-title="mac" class="article-share-link">Share</a>
       
       
       
@@ -797,7 +878,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/local_config/" data-id="ckqmbctu7000p9gn71acw7wgg" data-title="local_config" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/local_config/" data-id="ckqqakzm2000qa1n83s03e0od" data-title="local_config" class="article-share-link">Share</a>
       
       
       
@@ -836,7 +917,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test_two/" data-id="ckqmbctt0000i9gn75fsodymd" data-title="test_two" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/test_two/" data-id="ckqqakzks000ja1n8gl3b0fgf" data-title="test_two" class="article-share-link">Share</a>
       
       
       
@@ -875,7 +956,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test_one/" data-id="ckqmbctsz000h9gn7dnz263mi" data-title="test_one" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/test_one/" data-id="ckqqakzkr000ia1n8f3d40yze" data-title="test_one" class="article-share-link">Share</a>
       
       
       
@@ -914,7 +995,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test/" data-id="ckqmbctsy000g9gn72g0458u1" data-title="test" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/test/" data-id="ckqqakzkq000ha1n88998h2vh" data-title="test" class="article-share-link">Share</a>
       
       
       
@@ -962,7 +1043,11 @@
       <ul>
         
           <li>
-            <a href="/2021/07/02/hello-world/">Hello World</a>
+            <a href="/2021/07/05/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/02/yuque/git/">git</a>
           </li>
         
           <li>
@@ -975,10 +1060,6 @@
         
           <li>
             <a href="/2021/06/02/yuque/api%E5%AE%89%E5%85%A8%E4%BF%9D%E8%AF%81/">api安全保证</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/01/yuque/project_communication/">project_communication</a>
           </li>
         
       </ul>

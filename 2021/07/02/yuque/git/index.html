@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>git | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="介绍历史集中式版本管理系统：版本存储在中央服务器中，每次修改需要拉取到本地进行修改分布式版本管理系统：每个人的本地都有一个完整的代码版本，可以互相之间进行推送修改，在实际的使用过程中会有一个“中央服务器”来交换大家之间的修改​ 发展由 Linus 为了管理 Linux 系统的开发通过 C 语言编写创建的分布式版本管理系统​ 整体结构​ ​ ​ 配置基础配置123456789101112# 版本查看">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git">
+<meta property="og:url" content="http://example.com/2021/07/02/yuque/git/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="介绍历史集中式版本管理系统：版本存储在中央服务器中，每次修改需要拉取到本地进行修改分布式版本管理系统：每个人的本地都有一个完整的代码版本，可以互相之间进行推送修改，在实际的使用过程中会有一个“中央服务器”来交换大家之间的修改​ 发展由 Linus 为了管理 Linux 系统的开发通过 C 语言编写创建的分布式版本管理系统​ 整体结构​ ​ ​ 配置基础配置123456789101112# 版本查看">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/goinhn/imageClouding/raw/master/uPic/jQyIOH.png#height=580&id=yZTyt&originHeight=1034&originWidth=456&originalType=binary%E2%88%B6=1&status=done&style=none&width=256">
+<meta property="og:image" content="https://gitee.com/goinhn/imageClouding/raw/master/uPic/LOuZwS.png#height=247&id=fJ5AT&originHeight=446&originWidth=1014&originalType=binary%E2%88%B6=1&status=done&style=none&width=562">
+<meta property="og:image" content="https://gitee.com/goinhn/imageClouding/raw/master/uPic/WW1JZs.png#id=GmXVk&originHeight=336&originWidth=1024&originalType=binary%E2%88%B6=1&status=done&style=none">
+<meta property="og:image" content="https://gitee.com/goinhn/imageClouding/raw/master/uPic/YfM23s.png#id=OUffm&originHeight=314&originWidth=1108&originalType=binary%E2%88%B6=1&status=done&style=none">
+<meta property="og:image" content="https://gitee.com/goinhn/imageClouding/raw/master/uPic/zCuRLJ.png#id=LMaXF&originHeight=342&originWidth=1060&originalType=binary%E2%88%B6=1&status=done&style=none">
+<meta property="og:image" content="https://gitee.com/goinhn/imageClouding/raw/master/uPic/b4ER0H.png#id=aVKLT&originHeight=320&originWidth=1236&originalType=binary%E2%88%B6=1&status=done&style=none">
+<meta property="og:image" content="https://gitee.com/goinhn/imageClouding/raw/master/uPic/daR2oh.png#id=uUulz&originHeight=332&originWidth=906&originalType=binary%E2%88%B6=1&status=done&style=none">
+<meta property="og:image" content="https://gitee.com/goinhn/imageClouding/raw/master/uPic/KEO4Sx.png#id=HFt0A&originHeight=320&originWidth=1274&originalType=binary%E2%88%B6=1&status=done&style=none">
+<meta property="og:image" content="https://gitee.com/goinhn/imageClouding/raw/master/uPic/N6XE6x.png#id=HniCf&originHeight=326&originWidth=1292&originalType=binary%E2%88%B6=1&status=done&style=none">
+<meta property="og:image" content="https://gitee.com/goinhn/imageClouding/raw/master/uPic/zTuZDO.png#id=Skj9H&originHeight=254&originWidth=1232&originalType=binary%E2%88%B6=1&status=done&style=none">
+<meta property="og:image" content="https://gitee.com/goinhn/imageClouding/raw/master/uPic/GRw75w.png#id=CPcIT&originHeight=390&originWidth=1238&originalType=binary%E2%88%B6=1&status=done&style=none">
+<meta property="og:image" content="https://gitee.com/goinhn/imageClouding/raw/master/uPic/o8WTt3.png#id=KpTQi&originHeight=294&originWidth=1008&originalType=binary%E2%88%B6=1&status=done&style=none">
+<meta property="article:published_time" content="2021-07-02T12:28:42.000Z">
+<meta property="article:modified_time" content="2021-07-05T07:18:36.471Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/goinhn/imageClouding/raw/master/uPic/jQyIOH.png#height=580&id=yZTyt&originHeight=1034&originWidth=456&originalType=binary%E2%88%B6=1&status=done&style=none&width=256">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-yuque/git" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/02/yuque/git/" class="article-date">
+  <time class="dt-published" datetime="2021-07-02T12:28:42.000Z" itemprop="datePublished">2021-07-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      git
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><p>集中式版本管理系统：<br>版本存储在中央服务器中，每次修改需要拉取到本地进行修改<br>分布式版本管理系统：<br>每个人的本地都有一个完整的代码版本，可以互相之间进行推送修改，在实际的使用过程中会有一个“中央服务器”来交换大家之间的修改<br>​</p>
+<h3 id="发展"><a href="#发展" class="headerlink" title="发展"></a>发展</h3><p>由 Linus 为了管理 Linux 系统的开发通过 C 语言编写创建的<strong>分布式版本管理系统</strong><br>​</p>
+<h3 id="整体结构"><a href="#整体结构" class="headerlink" title="整体结构"></a>整体结构</h3><p><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/jQyIOH.png#height=580&id=yZTyt&originHeight=1034&originWidth=456&originalType=binary%E2%88%B6=1&status=done&style=none&width=256"><br>​</p>
+<p>​</p>
+<p>​</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 版本查看</span><br><span class="line">git --version</span><br><span class="line"></span><br><span class="line"># 配置查看</span><br><span class="line">git config --list</span><br><span class="line"></span><br><span class="line"># 设置全局的用户名和邮箱</span><br><span class="line">git config --global user.name &#39;xxx&#39;</span><br><span class="line">git config --global user.email &#39;xxx@xxx&#39;</span><br><span class="line"></span><br><span class="line"># 全局配置的config在用户主目录下的.gitconfig文件中</span><br><span class="line"># 当前项目的配置在项目目录的.git&#x2F;config中</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置命令别名"><a href="#配置命令别名" class="headerlink" title="配置命令别名"></a>配置命令别名</h3><p>将 st 命令标识为 status<br>git config –global <strong>alias</strong>.st status<br>​</p>
+<h3 id="git-多端验证配置"><a href="#git-多端验证配置" class="headerlink" title="git 多端验证配置"></a>git 多端验证配置</h3><p>在本地生成对应的公私钥：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br><span class="line">-b	采用长度1024bit的密钥对,b&#x3D;bits,最长4096，不过没啥必要</span><br><span class="line">-t rsa	采用rsa加密方式,t&#x3D;type</span><br><span class="line">-f	生成文件名,f&#x3D;output_keyfiles</span><br><span class="line">-C	备注，C&#x3D;comment</span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa -f ~&#x2F;.ssh&#x2F;id_rsa_icode_xxx</span><br></pre></td></tr></table></figure>
+
+<p>在~/.ssh 下新建 config 文件，要确保该文件有（<strong>可读的权限</strong>）<br>配置的 config 文件模板</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 配置文件参数</span><br><span class="line"># Host : 别名，可以取自己喜欢的名字，不过这个会影响git相关命令，例如定义为：Host mygithub.com时，clone命令为git clone git@mygithub.com:WordPress&#x2F;WordPress.git</span><br><span class="line"># HostName : 要登录主机的主机名，真实的域名地址</span><br><span class="line"># User : 登录名</span><br><span class="line"># IdentityFile : 指明上面User对应的identityFile路径</span><br><span class="line"># PreferredAuthentications : 配置登录时的权限认证方式--可设为publickey,password publickey,keyboard-interactive等</span><br><span class="line"></span><br><span class="line"># 文件模板如下：</span><br><span class="line">Host icode.baidu.com</span><br><span class="line">User xxx</span><br><span class="line">HostName icode.baidu.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~&#x2F;.ssh&#x2F;id_rsa_icode_xxx</span><br></pre></td></tr></table></figure>
+
+<h3 id="忽略特殊文件"><a href="#忽略特殊文件" class="headerlink" title="忽略特殊文件"></a>忽略特殊文件</h3><p>配置.gitignore 文件<br>常用.gitignore 文件模板</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/github/gitignore">https://github.com/github/gitignore</a>​</p>
+</blockquote>
+<p>需要强制将忽略的文件加入版本库：<br>git add -f target.xxx<br>检查某个文件或者文件夹是否被忽略<br>git check-ignore target.xxx<br>​</p>
+<p>.gitignore 本身要放在版本库的管理中，可以对.gitignore 进行版本管理<br>​</p>
+<h2 id="初始化数据库"><a href="#初始化数据库" class="headerlink" title="初始化数据库"></a>初始化数据库</h2><p>​</p>
+<p>数据库记录修改：<br>对数据库中的内容进行修改提交之后，会生成上次提交的状态与当前状态的差异记录（revision）<br>提交按照时间的序列在数据库中进行排序<br>git 会为每一次的提交生成一个 40 位的由英文和数字组合的值来给提交进行命名<br>不同类别的修改（bug 修复 or 系统升级）要分开进行提交，方便后续进行查看<br>提交的时候需要输入提交的信息，否则无法提交，多人合作的时候要统一提交的格式</p>
+<p>​</p>
+<p>分支：<br>分支是为了将修改记录的整体流程分叉保存<br>分叉之后的分支不受其它分支影响，可以对多个分支同时进行修改<br>开发的过程可以基于原分支进行创建新的分支，在新分支上开发完成后再将该分支合并回原分支<br>​</p>
+<p>新建分支：<br>git branch <branch>…<br>​</p>
+<p>分支切换：<br>git checkout <branch>…<br>​</p>
+<p>新建分支并切换到该分支<br>git checkout -b <branch>…<br>HEAD 指向的是现在使用中的分支的最后一次更新。通常默认指向 master 分支的最后一次更新。通过移动 HEAD，就可以变更使用的分支。<br>​</p>
+<p>提交时使用<del>(tilde)和^(caret)就可以指定某个提交的相对位置。最常用的就是相对于 HEAD 的位置。HEAD 后面加上</del>(tilde）可以指定 HEAD 之前的提交记录。合并分支会有多个根节点，您可以用^(caret) 来指定使用哪个为根节点。<br><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/LOuZwS.png#height=247&id=fJ5AT&originHeight=446&originWidth=1014&originalType=binary%E2%88%B6=1&status=done&style=none&width=562"></p>
+<p>合并<br>stash<br>暂时保存分支的内容<br>stash 是临时保存文件修改内容的区域。stash 可以暂时保存工作树和索引里还没提交的修改内容，您可以事后再取出暂存的修改，应用到原先的分支或其他的分支上。<br>​</p>
+<p>分支合并：<br>merge<br>git merge node<br>​</p>
+<p>rebase<br>git rebase node<br>发生冲突则，解决冲突后：<br>git rebase –continue 继续合并<br>git rebase –abort 放弃合并<br>​</p>
+<p>删除分支<br>git branch -d<br>​</p>
+<p>回退到上一个版本<br>当前修改的记录撤销<br>git reset –hard HEAD~<br>当前修改的记录保留<br>git reset –soft HEAD~<br>​</p>
+<p>​</p>
+<p><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/WW1JZs.png#id=GmXVk&originHeight=336&originWidth=1024&originalType=binary%E2%88%B6=1&status=done&style=none"><br>合并 bugfix 分支到 master 分支时，如果 master 分支的状态没有被更改过，那么这个合并是非常简单的。 bugfix 分支的历史记录包含 master 分支所有的历史记录，所以通过把 master 分支的位置移动到 bugfix 的最新分支上，Git 就会合并。这样的合并被称为 fast-forward（快进）合并。</p>
+<p><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/YfM23s.png#id=OUffm&originHeight=314&originWidth=1108&originalType=binary%E2%88%B6=1&status=done&style=none"><br>但是，master 分支的历史记录有可能在 bugfix 分支分叉出去后有新的更新。这种情况下，要把 master 分支的修改内容和 bugfix 分支的修改内容汇合起来。<br><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/zCuRLJ.png#id=LMaXF&originHeight=342&originWidth=1060&originalType=binary%E2%88%B6=1&status=done&style=none"><br>因此，合并两个修改会生成一个提交。这时，master 分支的 HEAD 会移动到该提交上。<br><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/b4ER0H.png#id=aVKLT&originHeight=320&originWidth=1236&originalType=binary%E2%88%B6=1&status=done&style=none"><br>执行合并时，如果设定了 non fast-forward 选项，即使在能够 fast-forward 合并的情况下也会生成新的提交并合并。</p>
+<p>rebase<br>跟 merge 的例子一样，如下图所示，bugfix 分支是从 master 分支分叉出来的。<br><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/daR2oh.png#id=uUulz&originHeight=332&originWidth=906&originalType=binary%E2%88%B6=1&status=done&style=none"><br>如果使用 rebase 方法进行分支合并，会出现下图所显示的历史记录。现在我们来简单地讲解一下合并的流程吧。<br><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/KEO4Sx.png#id=HFt0A&originHeight=320&originWidth=1274&originalType=binary%E2%88%B6=1&status=done&style=none"><br>首先，rebase bugfix 分支到 master 分支, bugfix 分支的历史记录会添加在 master 分支的后面。如图所示，历史记录成一条线，相当整洁。<br>这时移动提交 X 和 Y 有可能会发生冲突，所以需要修改各自的提交时发生冲突的部分。<br><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/N6XE6x.png#id=HniCf&originHeight=326&originWidth=1292&originalType=binary%E2%88%B6=1&status=done&style=none"><br>rebase 之后，master 的 HEAD 位置不变。因此，要合并 master 分支和 bugfix 分支，即是将 master 的 HEAD 移动到 bugfix 的 HEAD 这里。<br><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/zTuZDO.png#id=Skj9H&originHeight=254&originWidth=1232&originalType=binary%E2%88%B6=1&status=done&style=none"><br>汇合分支上的提交，合并到同一个分支：<br>git merge –squash<br><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/GRw75w.png#id=CPcIT&originHeight=390&originWidth=1238&originalType=binary%E2%88%B6=1&status=done&style=none"><br>​</p>
+<p><strong>主要使用的场合：</strong></p>
+<ul>
+<li>汇合主题分支的提交，然后合并提交到目标分支。</li>
+</ul>
+<p>​</p>
+<p>标签：</p>
+<ul>
+<li><strong>轻标签</strong><ul>
+<li>添加名称</li>
+</ul>
+</li>
+<li><strong>注解标签</strong><ul>
+<li>添加名称</li>
+<li>添加注解</li>
+<li>添加签名</li>
+</ul>
+</li>
+</ul>
+<p>一般情况下，发布标签是采用注解标签来添加注解或签名的。轻标签是为了在本地暂时使用或一次性使用。<br>您可以指定标签名称以退出，或 reset 在「修改提交」的讲解，还可以简单的恢复过去特定的状态。<br>列出所有的标签：<br>git tag<br>显示所有的标签和注解<br>git tag -n<br>​</p>
+<p>添加轻标签：<br>git tag <tagname>…<br>​</p>
+<p>显示包含标签的历史：<br>git log –decorate<br>​</p>
+<p>添加注解标签：会自动打开编辑区进行编辑<br>git tag -a <tagname></p>
+<p>注解标签直接添加注释<br>git tag -am “this is note” <tagname><br>​</p>
+<p>删除指定的标签<br>git tag -d <tagname>…<br>​</p>
+<p>​</p>
+<p>修改最近的提交，<br>git commit –amend<br>​</p>
+<p>安全取消过去的提交<br>git revert <commit>…<br>​</p>
+<p>遗弃过去的提交：<br>回退到原有的版本：<br>git reset<br>有几种参数模式：</p>
+<table>
+<thead>
+<tr>
+<th>模式名称</th>
+<th>HEAD 位置</th>
+<th>索引</th>
+<th>工作树</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>soft</td>
+<td>修改</td>
+<td>不修改</td>
+<td>不修改</td>
+</tr>
+<tr>
+<td>mixed</td>
+<td>修改</td>
+<td>修改</td>
+<td>不修改</td>
+</tr>
+<tr>
+<td>hard</td>
+<td>修改</td>
+<td>修改</td>
+<td>修改</td>
+</tr>
+</tbody></table>
+<p>主要的使用场合：</p>
+<ul>
+<li>复原修改过的索引的状态(mixed)</li>
+<li>彻底取消最近的提交(hard)</li>
+<li>只取消提交(soft)</li>
+</ul>
+<p>​</p>
+<p>提取提交：<br>在 cherry-pick，您可以从其他分支复制指定的提交，然后导入到现在的分支。<br><img src="https://gitee.com/goinhn/imageClouding/raw/master/uPic/o8WTt3.png#id=KpTQi&originHeight=294&originWidth=1008&originalType=binary%E2%88%B6=1&status=done&style=none"><br><strong>主要使用的场合：</strong></p>
+<ul>
+<li>把弄错分支的提交移动到正确的地方</li>
+<li>把其他分支的提交添加到现在的分支</li>
+</ul>
+<p>​</p>
+<p>​</p>
+<p>改写提交的历史：<br>在 rebase 指定 i 选项，您可以改写、替换、删除或合并提交<br>git rebase -i HEAD~ 汇合过去的提交<br>实际上，在 rebase 之前的提交会以 ORIG_HEAD 之名存留。如果 rebase 之后无法复原到原先的状态，可以用 git reset –hard ORIG_HEAD 复原到 rebase 之前的状态。<br>主要使用的场景：</p>
+<ul>
+<li>在 push 之前，重新输入正确的提交注解</li>
+<li>清楚地汇合内容含义相同的提交。</li>
+<li>添加最近提交时漏掉的档案</li>
+</ul>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+<p>添加<br>​</p>
+<p>​</p>
+<p>​</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/07/02/yuque/git/" data-id="ckqqakzkg0005a1n83wbg2n42" data-title="git" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/07/05/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/06/30/yuque/switch%E9%9B%86%E5%90%88%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">switch集合枚举类型</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/07/05/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/02/yuque/git/">git</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/30/yuque/switch%E9%9B%86%E5%90%88%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/">switch集合枚举类型</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/08/yuque/springboot/">springboot</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/02/yuque/api%E5%AE%89%E5%85%A8%E4%BF%9D%E8%AF%81/">api安全保证</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
