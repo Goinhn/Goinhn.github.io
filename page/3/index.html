@@ -140,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/14/yuque/java_specification/" data-id="ckqtporb10006atn53q0o8lp5" data-title="java_specification" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/14/yuque/java_specification/" data-id="ckqtqm49a0006d4mz3re7dd9g" data-title="java_specification" class="article-share-link">Share</a>
       
       
       
@@ -205,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/14/yuque/code_review/" data-id="ckqtporay0003atn5fsnog8vm" data-title="code_review" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/14/yuque/code_review/" data-id="ckqtqm4970003d4mzdacx6cbr" data-title="code_review" class="article-share-link">Share</a>
       
       
       
@@ -320,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/13/yuque/mac/" data-id="ckqtporb20008atn532ckfhm4" data-title="mac" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/05/13/yuque/mac/" data-id="ckqtqm49b0008d4mz9v2d1vnp" data-title="mac" class="article-share-link">Share</a>
       
       
       
@@ -359,7 +359,10 @@
 <p>// 指定进行安装<br>rpm -ivh <a target="_blank" rel="noopener" href="http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm">http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm</a></p>
 <p>// 如果发生冲入可以删除冲入的包<br>yum remove epel-release</p>
 <p>// 更新数据<br>yum clean all &amp;&amp; yum makecache<br>​</p>
-<h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2><p>配置文件：<br>全局：/etc/vim/vimrc<br>个人：～/.vimrc<br>​</p>
+<h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2><p>配置文件：<br>全局：/etc/vim/vimrc<br>个人：～/.vimrc<br>常用的一些配置项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"># 开启语法高亮</span><br><span class="line">syntax on</span><br><span class="line"></span><br><span class="line"># 在底下现实当前模式</span><br><span class="line">set showmode</span><br><span class="line"></span><br><span class="line"># 设置编码规则</span><br><span class="line">set encoding&#x3D;utf-8</span><br><span class="line"></span><br><span class="line"># 换行的时候自动缩进</span><br><span class="line">set autoindent</span><br><span class="line"></span><br><span class="line"># 设置tab的大小为2</span><br><span class="line">set tabstop&#x3D;2</span><br><span class="line"></span><br><span class="line"># 设置自动换行的长度为120</span><br><span class="line">set textwidth&#x3D;120</span><br><span class="line"></span><br><span class="line"># 自动换行</span><br><span class="line">set wrap</span><br><span class="line"></span><br><span class="line"># 换行的时候不在单词的中间换行</span><br><span class="line">set linebreak</span><br><span class="line"></span><br><span class="line"># 换行的时候右边空出2个单位的长度</span><br><span class="line">set wrapmargin&#x3D;2</span><br><span class="line"></span><br><span class="line"># 现实匹配高亮</span><br><span class="line">set showmatch</span><br><span class="line"></span><br><span class="line"># 高亮搜索的结构</span><br><span class="line">set hlsearch</span><br><span class="line"></span><br><span class="line"># 搜索的时候无关大小写</span><br><span class="line">set ignorecase</span><br><span class="line"></span><br><span class="line"># 设置备份文件、交换文件和操作历史文件保存的位置</span><br><span class="line">set backupdir&#x3D;~&#x2F;.vim&#x2F;.backup&#x2F;&#x2F;</span><br><span class="line">set directory&#x3D;~&#x2F;.vim&#x2F;.swp&#x2F;&#x2F;</span><br><span class="line">set undodir&#x3D;~&#x2F;.vim&#x2F;.undo&#x2F;&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
 <h2 id="homebrew"><a href="#homebrew" class="headerlink" title="homebrew"></a>homebrew</h2><blockquote>
 <p>brew.sh</p>
 </blockquote>
@@ -879,7 +882,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/local_config/" data-id="ckqtporbq000qatn513h89bbo" data-title="local_config" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/local_config/" data-id="ckqtqm49z000qd4mzewnt2nk7" data-title="local_config" class="article-share-link">Share</a>
       
       
       
@@ -918,7 +921,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test_two/" data-id="ckqtporbb000jatn59eku75vw" data-title="test_two" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/test_two/" data-id="ckqtqm49k000jd4mzfj360vkb" data-title="test_two" class="article-share-link">Share</a>
       
       
       
@@ -957,7 +960,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test_one/" data-id="ckqtporba000iatn54iysa3zr" data-title="test_one" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/test_one/" data-id="ckqtqm49j000id4mze0pdhr7k" data-title="test_one" class="article-share-link">Share</a>
       
       
       
@@ -996,7 +999,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/20/yuque/test/" data-id="ckqtporba000hatn5fjb4feyw" data-title="test" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/04/20/yuque/test/" data-id="ckqtqm49i000hd4mz3vn24wb9" data-title="test" class="article-share-link">Share</a>
       
       
       
